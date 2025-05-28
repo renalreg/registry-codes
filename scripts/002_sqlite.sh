@@ -1,5 +1,5 @@
-apt-get update 
-apt-get install sqlite3
+sudo apt-get update 
+sudo apt-get install sqlite3
 
 # remove reference to extract schema and create tables
 mkdir -p /tmp
