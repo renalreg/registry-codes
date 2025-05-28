@@ -1,0 +1,47 @@
+name: Build and Publish Registry Codes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed for creating releases
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Docker Compose
+        run: |
+          # Run docker-compose and wait for it to complete
+          docker-compose up --build
+          
+          # Ensure containers are cleaned up
+          docker-compose down
+
+      - name: List artifacts
+        run: |
+          ls -la output/
+          echo "Contents of output directory:"
+
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: registry-codes
+          path: output/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Registry Codes Build
+          tag_name: build-${{ github.run_number }}
+          files: output/*
+          generate_release_notes: true
