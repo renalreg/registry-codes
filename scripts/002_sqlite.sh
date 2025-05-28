@@ -1,19 +1,24 @@
-apt-get update 
-apt-get install sqlite3
+# TODO: use a loop and loop through all the tables
 
-# remove reference to extract schema and create tables
-
+# convert to correct sqlite syntax
 mkdir -p /tmp
-cat /tables/modality_codes/schema.sql | sed 's/"extract"\.//g' > /tmp/schema.sql
-sqlite3 /output/registry_codes.sqlite  .read /tmp/schema.sql
+cat /tables/modality_codes/schema.sql | sed -E \
+    -e 's/"extract"\.//g' \
+    -e 's/character varying\([0-9]+\)/TEXT/Ig' \
+    -e 's/bit\(1\)/INTEGER/Ig' \
+    > /tmp/schema.sql
 
-cat /tables/satellite_map/schema.sql | sed 's/"extract"\.//g' > /tmp/schema.sql
-sqlite3 /output/registry_codes.sqlite  .read /tmp/schema.sql
-
+sqlite3 /output/registry_codes.sqlite  ".read /tmp/schema.sql"
 
 # load data from csv
 sqlite3 /output/registry_codes.sqlite <<EOF
 .mode csv
-.import tables/modality_codes/v4.csv modality_codes
-.import tables/modality_codes/v5.csv modality_codes
+.headers off
+.import /tables/modality_codes/v4.csv modality_codes
+EOF
+
+sqlite3 /output/registry_codes.sqlite <<EOF
+.mode column
+.headers on
+SELECT * FROM modality_codes LIMIT 10;
 EOF
