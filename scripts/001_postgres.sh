@@ -12,5 +12,4 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<EOF
 EOF
 
 # dump data
-mkdir /output
 pg_dump --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" --schema=extract --clean --if-exists --no-owner --no-privileges > /output/registry_codes_dump.sql
