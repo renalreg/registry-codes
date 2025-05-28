@@ -4,12 +4,14 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       tag_name:
         description: 'Version tag for the release (e.g., v1.0.0)'
         required: true
-        default: ''
+        default: 'v1.0.0'
 
 jobs:
   build-and-release:
