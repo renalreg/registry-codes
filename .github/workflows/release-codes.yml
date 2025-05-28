@@ -2,8 +2,8 @@ name: Release Codes Database
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       tag_name:
@@ -37,7 +37,7 @@ jobs:
         if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
           echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
         else
-          echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo "TAG_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
         fi
     
     - name: Create release notes
@@ -49,7 +49,30 @@ jobs:
         echo "## Contents" >> release_notes.md
         echo "" >> release_notes.md
         echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release_notes.md
-        echo "- **registry_codes_dump.sql**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
+        echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
+        echo "" >> release_notes.md
+        echo "## Download Examples" >> release_notes.md
+        echo "" >> release_notes.md
+        echo "### SQLite Database" >> release_notes.md
+        echo "" >> release_notes.md
+        echo '```bash' >> release_notes.md
+        echo "# Download with curl" >> release_notes.md
+        echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.sqlite" >> release_notes.md
+        echo "" >> release_notes.md
+        echo "# Use the database" >> release_notes.md
+        echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release_notes.md
+        echo '```' >> release_notes.md
+        echo "" >> release_notes.md
+        echo "### PostgreSQL Dump" >> release_notes.md
+        echo "" >> release_notes.md
+        echo '```bash' >> release_notes.md
+        echo "# Download with curl" >> release_notes.md
+        echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.dump" >> release_notes.md
+        echo "" >> release_notes.md
+        echo "# Restore to a PostgreSQL database" >> release_notes.md
+        echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
+        echo '```' >> release_notes.md
+        echo "" >> release_notes.md
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
@@ -57,9 +80,10 @@ jobs:
         tag_name: ${{ env.TAG_NAME }}
         name: Registry Codes ${{ env.TAG_NAME }}
         body_path: release_notes.md
+        draft: true
         files: |
           output/registry_codes.sqlite
-          output/registry_codes_dump.sql
+          output/registry_codes.dump
         fail_on_unmatched_files: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
