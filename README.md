@@ -139,8 +139,15 @@ Follow these steps to update the registry codes:
 
 The GitHub Actions workflow will automatically create a new release with updated database files.
 
-
-
+# Releasing new codeset
+After merging branch containing changes on master branch run:
+```bash
+git tag vx.x.x
+```
+then 
+```bash
+git push vx.x.x
+```
 
 # Automatically sync databases 
 Schedule periodic checks for new releases using `cron` and trigger a sync if a new release is found. Example:
