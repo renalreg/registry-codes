@@ -67,7 +67,7 @@ Here is an example of how to use the sqlite database with Python and the `ukrdc-
    ```python
    from sqlalchemy import create_engine
    from sqlalchemy.orm import sessionmaker
-   from ukrdc_sqla.models import ModalityCodes
+   from ukrdc_sqla.ukrdc import Codes
 
    # Create an engine connected to the SQLite database
    engine = create_engine('sqlite:///registry_codes.sqlite')
@@ -79,7 +79,7 @@ Here is an example of how to use the sqlite database with Python and the `ukrdc-
    session = Session()
 
    # Query the modality codes table
-   modality_codes = session.query(ModalityCodes).limit(10).all()
+   modality_codes = session.query(Codes).limit(10).all()
    for code in modality_codes:
        print(code.registry_code, code.registry_code_desc)
 
