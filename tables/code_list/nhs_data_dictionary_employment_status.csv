@@ -1,0 +1,9 @@
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,01,Employed
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,02,Unemployed and actively seeking work
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,03,Undertaking full (at least 16 hours per week) or part-time (less than 16 hours per week) education or training as a student and not working or actively seeking work
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,04,Long-term sick or disabled, those receiving government sickness and disability benefits
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,05,Looking after the family or home as a homemaker and not working or actively seeking work
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,06,Not receiving government sickness and disability benefits and not working or actively seeking work
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,07,Unpaid voluntary work and not working or actively seeking work
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,08,Retired
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,ZZ,Not Stated (PERSON asked but declined to provide a response)

@@ -1,0 +1,92 @@
+PV,BodyTemperature,Body Temperature,obs,
+PV,FaecalCalprotectin,Faecal Calprotectin,result,ug/g
+PV,TargetWeight,Target Weight,obs,
+PV,acr,ACR,result,mg/mmol
+PV,adjustedcalcium,Adjusted Calcium,result,mmol/L
+PV,albumin,Albumin,result,g/L
+PV,albumin_post,Albumin (Post),result,g/L
+PV,alp,AlkP,result,U/L
+PV,alt,ALT,result,U/L
+PV,amy,Amylase,result,U/L
+PV,ast,AST,result,U/L
+PV,bili,Bili,result,umol/L
+PV,bmi,BMI,obs,
+PV,bpdia,BP Diastolic,obs,mm Hg
+PV,bpsys,BP Systolic,obs,mm Hg
+PV,calcium,Calcium,result,mmol/l
+PV,calcium_post,Calcium (Post),result,
+PV,cholesterol,Cholesterol,result,mmol/l
+PV,ciclosporin,Ciclosporin,result,ng/ml
+PV,covid19antibody,Covid-19 Antibody,result,
+PV,covid19lflow,Covid-19 Lateral Flow,result,
+PV,covid19pcr,Covid-19 PCR,result,
+PV,creatinine,Creatinine,result,umol/l
+PV,creatinine_post,Creatinine (Post),result,
+PV,crp,CRP,result,mg/l
+PV,egfr,eGFR,result,mL/min/1.73m^2
+PV,egfr_post,eGFR (Post),result,mL/min/1.73m^2
+PV,ferritin,Ferritin,result,ug/l
+PV,folate,Folate,result,ug/l
+PV,ft3,Free T3,result,pmol/l
+PV,ft4,Free T4,result,pmol/l
+PV,ggt,GGT,result,U/l
+PV,glucose,Glucose Random,result,mmol/l
+PV,hb,Hb,result,g/l
+PV,hba1c,HbA1c,result,mmol/mol
+PV,hbv,Hep B,result,
+PV,hco3,Bicarb,result,mmol/l
+PV,hco3_post,HCO3 (Post),result,
+PV,hct,HCT/PCV,result,I/l
+PV,hcv,Hep C,result,
+PV,hdl,HDL,result,mmol/l
+PV,height,Height,obs,cm
+PV,hypotension,Symptomatic Hypotension,obs,
+PV,inr,INR,result,ratio
+PV,iron,Iron,result,mmol/l
+PV,ironsat,Fe Sat,result,%
+PV,ktv,Kt/V,result,ratio
+PV,ldh,LDH,result,U/l
+PV,ldl,LDL,result,mmol/l
+PV,lhratio,LDL:LDH Ratio,result,ratio
+PV,lipase,Lipase,result,U/l
+PV,lithium,Lithium,result,mEq/l
+PV,magnesium,Mg,result,mmol/l
+PV,mmp,MMP Level,result,
+PV,neutrophils,Neutrophils,result,10^9/l
+PV,odema,Odema,obs,
+PV,pcr,PCR,result,mg/mmol
+PV,phepku,Phenylalanine,result,mg/dl
+PV,phosphate,Phosphate,result,mmol/l
+PV,phosphate_post,Phosphate (Post),result,mmol/l
+PV,platelets,Platelets,result,10^9/l
+PV,potassium,Potassium,result,mmol/l
+PV,potassium_post,Potassium (Post),result,mmol/l
+PV,psa,PSA,result,ng/ml
+PV,pth,PTH,result,pmol/l
+PV,pulse,Pulse,obs,bpm
+PV,ret-he,RET-HE,result,pg
+PV,sirolimus,Sirolimus,result,ng/l
+PV,sodium,Sodium,result,mmol/l
+PV,sodium_post,Sodium (Post),result,mmol/l
+PV,t4,Total T4,result,ng/l
+PV,tacrolimus,Tacrolimus,result,ng/ml
+PV,testosterone,Serum Testosterone,result,ng/dl
+PV,tg,TG,result,mmol/l
+PV,tgn,TGN Levels,result,
+PV,tpmt,TPMT Levels,result,mU/l
+PV,transferrin,Transferrin,result,%
+PV,trop,Troponin-T,result,ng/ml
+PV,tsh,TSH,result,mU/l
+PV,ualbumin,Urine Albumin,result,mg/l
+PV,ucreatinine,Urine Creatinine,result,mmol/l
+PV,updipstick,Urine Protein Dipstick,obs,
+PV,uprotein,Urine Protein,result,mmol/l
+PV,urate,Urate,result,mmol/l
+PV,urea,Urea,result,mmol/l
+PV,urea_post,Urea (Post),result,mmol/l
+PV,urr,URR,result,ratio
+PV,urr_post,URR (Post),result,
+PV,vitb12,Vitamin B12,result,ng/l
+PV,vitd,Vitamin D,result,nmol/l
+PV,wbc,WBC,result,10^9/l
+PV,weight,Weight,obs,kg
