@@ -17,8 +17,8 @@ sqlite3 /output/registry_codes.sqlite <<EOF
 .import /tables/modality_codes/v4.csv modality_codes
 EOF
 
-sqlite3 /output/registry_codes.sqlite <<EOF
-.mode column
-.headers on
-SELECT * FROM modality_codes LIMIT 10;
-EOF
+#sqlite3 /output/registry_codes.sqlite <<EOF
+#.mode column
+#.headers on
+#SELECT * FROM modality_codes LIMIT 10;
+#EOF

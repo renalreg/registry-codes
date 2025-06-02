@@ -1,7 +1,8 @@
 .qodo
 .vscode
 pg_data
-
+.venv
+output
 
 __pycache__/
 *.py[cod]
