@@ -1,65 +1,65 @@
-EDTA_COD,0,cause of death uncertain/not determined
-EDTA_COD,11,myocardial ischaemia and infraction
-EDTA_COD,12,hyperkalaemia
-EDTA_COD,13,haemorrhagic pericarditis
-EDTA_COD,14,other causes of cardiac failure
-EDTA_COD,15,cardiac arrest/sudden death; other cause or unknown
-EDTA_COD,16,hypertensive cardiac failure
-EDTA_COD,17,hypokalaemia 
-EDTA_COD,18,fluid overload/pulmonary oedema
-EDTA_COD,19,elevated pvr/pulmonary hypertension
-EDTA_COD,21,pulmonary embolus
-EDTA_COD,22,"cerebro-vascular accident, other cause or unspecified"
-EDTA_COD,23,gastro-intestinal haemorrhage (digestive)
-EDTA_COD,24,haemorrhage from graft site
-EDTA_COD,25,haemorrhage from vascular access or dialysis circuit
-EDTA_COD,26,cerebral haemorrhage from ruptured vascular aneurysm
-EDTA_COD,27,haemorrhage from surgery (except digestive haemorrhage)
-EDTA_COD,28,"other haemorrhage, other site and/or other cause"
-EDTA_COD,29,mesenteric infarction
-EDTA_COD,31,pulmonary infection (bacterial)
-EDTA_COD,32,pulmonary infection (viral)
-EDTA_COD,33,pulmonary infection (fungal or protozoal; parasitic)
-EDTA_COD,34,infections elsewhere (except viral hepatitis)
-EDTA_COD,35,septicaemia
-EDTA_COD,36,tuberculosis (lung)
-EDTA_COD,37,tuberculosis (elsewhere)
-EDTA_COD,38,generalized viral infection
-EDTA_COD,39,peritonitis (all causes except for peritoneal dialysis)
-EDTA_COD,41,liver disease due to hepatitis b virus
-EDTA_COD,42,liver disease due to other viral hepatitis
-EDTA_COD,43,liver disease due to drug toxicity
-EDTA_COD,44,cirrhosis - not viral (alcoholic or other cause)
-EDTA_COD,45,cystic liver disease
-EDTA_COD,46,liver failure - cause unknown
-EDTA_COD,51,patient refused further treatment for erf
-EDTA_COD,52,suicide
-EDTA_COD,53,erf treatment ceased for any other reason
-EDTA_COD,54,erf treatment withdrawn for medical reasons
-EDTA_COD,61,ureamia caused by graft failure
-EDTA_COD,62,pancreatitis
-EDTA_COD,63,bone marrow depression (aplosia)
-EDTA_COD,64,cachexia
-EDTA_COD,66,malignant disease in patient treated by immunosuppressive therapy
-EDTA_COD,67,malignant disease: solid tumors except those of 66
-EDTA_COD,68,malignant disease: lymphoproliferative disorders (except 66)
-EDTA_COD,69,dementia
-EDTA_COD,70,"peritonitis (sclerosing, with peritoneal dialysis)"
-EDTA_COD,71,perforation of peptic ulcer
-EDTA_COD,72,perforation of colon
-EDTA_COD,73,chronic obstructive pulmonary disease
-EDTA_COD,79,multi-system failure
-EDTA_COD,81,accident related to erf treatment
-EDTA_COD,82,accident unrelated to erf treatment
-EDTA_COD,99,other identified cause of death
-EDTA_COD,100,"peritonitis (bacterial, with peritoneal dialysis)"
-EDTA_COD,101,"peritonitis (fungal, with peritoneal dialysis)"
-EDTA_COD,102,"peritonitis (due to other cause, with peritoneal dialysis)"
-EDTA_COD,103,peripheral vascular disease
-EDTA_COD,104,calciphylaxis
-EDTA_COD,105,ischaemic bowel
-EDTA_COD,106,ruptured aaa
-EDTA_COD,107,advanced ckd not on dialysis(conservative management)
-EDTA_COD,108,acute kidney injury
-EDTA_COD,109,c diff colitis
-EDTA_COD,110,line related sepsis
+EDTA_COD,0,cause of death uncertain/not determined,,,,
+EDTA_COD,11,myocardial ischaemia and infraction,,,,
+EDTA_COD,12,hyperkalaemia,,,,
+EDTA_COD,13,haemorrhagic pericarditis,,,,
+EDTA_COD,14,other causes of cardiac failure,,,,
+EDTA_COD,15,cardiac arrest/sudden death; other cause or unknown,,,,
+EDTA_COD,16,hypertensive cardiac failure,,,,
+EDTA_COD,17,hypokalaemia ,,,,
+EDTA_COD,18,fluid overload/pulmonary oedema,,,,
+EDTA_COD,19,elevated pvr/pulmonary hypertension,,,,
+EDTA_COD,21,pulmonary embolus,,,,
+EDTA_COD,22,"cerebro-vascular accident, other cause or unspecified",,,,
+EDTA_COD,23,gastro-intestinal haemorrhage (digestive),,,,
+EDTA_COD,24,haemorrhage from graft site,,,,
+EDTA_COD,25,haemorrhage from vascular access or dialysis circuit,,,,
+EDTA_COD,26,cerebral haemorrhage from ruptured vascular aneurysm,,,,
+EDTA_COD,27,haemorrhage from surgery (except digestive haemorrhage),,,,
+EDTA_COD,28,"other haemorrhage, other site and/or other cause",,,,
+EDTA_COD,29,mesenteric infarction,,,,
+EDTA_COD,31,pulmonary infection (bacterial),,,,
+EDTA_COD,32,pulmonary infection (viral),,,,
+EDTA_COD,33,pulmonary infection (fungal or protozoal; parasitic),,,,
+EDTA_COD,34,infections elsewhere (except viral hepatitis),,,,
+EDTA_COD,35,septicaemia,,,,
+EDTA_COD,36,tuberculosis (lung),,,,
+EDTA_COD,37,tuberculosis (elsewhere),,,,
+EDTA_COD,38,generalized viral infection,,,,
+EDTA_COD,39,peritonitis (all causes except for peritoneal dialysis),,,,
+EDTA_COD,41,liver disease due to hepatitis b virus,,,,
+EDTA_COD,42,liver disease due to other viral hepatitis,,,,
+EDTA_COD,43,liver disease due to drug toxicity,,,,
+EDTA_COD,44,cirrhosis - not viral (alcoholic or other cause),,,,
+EDTA_COD,45,cystic liver disease,,,,
+EDTA_COD,46,liver failure - cause unknown,,,,
+EDTA_COD,51,patient refused further treatment for erf,,,,
+EDTA_COD,52,suicide,,,,
+EDTA_COD,53,erf treatment ceased for any other reason,,,,
+EDTA_COD,54,erf treatment withdrawn for medical reasons,,,,
+EDTA_COD,61,ureamia caused by graft failure,,,,
+EDTA_COD,62,pancreatitis,,,,
+EDTA_COD,63,bone marrow depression (aplosia),,,,
+EDTA_COD,64,cachexia,,,,
+EDTA_COD,66,malignant disease in patient treated by immunosuppressive therapy,,,,
+EDTA_COD,67,malignant disease: solid tumors except those of 66,,,,
+EDTA_COD,68,malignant disease: lymphoproliferative disorders (except 66),,,,
+EDTA_COD,69,dementia,,,,
+EDTA_COD,70,"peritonitis (sclerosing, with peritoneal dialysis)",,,,
+EDTA_COD,71,perforation of peptic ulcer,,,,
+EDTA_COD,72,perforation of colon,,,,
+EDTA_COD,73,chronic obstructive pulmonary disease,,,,
+EDTA_COD,79,multi-system failure,,,,
+EDTA_COD,81,accident related to erf treatment,,,,
+EDTA_COD,82,accident unrelated to erf treatment,,,,
+EDTA_COD,99,other identified cause of death,,,,
+EDTA_COD,100,"peritonitis (bacterial, with peritoneal dialysis)",,,,
+EDTA_COD,101,"peritonitis (fungal, with peritoneal dialysis)",,,,
+EDTA_COD,102,"peritonitis (due to other cause, with peritoneal dialysis)",,,,
+EDTA_COD,103,peripheral vascular disease,,,,
+EDTA_COD,104,calciphylaxis,,,,
+EDTA_COD,105,ischaemic bowel,,,,
+EDTA_COD,106,ruptured aaa,,,,
+EDTA_COD,107,advanced ckd not on dialysis(conservative management),,,,
+EDTA_COD,108,acute kidney injury,,,,
+EDTA_COD,109,c diff colitis,,,,
+EDTA_COD,110,line related sepsis,,,,

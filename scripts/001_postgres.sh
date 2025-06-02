@@ -38,14 +38,14 @@ echo "# Code list contains various coding standards and their descriptions"
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -f tables/code_list/schema.sql
 
 # Loop through CSV files in code_list
-#for csv_file in tables/code_list/*.csv; do
-#    if [ -f "$csv_file" ]; then
-#        echo "  Importing data from $(basename "$csv_file")"
-#        psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-#\copy extract.code_list(coding_standard, code, description, object_type, units, pkb_reference_range, pkb_comment) FROM '$csv_file' WITH (FORMAT csv)
-#EOF
-#    fi
-#done
+for csv_file in tables/code_list/*.csv; do
+    if [ -f "$csv_file" ]; then
+        echo "  Importing data from $(basename "$csv_file")"
+        psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
+\copy extract.code_list(coding_standard, code, description, object_type, units, pkb_reference_range, pkb_comment) FROM '$csv_file' WITH (FORMAT csv)
+EOF
+    fi
+done
 
 
 # code_map

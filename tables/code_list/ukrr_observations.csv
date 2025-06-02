@@ -1,61 +1,61 @@
-UKRR,QBLA1,Serum Creatinine,result,umol/L
-UKRR,QBLA3,Serum Urea,result,mmol/L
-UKRR,QBLA4,Serum Bicarbonate,result,mmol/L
-UKRR,QBLA6,Serum Sodium,result,mmol/L
-UKRR,QBLA9,Serum Potassium,result,mmol/L
-UKRR,QBLAB,Lab Calculated eGFR,result,mL/min/1.72m^2
-UKRR,QBLAC,Serum Uric Acid (Urate),result,mmol/L
-UKRR,QBLAL,Unit Calculated eGFR,result,mL/min/1.72m^2
-UKRR,QBLB1,Serum Phosphate,result,mmol/L
-UKRR,QBLB3,Serum Calcium,result,mmol/L
-UKRR,QBLB4,Corrected Serum Calcium,result,mmol/L
-UKRR,QBLB5,Serum Alkaline Phosphatase,result,IU/L
-UKRR,QBLB7,Serum Albumin,result,g/L
-UKRR,QBLB9,Serum Parathyroid Hormone (PTH),result,pmol/L
-UKRR,QBLC1,Urine Protein:Creatinine Ratio,result,
-UKRR,QBLC3,Urine Albumin:Creatinine Ratio,result,
-UKRR,QBLD1,Total Serium Cholesterol,result,mmol/L
-UKRR,QBLD3,Serum HDL Cholesterol,result,mmol/L
-UKRR,QBLD4,Serum LDL Cholesterol,result,mmol/L
-UKRR,QBLD5,Serum Triglycerides,result,mmol/L
-UKRR,QBLD6,CRP,result,mg/L
-UKRR,QBLD8,Hba1c %,result,%
-UKRR,QBLDA,Hba1c,result,mmol/mol
-UKRR,QBLE1,Haemoglobin,result,g/dL
-UKRR,QBLE3,MCH,result,g/dL
-UKRR,QBLE4,Platelets,result,10^9/L
-UKRR,QBLE5,WBC (from full blood count),result,10^9/L
-UKRR,QBLEB,Haemloglobin,result,g/L
-UKRR,QBLF1,Serum Ferritin,result,ug/L = ng/ml
-UKRR,QBLF3,Transferrin Saturation,result,%
-UKRR,QBLF5,Percentage of Hypochromic Cells,result,%
-UKRR,QBLF7,Serum B12,result,ng/L
-UKRR,QBLF9,Serum Folate,result,ug/L
-UKRR,QBLFB,Red Cell Folate,result,ug/L
-UKRR,QBLFD,Serum Aluminium,result,umol/L
-UKRR,QBLFF,Tacrolimus Blood Concentration Level,result,ng/mL
-UKRR,QBLFH,Sirolimus Blood Concentration Level,result,ng/mL
-UKRR,QBLFK,Ciclosporin Blood Concentration Level,result,ng/mL
-UKRR,QBLFM,Mycophenolate Blood Concentration Level,result,ng/mL
-UKRR,QBLG1,Weight,observation,kg
-UKRR,QBLG3,Systolic BP,observation,mmHg
-UKRR,QBLG4,Diastolic BP,observation,mmHg
-UKRR,QBLG9,Urea Reduction Ratio,result,
-UKRR,QBLGG,Kt/V,result,
-UKRR,QBLGB,Height,observation,cm
-UKRR,QBLHA,HBV Antibody Status,result,
-UKRR,QBLHC,HBV Surface Antigen Status,result,
-UKRR,QBLHE,HCV Antibody Status,result,
-UKRR,QBLHG,CMV Antibody Status,result,
-UKRR,QBLHK,CMV PCR Copies/ML,result,IU/mL
-UKRR,QBLHM,HIV Antigen Status,result,
-UKRR,QBLHN,Varicella,result,
-UKRR,QBLHR,EBV Status,result,
-UKRR,QBLHS,EBV Log Count,result,
-UKRR,QBLHV,Urine Volume in 24 Hours,observation,ml
-UKRR,QBLHX,Urinary Creatinine Excretion,result,mmol/L
-UKRR,QBLPA,PTH ULN,result,pmol/L
-UKRR,QBLPB,PTH / PTHH ULN Ratio,result,
-UKRR,QBLPC,ALT,result,IU/L
-UKRR,QBLPD,ANC,result,10^9/L
-UKRR,QBLPE,ALC,result,10^9/L
+UKRR,QBLA1,Serum Creatinine,result,umol/L,,
+UKRR,QBLA3,Serum Urea,result,mmol/L,,
+UKRR,QBLA4,Serum Bicarbonate,result,mmol/L,,
+UKRR,QBLA6,Serum Sodium,result,mmol/L,,
+UKRR,QBLA9,Serum Potassium,result,mmol/L,,
+UKRR,QBLAB,Lab Calculated eGFR,result,mL/min/1.72m^2,,
+UKRR,QBLAC,Serum Uric Acid (Urate),result,mmol/L,,
+UKRR,QBLAL,Unit Calculated eGFR,result,mL/min/1.72m^2,,
+UKRR,QBLB1,Serum Phosphate,result,mmol/L,,
+UKRR,QBLB3,Serum Calcium,result,mmol/L,,
+UKRR,QBLB4,Corrected Serum Calcium,result,mmol/L,,
+UKRR,QBLB5,Serum Alkaline Phosphatase,result,IU/L,,
+UKRR,QBLB7,Serum Albumin,result,g/L,,
+UKRR,QBLB9,Serum Parathyroid Hormone (PTH),result,pmol/L,,
+UKRR,QBLC1,Urine Protein:Creatinine Ratio,result,,,
+UKRR,QBLC3,Urine Albumin:Creatinine Ratio,result,,,
+UKRR,QBLD1,Total Serium Cholesterol,result,mmol/L,,
+UKRR,QBLD3,Serum HDL Cholesterol,result,mmol/L,,
+UKRR,QBLD4,Serum LDL Cholesterol,result,mmol/L,,
+UKRR,QBLD5,Serum Triglycerides,result,mmol/L,,
+UKRR,QBLD6,CRP,result,mg/L,,
+UKRR,QBLD8,Hba1c %,result,%,,
+UKRR,QBLDA,Hba1c,result,mmol/mol,,
+UKRR,QBLE1,Haemoglobin,result,g/dL,,
+UKRR,QBLE3,MCH,result,g/dL,,
+UKRR,QBLE4,Platelets,result,10^9/L,,
+UKRR,QBLE5,WBC (from full blood count),result,10^9/L,,
+UKRR,QBLEB,Haemloglobin,result,g/L,,
+UKRR,QBLF1,Serum Ferritin,result,ug/L = ng/ml,,
+UKRR,QBLF3,Transferrin Saturation,result,%,,
+UKRR,QBLF5,Percentage of Hypochromic Cells,result,%,,
+UKRR,QBLF7,Serum B12,result,ng/L,,
+UKRR,QBLF9,Serum Folate,result,ug/L,,
+UKRR,QBLFB,Red Cell Folate,result,ug/L,,
+UKRR,QBLFD,Serum Aluminium,result,umol/L,,
+UKRR,QBLFF,Tacrolimus Blood Concentration Level,result,ng/mL,,
+UKRR,QBLFH,Sirolimus Blood Concentration Level,result,ng/mL,,
+UKRR,QBLFK,Ciclosporin Blood Concentration Level,result,ng/mL,,
+UKRR,QBLFM,Mycophenolate Blood Concentration Level,result,ng/mL,,
+UKRR,QBLG1,Weight,observation,kg,,
+UKRR,QBLG3,Systolic BP,observation,mmHg,,
+UKRR,QBLG4,Diastolic BP,observation,mmHg,,
+UKRR,QBLG9,Urea Reduction Ratio,result,,,
+UKRR,QBLGG,Kt/V,result,,,
+UKRR,QBLGB,Height,observation,cm,,
+UKRR,QBLHA,HBV Antibody Status,result,,,
+UKRR,QBLHC,HBV Surface Antigen Status,result,,,
+UKRR,QBLHE,HCV Antibody Status,result,,,
+UKRR,QBLHG,CMV Antibody Status,result,,,
+UKRR,QBLHK,CMV PCR Copies/ML,result,IU/mL,,
+UKRR,QBLHM,HIV Antigen Status,result,,,
+UKRR,QBLHN,Varicella,result,,,
+UKRR,QBLHR,EBV Status,result,,,
+UKRR,QBLHS,EBV Log Count,result,,,
+UKRR,QBLHV,Urine Volume in 24 Hours,observation,ml,,
+UKRR,QBLHX,Urinary Creatinine Excretion,result,mmol/L,,
+UKRR,QBLPA,PTH ULN,result,pmol/L,,
+UKRR,QBLPB,PTH / PTHH ULN Ratio,result,,,
+UKRR,QBLPC,ALT,result,IU/L,,
+UKRR,QBLPD,ANC,result,10^9/L,,
+UKRR,QBLPE,ALC,result,10^9/L,,

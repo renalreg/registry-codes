@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
     
-def loop_though_csv(items_per_line:int, table_name:str, allow_empty:bool=False):
+def loop_though_csv(items_per_line:int, table_name:str, allow_empty:bool=True):
     """
     Function to loop through the csvs in the directory defined by table name and check each
     row has the number of entries we expect. It should return a dictionary of line numbers and what each line contains where there are less or more than items_per_line
@@ -89,8 +89,8 @@ def test_code_exclusion():
 
 
 def test_code_list():
-    # Test for code_list (7 fields)
-    errors = loop_though_csv(3, "code_list", allow_empty=False)
+
+    errors = loop_though_csv(7, "code_list")
     
     # Print details of any errors found
     for key, details in errors.items():
