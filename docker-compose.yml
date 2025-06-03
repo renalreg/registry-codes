@@ -23,6 +23,7 @@ services:
       - ./pg_data:/var/lib/postgresql/data # persistant volume
       - ./tables:/tables
       - ./scripts/002_postgres.sh:/docker-entrypoint-initdb.d/002_postgres.sh
+      - ./scripts:/scripts
       - ./output:/output
 
     user: root

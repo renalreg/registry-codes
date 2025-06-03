@@ -3,6 +3,9 @@
 pg_data
 .venv
 output
+tables/ukrdc_ods_codes/egpcur
+tables/ukrdc_ods_codes/epraccur
+
 
 __pycache__/
 *.py[cod]

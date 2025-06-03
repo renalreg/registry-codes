@@ -141,21 +141,22 @@ done
 
 # ukrdc_ods_gp_codes
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -f tables/ukrdc_ods_gp_codes/schema.sql
-awk -F',' '{
-    printf "%s,%s,%s,%s,%s,GP\n", $1, $2, $5, $10, $18
-}' tables/ukrdc_ods_gp_codes/egpcur/egpcur.csv > /tmp/gp_processed.csv
+
+# Process GP data
+awk -v type=GP -f scripts/process_ods_codes.awk tables/ukrdc_ods_gp_codes/egpcur/egpcur.csv > /tmp/gp_processed.csv
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/gp_processed.csv' WITH (FORMAT csv)
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/gp_processed.csv' WITH (FORMAT csv, DELIMITER ';')
 EOF
 
-awk -F',' '{
-    printf "%s,%s,%s,%s,%s,PRACTICE\n", $1, $2, $5, $10, $18
-}' tables/ukrdc_ods_gp_codes/epraccur/epraccur.csv > /tmp/practice_processed.csv
+
+# Process Practice data
+awk -v type=PRACTICE -f scripts/process_ods_codes.awk tables/ukrdc_ods_gp_codes/epraccur/epraccur.csv > /tmp/practice_processed.csv
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/practice_processed.csv' WITH (FORMAT csv)
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/practice_processed.csv' WITH (FORMAT csv, DELIMITER ';')
 EOF
+
 
 # Dump all data from extract schema
 echo "Creating database dump..."
