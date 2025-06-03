@@ -139,12 +139,26 @@ EOF
 done
 
 
+# ukrdc_ods_gp_codes
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -f tables/ukrdc_ods_gp_codes/schema.sql
+awk -F',' '{
+    printf "%s,%s,%s,%s,%s,GP\n", $1, $2, $5, $10, $18
+}' tables/ukrdc_ods_gp_codes/egpcur/egpcur.csv > /tmp/gp_processed.csv
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/gp_processed.csv' WITH (FORMAT csv)
+EOF
+
+awk -F',' '{
+    printf "%s,%s,%s,%s,%s,PRACTICE\n", $1, $2, $5, $10, $18
+}' tables/ukrdc_ods_gp_codes/epraccur/epraccur.csv > /tmp/practice_processed.csv
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/practice_processed.csv' WITH (FORMAT csv)
+EOF
+
 # Dump all data from extract schema
 echo "Creating database dump..."
 pg_dump --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" --schema=extract --clean --if-exists --no-owner --no-privileges > /output/registry_codes.dump
 
 echo "Done! Database dump created at /output/registry_codes.dump"
-
-
-
-# TODO: Optionally build ods tables
