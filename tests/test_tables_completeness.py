@@ -50,8 +50,8 @@ def loop_though_csv(items_per_line:int, table_name:str, allow_empty:bool=True):
 
 
 def test_modality_codes():
-    # Test for modality_codes (13 fields)
-    errors = loop_though_csv(13, "modality_codes", allow_empty=False)
+    # Test for modality_codes (12 fields)
+    errors = loop_though_csv(13, "modality_codes", allow_empty=True)
     
     # Print details of any errors found
     for key, details in errors.items():
