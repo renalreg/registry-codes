@@ -26,6 +26,7 @@ services:
       - ./scripts:/scripts
       - ./output:/output
 
+    #command: ["/scripts/002_postgres.sh"]
     user: root
 
   
