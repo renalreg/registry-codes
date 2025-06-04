@@ -26,7 +26,7 @@ jobs:
       run: mkdir -p output && chmod -R 777 output
     
     - name: Fix script permissions
-      run: chmod +x scripts
+      run: chmod +x scripts/*.sh
 
     - name: Run docker-compose
       run: docker compose up --build --abort-on-container-exit
