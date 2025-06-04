@@ -163,3 +163,6 @@ echo "Creating database dump..."
 pg_dump --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" --schema=extract --clean --if-exists --no-owner --no-privileges > /output/registry_codes.dump
 
 echo "Done! Database dump created at /output/registry_codes.dump"
+
+# Signal the container to stop now that the script is complete and message is printed
+kill 1
