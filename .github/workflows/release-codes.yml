@@ -29,10 +29,7 @@ jobs:
       run: chmod +x scripts/*.sh
 
     - name: Build Docker images
-      run: docker compose build
-
-    - name: Start PostgreSQL service in detached mode
-      run: docker compose up -d
+      run: docker compose up --build --detach
 
     - name: Wait for PostgreSQL initialization and dump creation
       shell: bash 
@@ -71,8 +68,8 @@ jobs:
         
         echo "PostgreSQL dump created!"
 
-    - name: Stop PostgreSQL service
-      run: docker compose stop postgres
+    - name: Stop container
+      run: docker compose down
 
     - name: Verify output files
       run: ls -la output/

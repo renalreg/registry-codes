@@ -26,40 +26,16 @@ services:
       - ./scripts:/scripts
       - ./output:/output
 
-    command: [""]
     user: root
 
-  
   # TODO: duplicate process with mssql 
-  #mssql:
-  #  image: mcr.microsoft.com/mssql/server:2019-latest
-  #  environment:
-  #    ACCEPT_EULA: Y
-  #    SA_PASSWORD: YourStrong!Passw0rd
-  #    MSSQL_PID: Developer
-  #  ports:
-  #    - "1433:1433"
-  #  volumes:
-  #    - ./tables:/tables
-  #    - ./scripts/004_sqlserver.sh:/scripts/setup.sh
-  #    - ./output:/output
-  #  user: root
-
 
   # TODO: add service to build redis cache
-  #redis:
-  #  image: redis:latest
-  #  ports:
-  #    - "6379:6379"
 
   # builds sqlite dump and other bits that might be required
   codes-builder:
     build: .
-    depends_on:
-      ods-downloader:
-        condition: service_completed_successfully
     tty: true
-    
     volumes:
       - ./tables:/tables
       - ./scripts:/scripts
