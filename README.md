@@ -21,7 +21,7 @@ You can download the release assets directly using `curl`. Here is an example:
 1. **Download Asset**: Use the following command to download the file.
    ```bash
    curl -L -o registry_codes.dump \
-       https://github.com/renalreg/registry-codes/releases/download/v0.1.0/registry_codes.dump
+       https://github.com/renalreg/registry-codes/releases/download/latest/registry_codes.dump
    ```
 
    Replace the URL with the direct link to the asset you want to download.
@@ -30,7 +30,7 @@ You can download the release assets directly using `curl`. Here is an example:
 1. **Get Dump of Codes:**
    - Download the registry codes dump file using `curl`.
    ```bash
-   curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/refs/tags/v0.1.0/registry_codes.dump
+   curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/refs/tags/limited/registry_codes.dump
    ```
 
 2. **Restore Table Using Dump File:**
@@ -53,7 +53,7 @@ Here is an example of how to use the sqlite database with Python and the `ukrdc-
 1. **Download the SQLite Database:**
    - Use `curl` to download the `registry_codes.sqlite` file from the GitHub repository.
    ```bash
-   curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/v0.1.0/registry_codes.sqlite
+   curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/latest/registry_codes.sqlite
    ```
 
 2. **Set up the Environment:**
