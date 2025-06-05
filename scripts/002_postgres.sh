@@ -160,7 +160,7 @@ EOF
 
 # Dump all data from extract schema
 echo "Creating database dump..."
-pg_dump --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" --schema=extract --clean --if-exists --no-owner --no-privileges > /output/registry_codes.dump
+pg_dump --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" --schema=extract --clean --if-exists --no-owner --no-privileges -Ft > /output/registry_codes.dump
 
 echo "Done! Database dump created at /output/registry_codes.dump"
 
