@@ -126,6 +126,7 @@ jobs:
         draft: true
         files: |
           output/registry_codes.sqlite
+          output/registry_codes_ods.sqlite
           output/registry_codes.dump
         fail_on_unmatched_files: true
       env:
