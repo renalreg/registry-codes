@@ -142,20 +142,9 @@ done
 
 # ukrdc_ods_gp_codes
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -f tables/ukrdc_ods_gp_codes/schema.sql
-
-# Process GP data
-awk -v type=GP -f scripts/process_ods_codes.awk tables/ukrdc_ods_gp_codes/egpcur/egpcur.csv > /tmp/gp_processed.csv
-
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/gp_processed.csv' WITH (FORMAT csv, DELIMITER ';')
-EOF
-
-
-# Process Practice data
-awk -v type=PRACTICE -f scripts/process_ods_codes.awk tables/ukrdc_ods_gp_codes/epraccur/epraccur.csv > /tmp/practice_processed.csv
-
-psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tmp/practice_processed.csv' WITH (FORMAT csv, DELIMITER ';')
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tables/ukrdc_ods_gp_codes/gp_processed.csv' WITH (FORMAT csv, DELIMITER ';');
+\copy extract.ukrdc_ods_gp_codes(code, name, address1, postcode, phone, type) FROM '/tables/ukrdc_ods_gp_codes/practice_processed.csv' WITH (FORMAT csv, DELIMITER ';');
 EOF
 
 

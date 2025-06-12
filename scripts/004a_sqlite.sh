@@ -1,15 +1,10 @@
+#!/bin/bash
 mkdir -p /tmp
 DB_FILE="/output/registry_codes.sqlite"
 
 # Find all subdirectories in /tables, each representing a table
 find /tables -mindepth 1 -maxdepth 1 -type d | while read TABLE_PATH; do
     TABLE_NAME=$(basename "$TABLE_PATH")
-
-    # Skip processing for ukrdc_ods_gp_codes directory
-    if [ "$TABLE_NAME" = "ukrdc_ods_gp_codes" ]; then
-        echo "Skipping processing for directory: $TABLE_NAME"
-        continue
-    fi
 
     SCHEMA_FILE="$TABLE_PATH/schema.sql"
     echo "Processing table: $TABLE_NAME"
@@ -20,8 +15,6 @@ find /tables -mindepth 1 -maxdepth 1 -type d | while read TABLE_PATH; do
     fi
 
 
-
-
     # Convert to correct sqlite syntax and apply schema
     echo "Transforming schema for $TABLE_NAME..."
     cat "$SCHEMA_FILE" | sed -E \
@@ -30,6 +23,12 @@ find /tables -mindepth 1 -maxdepth 1 -type d | while read TABLE_PATH; do
         -e 's/bit\(1\)/INTEGER/Ig' \
         -e 's/DEFAULT[[:space:]]*now\s*\(\)[[:space:]]*NOT[[:space:]]*NULL//Ig' \
         > "/tmp/${TABLE_NAME}_schema.sql"
+
+    # Skip following steps for ukrdc_ods_gp_codes
+    if [ "$TABLE_NAME" = "ukrdc_ods_gp_codes" ]; then
+        echo "Skipping processing for directory: $TABLE_NAME"
+        continue
+    fi
 
     echo "Applying schema for $TABLE_NAME..."
     echo "Contents of /tmp/${TABLE_NAME}_schema.sql:"

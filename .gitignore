@@ -3,8 +3,8 @@
 pg_data
 .venv
 output
-tables/ukrdc_ods_gp_codes
-
+tables/ukrdc_ods_gp_codes/*.pdf
+tables/ukrdc_ods_gp_codes/*.csv
 
 
 __pycache__/

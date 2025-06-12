@@ -35,6 +35,9 @@ services:
   # builds sqlite dump and other bits that might be required
   codes-builder:
     build: .
+    depends_on:
+      ods-downloader:
+        condition: service_completed_successfully
     tty: true
     volumes:
       - ./tables:/tables
