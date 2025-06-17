@@ -1,0 +1,83 @@
+PVMIGRATE,acr,PV,acr
+PVMIGRATE,Adjusted Calcium,PV,adjustedcalcium
+PVMIGRATE,adjustedca,PV,adjustedcalcium
+PVMIGRATE,adjustedcalcium,PV,adjustedcalcium
+PVMIGRATE,albumin,PV,albumin
+PVMIGRATE,Alkaline Phosphatase,PV,alp
+PVMIGRATE,alp,PV,alp
+PVMIGRATE,alt,PV,alt
+PVMIGRATE,amy,PV,amy
+PVMIGRATE,ast,PV,ast
+PVMIGRATE,bili,PV,bili
+PVMIGRATE,bmi,PV,bmi
+PVMIGRATE,BodyTemperature,PV,BodyTemperature
+PVMIGRATE,BP dia,PV,bpdia
+PVMIGRATE,BP sys,PV,bpsys
+PVMIGRATE,bpdia,PV,bpdia
+PVMIGRATE,bpsys,PV,bpsys
+PVMIGRATE,calcium,PV,calcium
+PVMIGRATE,cholestero,PV,cholesterol
+PVMIGRATE,cholesterol,PV,cholesterol
+PVMIGRATE,ciclospori,PV,ciclosporin
+PVMIGRATE,ciclosporin,PV,ciclosporin
+PVMIGRATE,creatinine,PV,creatinine
+PVMIGRATE,crp,PV,crp
+PVMIGRATE,egfr,PV,egfr
+PVMIGRATE,FaecalCalprotectin,PV,FaecalCalprotectin
+PVMIGRATE,ferr,PV,ferritin
+PVMIGRATE,ferritin,PV,ferritin
+PVMIGRATE,folate,PV,folate
+PVMIGRATE,ft3,PV,ft3
+PVMIGRATE,ft4,PV,ft4
+PVMIGRATE,ggt,PV,ggt
+PVMIGRATE,glucose,PV,glucose
+PVMIGRATE,hb,PV,hb
+PVMIGRATE,hba1c,PV,hba1c
+PVMIGRATE,HbA1c (IFCC),PV,hba1c
+PVMIGRATE,hco3,PV,hco3
+PVMIGRATE,hct,PV,hct
+PVMIGRATE,hdl,PV,hdl
+PVMIGRATE,height,PV,height
+PVMIGRATE,hypotension,PV,hypotension
+PVMIGRATE,inr,PV,inr
+PVMIGRATE,iron,PV,iron
+PVMIGRATE,ironsat,PV,ironsat
+PVMIGRATE,KT/V,PV,ktv
+PVMIGRATE,ktv,PV,ktv
+PVMIGRATE,ldh,PV,ldh
+PVMIGRATE,ldl,PV,ldl
+PVMIGRATE,lhratio,PV,lhratio
+PVMIGRATE,lipase,PV,lipase
+PVMIGRATE,lithium,PV,lithium
+PVMIGRATE,magnesium,PV,magnesium
+PVMIGRATE,neutrophils,PV,neutrophils
+PVMIGRATE,pcr,PV,pcr
+PVMIGRATE,phepku,PV,phepku
+PVMIGRATE,phosphate,PV,phosphate
+PVMIGRATE,platelets,PV,platelets
+PVMIGRATE,potassium,PV,potassium
+PVMIGRATE,psa,PV,psa
+PVMIGRATE,pth,PV,pth
+PVMIGRATE,pulse,PV,pulse
+PVMIGRATE,Random plasma glucose:,PV,glucose
+PVMIGRATE,Serum Creatinine,PV,creatinine
+PVMIGRATE,Serum Urea,PV,urea
+PVMIGRATE,sirolimus,PV,sirolimus
+PVMIGRATE,sirolimus (rapamycin),PV,sirolimus
+PVMIGRATE,sodium,PV,sodium
+PVMIGRATE,t4,PV,t4
+PVMIGRATE,tacrolimus,PV,tacrolimus
+PVMIGRATE,testosterone,PV,testosterone
+PVMIGRATE,tg,PV,tg
+PVMIGRATE,tpmt,PV,tpmt
+PVMIGRATE,transferri,PV,transferrin
+PVMIGRATE,transferrin,PV,transferrin
+PVMIGRATE,tsh,PV,tsh
+PVMIGRATE,ualbumin,PV,ualbumin
+PVMIGRATE,urate,PV,urate
+PVMIGRATE,urea,PV,urea
+PVMIGRATE,urr,PV,urr
+PVMIGRATE,vitb12,PV,vitb12
+PVMIGRATE,vitd,PV,vitd
+PVMIGRATE,wbc,PV,wbc
+PVMIGRATE,weight,PV,weight
