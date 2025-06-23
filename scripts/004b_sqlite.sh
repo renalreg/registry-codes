@@ -8,7 +8,6 @@ echo "Creating ods exclusive database..."
 echo "Creating ods include database..."
 /scripts/004a_sqlite.sh "/output/registry_codes_ods.sqlite"
 
-
 # Import the ODS codes
 sqlite3 "/output/registry_codes_ods.sqlite" ".read /tmp/ukrdc_ods_gp_codes_schema.sql"
 ODS_DIR="/tables/ukrdc_ods_gp_codes"
@@ -27,13 +26,13 @@ else
 fi
 
 # Import Practice CSV file
-if [ -f "$ODS_DIR/practise_process.csv" ]; then
-    echo "Loading Practice data from practise_process.csv..."
+if [ -f "$ODS_DIR/practice_process.csv" ]; then
+    echo "Loading Practice data from practice_process.csv..."
     sqlite3 "/output/registry_codes_ods.sqlite" <<IMPORT_EOF
 .mode csv
 .separator ";"
 .headers off
-.import "$ODS_DIR/practise_process.csv" "ukrdc_ods_gp_codes"
+.import "$ODS_DIR/practice_process.csv" "ukrdc_ods_gp_codes"
 IMPORT_EOF
 else
     echo "WARNING: Practice CSV file not found"

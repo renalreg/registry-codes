@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir -p /tmp
-DB_FILE="/output/registry_codes.sqlite"
+DB_FILE="$1"
 
 # Find all subdirectories in /tables, each representing a table
 find /tables -mindepth 1 -maxdepth 1 -type d | while read TABLE_PATH; do
