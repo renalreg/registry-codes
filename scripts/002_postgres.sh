@@ -69,7 +69,7 @@ for csv_file in tables/facility/*.csv; do
     if [ -f "$csv_file" ]; then
         echo "  Importing data from $(basename "$csv_file")"
         psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOF
-\copy extract.facility FROM '$csv_file' WITH (FORMAT csv)
+\copy extract.facility(code, pkb_out, pkb_in, pkb_msg_exclusions, ukrdc_out_pkb, pv_out_pkb) FROM '$csv_file' WITH (FORMAT csv)
 EOF
     fi
 done
