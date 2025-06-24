@@ -129,6 +129,7 @@ echo "Processing satellite_map..."
 echo "# Satellite map links satellite units to main renal centers"
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -f tables/satellite_map/schema.sql
 
+
 # Loop through CSV files in satellite_map
 for csv_file in tables/satellite_map/*.csv; do
     if [ -f "$csv_file" ]; then
