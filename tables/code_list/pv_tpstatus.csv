@@ -1,0 +1,7 @@
+PV_TPSTATUS,A,Active,,,,
+PV_TPSTATUS,S,Suspended,,,,
+PV_TPSTATUS,T,Transplanted,,,,
+PV_TPSTATUS,R,Not on List,,,,
+PV_TPSTATUS,N,Not on List,,,,
+PV_TPSTATUS,O,Not on List,,,,
+PV_TPSTATUS,U,No Status Uploaded,,,,
