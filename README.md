@@ -51,9 +51,18 @@ You can download the release assets directly using `curl`. Here is an example:
 Here is an example of how to use the sqlite database with Python and the `ukrdc-sqla` models:
 
 1. **Download the SQLite Database:**
-   - Use `curl` to download the `registry_codes.sqlite` file from the GitHub repository.
+   - Use `curl` to download the `registry_codes.sqlite` file from the GitHub repository (useful in docker).
    ```bash
    curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/latest/registry_codes.sqlite
+   ```
+   - Doing the equivalent in pure python is also straightforward:
+   ```python
+   import pathlib
+   import urllib.request
+   codes_path = pathlib.Path("xyz:/mypreferedpath/registry_codes.sqlite")
+
+   if not codes_path.exists():
+      urllib.request.urlretrieve("https://github.com/renalreg/registry-codes/releases/latest/download/registry_codes.sqlite", codes_path)
    ```
 
 2. **Set up the Environment:**
@@ -110,7 +119,9 @@ Follow these steps to update the registry codes:
 
 1. **Request a branch** - Ask a systems team member to create a new branch named something clear like `update-modality-codes-2025`
 
-2. **Update CSV files** - Download, edit, and upload the CSV files in the `tables` directory:
+2. **Update CSV files** - Download, edit, and upload the CSV files in the 
+`tables` directory:
+[!important] csv files exclude created on dates and updated on dates 
    - Open the CSV file in Excel or similar program
    - Make your changes (without altering column structure)
    - Save as CSV with the same filename if updating or new filename if adding
