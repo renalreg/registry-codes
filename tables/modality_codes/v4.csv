@@ -7,6 +7,7 @@
 115,Tfr in on: Transplant ; Live related - mother,TX,0,1,0,0,1,75,0,0,,0
 117,Tfr in on: Transplant ; Live related - child,TX,0,1,0,0,1,77,0,0,,0
 12,CYCLINGPD>=6 NIGHTS/WK DRY,PD,0,0,0,0,1,12,0,0,,0
+120, Patient - Transplant clinic follow up,TX,0,0,0,0,1,120,0,0,,0
 121,ASSISTED APD,PD,0,0,0,0,1,121,0,0,,0
 13,CYCLINGPD<6 NIGHTS/WK DRY,PD,0,0,0,0,1,13,0,0,,0
 14,CYCLING >+6 NIGHTS/WK WET,PD,0,0,0,0,1,14,0,0,,0
