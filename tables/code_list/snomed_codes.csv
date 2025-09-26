@@ -1,0 +1,7 @@
+SNOMED,27113001,Weight,obs,kg,,
+SNOMED,162755006,Height,obs,cm,,
+SNOMED,301331008,BMI,obs,kg/m^2,,
+SNOMED,162986007,Pulse,obs,bpm,,
+SNOMED,163030003,Systolic Blood Pressure,obs,mmHg (systolic),,
+SNOMED,163031004,Diastolic Blood Pressure,obs,mmHg (diastolic),,
+SNOMED,75367002,Blood Pressure,obs,,,

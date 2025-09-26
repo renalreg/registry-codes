@@ -3,4 +3,5 @@
 FROM debian:latest
 
 RUN apt-get update && apt-get install -y sqlite3
-CMD ["/bin/bash", "/scripts/002_sqlite.sh"]
+
+CMD ["/bin/bash", "/scripts/004b_sqlite.sh"]
