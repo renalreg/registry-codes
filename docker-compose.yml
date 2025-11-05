@@ -1,50 +1,55 @@
 services:
-  ods-downloader:
-    image: alpine/curl:latest
-    volumes:
-      - ./tables:/tables
-      - ./scripts:/scripts
-    command: ["/scripts/001_download_external.sh"]
-    user: root
+  #ods-downloader:
+  #  image: alpine/curl:latest
+  #  volumes:
+  #    - ./tables:/tables
+  #    - ./scripts:/scripts
+  #  command: ["/scripts/001_download_external.sh"]
+  #  user: root
 
   postgres:
     image: postgres:latest
-    depends_on:
-      ods-downloader:
-        condition: service_completed_successfully
-
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
-    ports:
-      - "9000:5432"
+      POSTGRES_PORT: 5432
+    user: root
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
-      - ./pg_data:/var/lib/postgresql/data # persistant volume
-      - ./tables:/tables
-      - ./scripts/002_postgres.sh:/docker-entrypoint-initdb.d/002_postgres.sh
-      - ./scripts:/scripts
       - ./output:/output
 
-    user: root
-
-  # TODO: duplicate process with mssql 
-
-  # TODO: add service to build redis cache
-
-  # builds sqlite dump and other bits that might be required
   codes-builder:
     build: .
     depends_on:
-      ods-downloader:
-        condition: service_completed_successfully
-    tty: true
-    volumes:
-      - ./tables:/tables
-      - ./scripts:/scripts
-      - ./output:/output
-    
+      #ods-downloader:
+      #  condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@postgres:5432/postgres
     user: root
+    command: >
+      sh -c "python scripts/build_postgres.py &&
+             python scripts/build_sqlite.py output/registry_codes.sqlite"
+    volumes:
+      - ./output:/app/output
 
-volumes:
-  pg_data:
+  postgres-dump:
+    image: postgres:latest
+    depends_on:
+      codes-builder:
+        condition: service_completed_successfully
+    environment:
+      DUMP_USER: postgres
+      DUMP_PASSWORD: postgres
+      DUMP_DB: postgres
+      DUMP_HOST: postgres
+    command: "wait 300"
+    volumes:
+      - ./output:/output
+    entrypoint: ["/bin/sh", "-c", "PGPASSWORD=$DUMP_PASSWORD pg_dump --username $DUMP_USER --dbname $DUMP_DB --host $DUMP_HOST --clean --if-exists --no-owner --no-privileges -Fc > output/registry_codes.dump"]
