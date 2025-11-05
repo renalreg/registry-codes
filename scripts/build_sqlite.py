@@ -10,6 +10,7 @@ def create_db(output_db):
 def main():
     parser = argparse.ArgumentParser(description='Build SQLite database from ukrdc-sqla models and CSV data')
     parser.add_argument('output_db', help='Output SQLite database file path')
+    parser.add_argument('--large-tables', action='store_true', help='Load large tables')
     args = parser.parse_args()
 
     # Create SQLite engine
@@ -17,6 +18,9 @@ def main():
 
     # Load list of folders
     tables = TABLE_MODEL_MAP.keys()
+
+    if args.large_tables:
+        tables = [table for table in tables if table in LARGE_TABLES]
 
     for table in tables:
         create_table(table, engine)

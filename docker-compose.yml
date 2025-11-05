@@ -1,11 +1,11 @@
 services:
-  #ods-downloader:
-  #  image: alpine/curl:latest
-  #  volumes:
-  #    - ./tables:/tables
-  #    - ./scripts:/scripts
-  #  command: ["/scripts/001_download_external.sh"]
-  #  user: root
+  ods-downloader:
+    image: alpine/curl:latest
+    volumes:
+      - ./tables:/tables
+      - ./scripts:/scripts
+    command: ["/scripts/download_gp_ods.sh"]
+    user: root
 
   postgres:
     image: postgres:latest
@@ -22,34 +22,33 @@ services:
       retries: 5
     volumes:
       - ./output:/output
+      
 
   codes-builder:
     build: .
     depends_on:
-      #ods-downloader:
-      #  condition: service_completed_successfully
+      ods-downloader:
+        condition: service_completed_successfully
       postgres:
         condition: service_healthy
     environment:
       DATABASE_URL: postgresql+psycopg://postgres:postgres@postgres:5432/postgres
     user: root
     command: >
-      sh -c "python scripts/build_postgres.py &&
-             python scripts/build_sqlite.py output/registry_codes.sqlite"
+      sh -c  "
+             python scripts/process_ods.py &&
+             python scripts/build_postgres.py &&
+             python scripts/build_sqlite.py output/registry_codes.sqlite false && 
+             python scripts/build_sqlite.py output/registry_codes_ods.sqlite true"
     volumes:
       - ./output:/app/output
+      - ./tables:/app/tables
 
   postgres-dump:
     image: postgres:latest
     depends_on:
       codes-builder:
         condition: service_completed_successfully
-    environment:
-      DUMP_USER: postgres
-      DUMP_PASSWORD: postgres
-      DUMP_DB: postgres
-      DUMP_HOST: postgres
-    command: "wait 300"
     volumes:
       - ./output:/output
-    entrypoint: ["/bin/sh", "-c", "PGPASSWORD=$DUMP_PASSWORD pg_dump --username $DUMP_USER --dbname $DUMP_DB --host $DUMP_HOST --clean --if-exists --no-owner --no-privileges -Fc > output/registry_codes.dump"]
+    entrypoint: ["/bin/sh", "-c", "PGPASSWORD=postgres pg_dump --username postgres --dbname postgres --host postgres --clean --if-exists --no-owner --no-privileges -Fc > /output/registry_codes.dump"]

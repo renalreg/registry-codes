@@ -1,5 +1,7 @@
 import os
 import datetime 
+import logging
+from sqlalchemy.exc import SQLAlchemyError
 
 import pandas as pd
 from sqlalchemy import inspect
@@ -8,7 +10,7 @@ from sqlalchemy import Integer
 from sqlalchemy.dialects.postgresql import BIT
 
 from ukrdc_sqla.ukrdc import (
-    Code, CodeMap, CodeExclusion, ModalityCodes, RRCodes, RRDataDefinition, SatelliteMap  
+    Code, CodeMap, CodeExclusion, ModalityCodes, RRCodes, RRDataDefinition, SatelliteMap, GPInfo  
 )
 
 # Map directory names to ukrdc-sqla models, define automatically filled columns
@@ -51,6 +53,11 @@ TABLE_MODEL_MAP = {
         "excluded_columns" : ["creation_date", "update_date"],
         "unique_columns" : ["satellite_code", "main_unit_code"]
     },
+    "ukrdc_ods_gp_codes":{
+        "sqla_model" : GPInfo,
+        "excluded_columns" : ["creation_date", "update_date"],
+        "unique_columns" : ["code"]
+    }
 }
 
 EXTERNAL_TABLE_LIST = ["ukrdc_ods_gp_codes"]
@@ -140,15 +147,19 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
     
     for i in range(0, len(df), chunksize):
         chunk = df[i:i+chunksize]
-        chunk.to_sql(
-            name=table_name,
-            con=engine,
-            dtype = dtypes,
-            if_exists="append",
+        try:
+            chunk.to_sql(
+                name=table_name,
+                con=engine,
+                dtype = dtypes,
+                if_exists="append",
             index=False,
             method="multi"
         )
-        total_rows += len(chunk)
+            total_rows += len(chunk)
+        except SQLAlchemyError as e:
+            logging.error(f"Error inserting data into {table_name}: {e}")
+            raise
         
     return total_rows
 
