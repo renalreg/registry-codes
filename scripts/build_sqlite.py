@@ -17,9 +17,11 @@ def main():
 
     # Load list of folders
     tables = TABLE_MODEL_MAP.keys()
+
     for table in tables:
         create_table(table, engine)
         load_data(table, engine)    
+
 
 if __name__ == '__main__':
     main()
