@@ -1,1 +1,0 @@
-# TODO: build redis cache compatible with rest of registry code

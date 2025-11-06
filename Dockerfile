@@ -1,7 +1,9 @@
-# Get base debian image for now this might need to be a python image once ods
-# exporter gets added
-FROM debian:latest
+# basic python image
+FROM python:3.12-slim-bookworm
 
-RUN apt-get update && apt-get install -y sqlite3
+WORKDIR /app
+ENV PYTHONPATH="/app:${PYTHONPATH}"
 
-CMD ["/bin/bash", "/scripts/004b_sqlite.sh"]
+COPY . ./
+
+RUN pip install .
