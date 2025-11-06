@@ -19,8 +19,8 @@ def main():
     # Load list of folders
     tables = TABLE_MODEL_MAP.keys()
 
-    if args.large_tables:
-        tables = [table for table in tables if table in LARGE_TABLES]
+    if not args.large_tables:
+        tables = [table for table in tables if table not in LARGE_TABLES]
 
     for table in tables:
         create_table(table, engine)
