@@ -33,43 +33,6 @@ jobs:
     - name: Build Docker images
       run: docker compose up --build --detach
 
-    - name: Wait for PostgreSQL initialization and dump creation
-      shell: bash 
-      run: |
-        echo "Waiting for PostgreSQL to initialize and create dump..."
-        timeout_seconds=600 # 10 minutes timeout (adjust if your init script takes longer)
-        interval_seconds=10 # Check every 10 seconds
-        elapsed_seconds=0
-        
-        # Default Docker Compose project name is the directory name, e.g., 'registry-codes'
-        # So the container name is likely 'registry-codes-postgres-1' or similar.
-        # We'll use a label selector for more robustness if project name changes in compose.
-        postgres_container_label="com.docker.compose.service=postgres"
-
-        until docker logs --tail 50 "$(docker ps -q --filter "label=${postgres_container_label}")" 2>&1 | grep -q -m 1 "Done! Database dump created at /output/registry_codes.dump"; do
-          elapsed_seconds=$((elapsed_seconds + interval_seconds))
-          if [ $elapsed_seconds -ge $timeout_seconds ]; then
-            echo "Timeout: PostgreSQL dump creation message not found within $timeout_seconds seconds."
-            echo "Current PostgreSQL logs:"
-            docker logs "$(docker ps -q --filter "label=${postgres_container_label}")"
-            docker compose down # Attempt cleanup
-            exit 1
-          fi
-          echo "Still waiting for PostgreSQL dump... ($elapsed_seconds s elapsed)"
-          # Check if the container is still running
-          if ! docker ps -q --filter "label=${postgres_container_label}" --filter "status=running" | grep -q .; then
-             echo "PostgreSQL container is not running. Aborting."
-             echo "Current PostgreSQL logs (attempting to get logs from stopped container):"
-             # Try to get logs from a potentially stopped container if possible
-             docker logs "$(docker ps -aq --filter "label=${postgres_container_label}" | head -n1)" || echo "Could not retrieve logs for stopped container."
-             docker compose down
-             exit 1
-          fi
-          sleep $interval_seconds
-        done
-        
-        echo "PostgreSQL dump created!"
-
     - name: Stop container
       run: docker compose down
 
