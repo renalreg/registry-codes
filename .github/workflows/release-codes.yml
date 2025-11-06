@@ -48,12 +48,6 @@ jobs:
           echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
         fi
     
-    - name: Generate Changelog
-      run: |
-        # Assuming a changelog generator is available
-        # This command should be replaced with the actual command to generate the changelog
-        echo "Generating changelog..."
-        # Example: github_changelog_generator
 
     - name: Create release notes
       run: |
@@ -89,22 +83,33 @@ jobs:
         echo '```' >> release_notes.md
         echo "" >> release_notes.md
 
+    - name: Create or Append to Release Notes
+      run: |
+        if [ -f release.md ]; then
+          echo "Appending to existing release.md..."
+          cat release_notes.md >> release.md
+        else
+          echo "Creating new release.md..."
+          mv release_notes.md release.md
+        fi
+
     - name: Determine Trigger Type
       id: trigger-type
       run: echo "trigger=${{ github.event_name }}" >> $GITHUB_ENV
 
-    - name: Skip Release Notes Update for Schedule
-      if: ${{ env.trigger != 'schedule' }}
+    - name: Refresh Files Only
+      if: ${{ env.trigger == 'update' }}
       run: |
-        echo "Appending release notes..."
-        cat CHANGELOG.md >> release_notes.md
+        echo "Trigger is update, refreshing files only..."
+        # Add commands here to refresh files
+        # Example: docker compose up --build
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ env.TAG_NAME }}
         name: Registry Codes ${{ env.TAG_NAME }}
-        body_path: release_notes.md
+        body_path: release.md
         draft: true
         files: |
           output/registry_codes.sqlite
