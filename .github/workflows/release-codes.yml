@@ -110,7 +110,6 @@ jobs:
         tag_name: ${{ env.TAG_NAME }}
         name: Registry Codes ${{ env.TAG_NAME }}
         body_path: release.md
-        draft: true
         files: |
           output/registry_codes.sqlite
           output/registry_codes_ods.sqlite
