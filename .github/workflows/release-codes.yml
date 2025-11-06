@@ -10,6 +10,8 @@ on:
         description: 'Version tag for the release (e.g., v1.0.0)'
         required: true
         default: 'v1.0.0'
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
 
 jobs:
   build-and-release:
@@ -83,6 +85,13 @@ jobs:
           echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
         fi
     
+    - name: Generate Changelog
+      run: |
+        # Assuming a changelog generator is available
+        # This command should be replaced with the actual command to generate the changelog
+        echo "Generating changelog..."
+        # Example: github_changelog_generator
+
     - name: Create release notes
       run: |
         echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release_notes.md
@@ -116,6 +125,16 @@ jobs:
         echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
         echo '```' >> release_notes.md
         echo "" >> release_notes.md
+
+    - name: Determine Trigger Type
+      id: trigger-type
+      run: echo "trigger=${{ github.event_name }}" >> $GITHUB_ENV
+
+    - name: Skip Release Notes Update for Schedule
+      if: ${{ env.trigger != 'schedule' }}
+      run: |
+        echo "Appending release notes..."
+        cat CHANGELOG.md >> release_notes.md
 
     - name: Create Release
       uses: softprops/action-gh-release@v2

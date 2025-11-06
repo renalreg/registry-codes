@@ -36,10 +36,10 @@ services:
     user: root
     command: >
       sh -c  "
-             python scripts/process_ods.py &&
-             python scripts/build_postgres.py &&
-             python scripts/build_sqlite.py output/registry_codes.sqlite false && 
-             python scripts/build_sqlite.py output/registry_codes_ods.sqlite true"
+         python scripts/process_ods.py &&
+         python scripts/build_postgres.py &&
+         python scripts/build_sqlite.py output/registry_codes.sqlite &&
+         python scripts/build_sqlite.py output/registry_codes_ods.sqlite --large-tables"
     volumes:
       - ./output:/app/output
       - ./tables:/app/tables

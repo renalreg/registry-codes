@@ -60,7 +60,7 @@ TABLE_MODEL_MAP = {
     }
 }
 
-EXTERNAL_TABLE_LIST = ["ukrdc_ods_gp_codes"]
+LARGE_TABLES = ["ukrdc_ods_gp_codes"]
 
 def download_external(table_name:str):
     return
@@ -132,7 +132,7 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
 def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
     """Insert DataFrame dataframe into table
     """
-    chunksize = 1000
+    chunksize = 10
     total_rows = 0
 
     # Delete existing data
