@@ -1,8 +1,12 @@
 name: Append Registry Codes Release Notes
 
 on:
+  push:
+    tags:
+      - 'v*'
   release:
     types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,45 +16,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Append database notes to release description
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { owner, repo } = context.repo;
-            const release = context.payload.release;
-            const tag = release.tag_name;
+      - name: Create release notes
+        run: |
+          echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release_notes.md
+          echo "" >> release_notes.md
+          echo "Generated on $(date)" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "## Contents" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release_notes.md
+          echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "## Download Examples" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "### SQLite Database" >> release_notes.md
+          echo "" >> release_notes.md
+          echo '```bash' >> release_notes.md
+          echo "# Download with curl" >> release_notes.md
+          echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.sqlite" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "# Use the database" >> release_notes.md
+          echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release_notes.md
+          echo '```' >> release_notes.md
+          echo "" >> release_notes.md
+          echo "### PostgreSQL Dump" >> release_notes.md
+          echo "" >> release_notes.md
+          echo '```bash' >> release_notes.md
+          echo "# Download with curl" >> release_notes.md
+          echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.dump" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "# Restore to a PostgreSQL database" >> release_notes.md
+          echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
+          echo '```' >> release_notes.md
+          echo "" >> release_notes.md
 
-            const existing = release.body || "";
-
-            const snippet = `\n\n---\n\n` +
-`## Registry Codes Database Release ${tag}\n\n` +
-`### Contents\n\n` +
-`- **registry_codes.sqlite**: SQLite database file with all registry codes\n` +
-`- **registry_codes_ods.sqlite**: SQLite ODS database file with all registry codes\n` +
-`- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes\n\n` +
-`### Download examples\n\n` +
-"#### SQLite database\n\n" +
-"```bash\n" +
-"# Download with curl\n" +
-`curl -L -o registry_codes.sqlite https://github.com/${owner}/${repo}/releases/download/${tag}/registry_codes.sqlite\n` +
-"\n" +
-"# Use the database\n" +
-"sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'\n" +
-"```\n\n" +
-"#### PostgreSQL dump\n\n" +
-"```bash\n" +
-"# Download with curl\n" +
-`curl -L -o registry_codes.dump https://github.com/${owner}/${repo}/releases/download/${tag}/registry_codes.dump\n` +
-"\n" +
-"# Restore to a PostgreSQL database\n" +
-"psql -U postgres -d your_database_name -f registry_codes.dump\n" +
-"```\n";
-
-            const body = existing + snippet;
-
-            await github.repos.updateRelease({
-              owner,
-              repo,
-              release_id: release.id,
-              body,
-            });
+      - name: Create or Append to Release Notes
+        run: |
+          if [ -f release.md ]; then
+            echo "Appending to existing release.md..."
+            cat release_notes.md >> release.md
+          else
+            echo "Creating new release.md..."
+            mv release_notes.md release.md
+          fi
