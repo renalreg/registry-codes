@@ -17,15 +17,8 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            const releaseFromEvent = context.payload.release;
-            const tag = releaseFromEvent.tag_name;
-
-            // Fetch the latest version of this release to ensure we don't overwrite
-            const { data: release } = await github.repos.getRelease({
-              owner,
-              repo,
-              release_id: releaseFromEvent.id,
-            });
+            const release = context.payload.release;
+            const tag = release.tag_name;
 
             const existing = release.body || "";
 
