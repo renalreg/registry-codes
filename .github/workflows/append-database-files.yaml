@@ -50,47 +50,11 @@ jobs:
           echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
         fi
 
-    - name: Create release notes
-      run: |
-        echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release.md
-        echo "" >> release.md
-        echo "Generated on $(date)" >> release.md
-        echo "" >> release.md
-        echo "## Contents" >> release.md
-        echo "" >> release.md
-        echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release.md
-        echo "- **registry_codes_ods.sqlite**: SQLite ODS database file with all registry codes" >> release.md
-        echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release.md
-        echo "" >> release.md
-        echo "## Download Examples" >> release.md
-        echo "" >> release.md
-        echo "### SQLite Database" >> release.md
-        echo "" >> release.md
-        echo '```bash' >> release.md
-        echo "# Download with curl" >> release.md
-        echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.sqlite" >> release.md
-        echo "" >> release.md
-        echo "# Use the database" >> release.md
-        echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release.md
-        echo '```' >> release.md
-        echo "" >> release.md
-        echo "### PostgreSQL Dump" >> release.md
-        echo "" >> release.md
-        echo '```bash' >> release.md
-        echo "# Download with curl" >> release.md
-        echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.dump" >> release.md
-        echo "" >> release.md
-        echo "# Restore to a PostgreSQL database" >> release.md
-        echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release.md
-        echo '```' >> release.md
-        echo "" >> release.md
-
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ env.TAG_NAME }}
         name: Registry Codes ${{ env.TAG_NAME }}
-        body_path: release.md
         files: |
           output/registry_codes.sqlite
           output/registry_codes_ods.sqlite
