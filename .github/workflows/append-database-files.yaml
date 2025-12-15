@@ -1,6 +1,9 @@
 name: Build and Attach Codes Databases
 
 on:
+  tags:
+    - 'v*'
+
   schedule:
     - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC for rolling release
   workflow_dispatch:
@@ -13,57 +16,51 @@ permissions:
   contents: write
 
 jobs:
-  build-databases:
+  build-and-release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+    - name: Checkout repo
+      uses: actions/checkout@v4
 
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v3
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v3
 
-      - name: Prepare output directory
-        run: |
-          mkdir -p output
-          chmod -R 777 output
+    - name: Prepare output directory
+      run: mkdir -p output && chmod -R 777 output
+    
+    - name: Fix script permissions
+      run: chmod +x scripts/*.sh
 
-      - name: Fix script permissions
-        run: chmod +x scripts/*.sh
+    - name: Build Docker images
+      run: docker compose up --build --detach
 
-      - name: Build databases
-        run: docker compose up --build --detach
+    - name: Stop container
+      run: docker compose down
 
-      - name: Stop containers
-        run: docker compose down
+    - name: Verify output files
+      run: ls -la output/
+      
+    - name: Get tag name
+      id: get_tag
+      run: |
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
+        else
+          echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        fi
+    
 
-      - name: Verify output files
-        run: ls -la output/
-
-      - name: Update rolling release (scheduled runs only)
-        if: github.event_name == 'schedule'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: codes
-          name: Registry Codes Database (rolling)
-          files: |
-            output/registry_codes.sqlite
-            output/registry_codes_ods.sqlite
-            output/registry_codes.dump
-          fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Attach database files to specified tag (manual runs only)
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.tag_name != ''
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.event.inputs.tag_name }}
-          name: Registry Codes ${{ github.event.inputs.tag_name }}
-          files: |
-            output/registry_codes.sqlite
-            output/registry_codes_ods.sqlite
-            output/registry_codes.dump
-          fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        name: Registry Codes ${{ env.TAG_NAME }}
+        body_path: release.md
+        files: |
+          output/registry_codes.sqlite
+          output/registry_codes_ods.sqlite
+          output/registry_codes.dump
+        fail_on_unmatched_files: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
