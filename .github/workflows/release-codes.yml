@@ -4,29 +4,23 @@ on:
   push:
     tags:
       - 'v*'
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
   workflow_dispatch:
     inputs:
       tag_name:
         description: 'Version tag for the release (e.g., v1.0.0)'
-        required: true
-        default: 'v1.0.0'
-  schedule:
-    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
-
-jobs:
-name: Update Codes Database Release
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * 0" # Sunday 00:00 UTC
+        required: false
 
 permissions:
   contents: write
 
 jobs:
-  build-and-update-release:
+  build-dumps:
     runs-on: ubuntu-latest
+
+    outputs:
+      tag_name: ${{ steps.set-tag-name.outputs.tag_name }}
 
     steps:
       - name: Checkout repo
@@ -34,6 +28,19 @@ jobs:
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v3
+
+      - name: Decide tag name
+        id: set-tag-name
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "push" && "${GITHUB_REF}" == refs/tags/* ]]; then
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+          elif [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && -n "${{ github.event.inputs.tag_name }}" ]]; then
+            TAG_NAME="${{ github.event.inputs.tag_name }}"
+          else
+            TAG_NAME="codes"
+          fi
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Prepare output directory
         run: |
@@ -52,15 +59,26 @@ jobs:
       - name: Verify output files
         run: ls -la output/
 
-      - name: Update release assets (rolling)
+      - name: Upload DB dumps as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-codes-dumps
+          path: |
+            output/registry_codes.sqlite
+            output/registry_codes_ods.sqlite
+            output/registry_codes.dump
+          if-no-files-found: error
+
+      - name: Update rolling release (scheduled runs only)
+        if: github.event_name == 'schedule'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: codes
-          name: Registry Codes Database
+          name: Registry Codes Database (rolling)
           body: |
             Rolling release containing the latest registry codes.
 
-            Assets are replaced automatically on each run.
+            Assets are replaced automatically on each scheduled run.
           files: |
             output/registry_codes.sqlite
             output/registry_codes_ods.sqlite
@@ -69,71 +87,78 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Create release notes
-      run: |
-        echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release_notes.md
-        echo "" >> release_notes.md
-        echo "Generated on $(date)" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "## Contents" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release_notes.md
-        echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "## Download Examples" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "### SQLite Database" >> release_notes.md
-        echo "" >> release_notes.md
-        echo '```bash' >> release_notes.md
-        echo "# Download with curl" >> release_notes.md
-        echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.sqlite" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "# Use the database" >> release_notes.md
-        echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release_notes.md
-        echo '```' >> release_notes.md
-        echo "" >> release_notes.md
-        echo "### PostgreSQL Dump" >> release_notes.md
-        echo "" >> release_notes.md
-        echo '```bash' >> release_notes.md
-        echo "# Download with curl" >> release_notes.md
-        echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.dump" >> release_notes.md
-        echo "" >> release_notes.md
-        echo "# Restore to a PostgreSQL database" >> release_notes.md
-        echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
-        echo '```' >> release_notes.md
-        echo "" >> release_notes.md
+  notes-and-tagged-release:
+    needs: build-dumps
+    runs-on: ubuntu-latest
 
-    - name: Create or Append to Release Notes
-      run: |
-        if [ -f release.md ]; then
-          echo "Appending to existing release.md..."
-          cat release_notes.md >> release.md
-        else
-          echo "Creating new release.md..."
-          mv release_notes.md release.md
-        fi
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
 
-    - name: Determine Trigger Type
-      id: trigger-type
-      run: echo "trigger=${{ github.event_name }}" >> $GITHUB_ENV
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Refresh Files Only
-      if: ${{ env.trigger == 'update' }}
-      run: |
-        echo "Trigger is update, refreshing files only..."
-        # Add commands here to refresh files
-        # Example: docker compose up --build
+      - name: Download DB dumps
+        uses: actions/download-artifact@v4
+        with:
+          name: registry-codes-dumps
+          path: output
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: ${{ env.TAG_NAME }}
-        name: Registry Codes ${{ env.TAG_NAME }}
-        body_path: release.md
-        files: |
-          output/registry_codes.sqlite
-          output/registry_codes_ods.sqlite
-          output/registry_codes.dump
-        fail_on_unmatched_files: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set TAG_NAME
+        run: echo "TAG_NAME=${{ needs.build-dumps.outputs.tag_name }}" >> "$GITHUB_ENV"
+
+      - name: Create release notes for this tag
+        run: |
+          echo "# Registry Codes Database Release $TAG_NAME" > release_notes.md
+          echo "" >> release_notes.md
+          echo "Generated on $(date -u)" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "## Contents" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release_notes.md
+          echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "## Download Examples" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "### SQLite Database" >> release_notes.md
+          echo "" >> release_notes.md
+          echo '```bash' >> release_notes.md
+          echo "# Download with curl" >> release_notes.md
+          echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/$TAG_NAME/registry_codes.sqlite" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "# Use the database" >> release_notes.md
+          echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release_notes.md
+          echo '```' >> release_notes.md
+          echo "" >> release_notes.md
+          echo "### PostgreSQL Dump" >> release_notes.md
+          echo "" >> release_notes.md
+          echo '```bash' >> release_notes.md
+          echo "# Download with curl" >> release_notes.md
+          echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/$TAG_NAME/registry_codes.dump" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "# Restore to a PostgreSQL database" >> release_notes.md
+          echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
+          echo '```' >> release_notes.md
+          echo "" >> release_notes.md
+
+      - name: Create or append to release.md
+        run: |
+          if [ -f release.md ]; then
+            echo "" >> release.md
+            cat release_notes.md >> release.md
+          else
+            mv release_notes.md release.md
+          fi
+
+      - name: Create or update tagged release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: Registry Codes ${{ env.TAG_NAME }}
+          body_path: release.md
+          files: |
+            output/registry_codes.sqlite
+            output/registry_codes_ods.sqlite
+            output/registry_codes.dump
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
