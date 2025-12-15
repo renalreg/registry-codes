@@ -1,12 +1,8 @@
-name: Append Registry Codes Release Notes
+name: Append Release Notes
 
 on:
-  push:
-    tags:
-      - 'v*'
   release:
     types: [published]
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,61 +10,51 @@ permissions:
 jobs:
   append-notes:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Get tag name
+      - name: Generate extra release notes
         run: |
-          if [ "${{ github.event_name }}" == "release" ]; then
-            echo "TAG_NAME=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-          else
-            echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-          fi
+          TAG_NAME="${{ github.event.release.tag_name }}"
 
-      - name: Create release notes
-        run: |
-          echo "TAG_NAME in append-release-notes workflow: '${TAG_NAME}'"
-          echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release_notes.md
-          echo "" >> release_notes.md
-          echo "Generated on $(date)" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "## Contents" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "- **registry_codes.sqlite**: SQLite database file with all registry codes" >> release_notes.md
-          echo "- **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "## Download Examples" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "### SQLite Database" >> release_notes.md
-          echo "" >> release_notes.md
-          echo '```bash' >> release_notes.md
-          echo "# Download with curl" >> release_notes.md
-          echo "curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.sqlite" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "# Use the database" >> release_notes.md
-          echo "sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'" >> release_notes.md
-          echo '```' >> release_notes.md
-          echo "" >> release_notes.md
-          echo "### PostgreSQL Dump" >> release_notes.md
-          echo "" >> release_notes.md
-          echo '```bash' >> release_notes.md
-          echo "# Download with curl" >> release_notes.md
-          echo "curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${{ env.TAG_NAME }}/registry_codes.dump" >> release_notes.md
-          echo "" >> release_notes.md
-          echo "# Restore to a PostgreSQL database" >> release_notes.md
-          echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
-          echo '```' >> release_notes.md
-          echo "" >> release_notes.md
-          echo "Generated release_notes.md contents:"
-          cat release_notes.md
+          cat <<EOF > extra_notes.md
+          ## Registry Codes Database Release ${TAG_NAME}
 
-      - name: Create or Append to Release Notes
+          Generated on $(date)
+
+          ## Contents
+          - **registry_codes.sqlite**: SQLite database file with all registry codes
+          - **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes
+
+          ## Download Examples
+
+          ### SQLite Database
+          \`\`\`bash
+          curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/${TAG_NAME}/registry_codes.sqlite
+          sqlite3 registry_codes.sqlite 'SELECT * FROM modality_codes LIMIT 5;'
+          \`\`\`
+
+          ### PostgreSQL Dump
+          \`\`\`bash
+          curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/${TAG_NAME}/registry_codes.dump
+          psql -U postgres -d your_database_name -f registry_codes.dump
+          \`\`\`
+          EOF
+
+      - name: Fetch existing release notes
         run: |
-          if [ -f release.md ]; then
-            echo "Appending to existing release.md..."
-            cat release_notes.md >> release.md
-          else
-            echo "Creating new release.md..."
-            mv release_notes.md release.md
-          fi
-          echo "Final release.md contents:"
-          cat release.md
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }} \
+            | jq -r '.body' > current_body.md
+
+      - name: Append and update release
+        run: |
+          cat current_body.md extra_notes.md > combined.md
+
+          jq -n --rawfile body combined.md \
+            '{ body: $body }' > payload.json
+
+          curl -X PATCH \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d @payload.json \
+            https://api.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }}
