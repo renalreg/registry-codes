@@ -14,40 +14,60 @@ on:
     - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
 
 jobs:
-  build-and-release:
+name: Update Codes Database Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0" # Sunday 00:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-update-release:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Set up Docker
-      uses: docker/setup-buildx-action@v3
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
 
-    - name: Prepare output directory
-      run: mkdir -p output && chmod -R 777 output
-    
-    - name: Fix script permissions
-      run: chmod +x scripts/*.sh
+      - name: Prepare output directory
+        run: |
+          mkdir -p output
+          chmod -R 777 output
 
-    - name: Build Docker images
-      run: docker compose up --build --detach
+      - name: Fix script permissions
+        run: chmod +x scripts/*.sh
 
-    - name: Stop container
-      run: docker compose down
+      - name: Build databases
+        run: docker compose up --build --detach
 
-    - name: Verify output files
-      run: ls -la output/
-      
-    - name: Get tag name
-      id: get_tag
-      run: |
-        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-          echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
-        else
-          echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-        fi
-    
+      - name: Stop containers
+        run: docker compose down
+
+      - name: Verify output files
+        run: ls -la output/
+
+      - name: Update release assets (rolling)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: codes
+          name: Registry Codes Database
+          body: |
+            Rolling release containing the latest registry codes.
+
+            Assets are replaced automatically on each run.
+          files: |
+            output/registry_codes.sqlite
+            output/registry_codes_ods.sqlite
+            output/registry_codes.dump
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create release notes
       run: |
