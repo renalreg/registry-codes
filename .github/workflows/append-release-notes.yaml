@@ -16,6 +16,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get tag name
+        run: |
+          if [ "${{ github.event_name }}" == "release" ]; then
+            echo "TAG_NAME=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          fi
+
       - name: Create release notes
         run: |
           echo "TAG_NAME in append-release-notes workflow: '${TAG_NAME}'"
