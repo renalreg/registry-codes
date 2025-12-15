@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: Create release notes
         run: |
+          echo "TAG_NAME in append-release-notes workflow: '${TAG_NAME}'"
           echo "# Registry Codes Database Release ${{ env.TAG_NAME }}" > release_notes.md
           echo "" >> release_notes.md
           echo "Generated on $(date)" >> release_notes.md
@@ -49,6 +50,8 @@ jobs:
           echo "psql -U postgres -d your_database_name -f registry_codes.dump" >> release_notes.md
           echo '```' >> release_notes.md
           echo "" >> release_notes.md
+          echo "Generated release_notes.md contents:"
+          cat release_notes.md
 
       - name: Create or Append to Release Notes
         run: |
@@ -59,3 +62,5 @@ jobs:
             echo "Creating new release.md..."
             mv release_notes.md release.md
           fi
+          echo "Final release.md contents:"
+          cat release.md
