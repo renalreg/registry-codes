@@ -1,12 +1,12 @@
 name: Append Registry Codes Release Notes
 
 on:
-  tags:
-    - 'v*'
-
-  workflow_dispatch:
-    release:
+  push:
+    tags:
+      - 'v*'
+  release:
     types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: write
