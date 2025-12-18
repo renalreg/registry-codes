@@ -46,12 +46,17 @@ jobs:
             https://api.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }} \
             | jq -r '.body' > current_body.md
 
-      - name: Append and update release
+      - name: Update release title and notes
         run: |
+          TAG_NAME="${{ github.event.release.tag_name }}"
+          NEW_TITLE="Registry Codes ${TAG_NAME}"
+
           cat current_body.md extra_notes.md > combined.md
 
-          jq -n --rawfile body combined.md \
-            '{ body: $body }' > payload.json
+          jq -n \
+            --arg name "$NEW_TITLE" \
+            --rawfile body combined.md \
+            '{ name: $name, body: $body }' > payload.json
 
           curl -X PATCH \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
