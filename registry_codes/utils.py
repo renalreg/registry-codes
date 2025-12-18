@@ -65,7 +65,7 @@ LARGE_TABLES = ["ukrdc_ods_gp_codes"]
 def download_external(table_name:str):
     return
 
-def create_table(table_name: str, engine) -> None:
+def create_table(table_name: str, engine, schema=None) -> None:
     """Create the database table for the specified table name if it doesn't
     exist.
     """
@@ -85,6 +85,8 @@ def create_table(table_name: str, engine) -> None:
         TABLE_MODEL_MAP[table_name]["sqla_model"] = model
     
     if not inspector.has_table(table_name):
+        if schema:
+            model.__table__.schema = schema
         model.__table__.create(engine)
         print(f"Created table: {table_name}")
     else:
@@ -129,7 +131,7 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     return combined_df
 
 
-def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
+def insert_data_to_table(table_name: str, df: pd.DataFrame, engine, schema=None) -> int:
     """Insert DataFrame dataframe into table
     """
     chunksize = 10
@@ -151,6 +153,7 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
             chunk.to_sql(
                 name=table_name,
                 con=engine,
+                schema = schema,
                 dtype = dtypes,
                 if_exists="append",
             index=False,
@@ -194,7 +197,7 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
     return cleaned_df
 
 
-def load_data(table_name: str, engine) -> int:
+def load_data(table_name: str, engine, schema = None) -> int:
     """Load all CSV files from the specified table directory and insert into database.
     """
     # Load data into DataFrame
@@ -207,7 +210,7 @@ def load_data(table_name: str, engine) -> int:
         return
     
     # Insert data into table
-    total_rows = insert_data_to_table(table_name, df, engine)
+    total_rows = insert_data_to_table(table_name, df, engine, schema = schema)
     
     print(f"Total rows inserted for {table_name}: {total_rows}")
     return total_rows
