@@ -46,11 +46,24 @@ jobs:
       run: |
         if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
           echo "TAG_NAME=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
-        else
+        elif [ "${{ github.event_name }}" == "push" ]; then
           echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        else
+          echo "TAG_NAME=" >> $GITHUB_ENV
         fi
 
-    - name: Create Release
+    - name: Upload databases as artifacts (Schedule runs)
+      if: github.event_name == 'schedule'
+      uses: actions/upload-artifact@v4
+      with:
+        name: registry-codes-weekly-$(date +'%Y-%m-%d')
+        path: output/
+        retention-days: 7
+        if-no-files-found: error
+        overwrite: true
+
+    - name: Create Release (Tag runs only)
+      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ env.TAG_NAME }}
