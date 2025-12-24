@@ -1,52 +1,38 @@
-from multiprocessing import Value
 import os
 import datetime 
 import logging
-import json
-
 from sqlalchemy.exc import SQLAlchemyError
 import datetime
 import pandas as pd
 from sqlalchemy import inspect
 from pathlib import Path
-from sqlalchemy import Integer, Boolean, DateTime
+from sqlalchemy import Integer, Boolean
 from sqlalchemy.orm import Session
 from sqlalchemy.dialects.postgresql import BIT, ARRAY
-from ukrdc_sqla.ukrdc import Base
 
-from registry_codes.schema import  TABLE_MODEL_MAP
 
-def coerce_sqla_types(data_row:dict, sqla_model:Base):
-    """Data from csv files is loaded into python as strings. To keep sqla happy
-    we need to cast some of the types. 
-    """
+from registry_codes.schema import LARGE_TABLES, TABLE_MODEL_MAP, SQLA_TO_PANDAS_DTYPE
 
-    coerced_data = {}
-    for key, value in data_row.items():
-        if pd.isna(value) or value == '':
-            value = None
-
-        match sqla_model.__table__.columns[key].type:
-            case Boolean():
-                value = bool(value)
-            case ARRAY():
-                if value:
-                    value = json.loads(value)
-            case DateTime():
-                #if (key == "startdate" or key == "enddate") and value:
-                    #print(f"DEBUG: DateTime case hit for {key}={value}")     
-                if value and isinstance(value, pd.Timestamp):
-                    value = value.to_pydatetime()
-                elif value and isinstance(value, str):
-                    value = pd.to_datetime(value).to_pydatetime()
-                    #print(f"DEBUG: Converted to {value}")
-            
-        coerced_data[key] = value
-
-    return coerced_data
+def map_sqla_dtypes(table, cols):
+    """Map SQLAlchemy column types to pandas dtypes for CSV reading."""
+    dtypes = {}
+    for col in cols:
+        col_sqla_type = table.columns[col].type
+        
+        # Match against type classes in mapping
+        pandas_dtype = str  # Default fallback
+        for sqla_type_class, pandas_type in SQLA_TO_PANDAS_DTYPE.items():
+            if isinstance(col_sqla_type, sqla_type_class):
+                pandas_dtype = pandas_type
+                break
+        
+        dtypes[col] = pandas_dtype
+    
+    return dtypes     
 
 def create_table(table_name: str, engine, schema=None) -> None:
-    """Build tables from sqla models
+    """Create the database table for the specified table name if it doesn't
+    exist. Probably not necessary as pandas can create the tables.
     """
     if table_name not in TABLE_MODEL_MAP:
         raise ValueError(f"Unknown table: {table_name}")
@@ -75,9 +61,8 @@ def create_table(table_name: str, engine, schema=None) -> None:
 
 
 def load_data_to_df(table_name: str) -> pd.DataFrame:
-    """ Data is defined using csv folders named after the table names on the
-    database. This function loads all of the csv files for a given table into a
-    dataframe for further processing. 
+    """Takes data defined in the tables directories and loads them into a
+    pandas dataframe.
     """
     if table_name not in TABLE_MODEL_MAP:
         raise ValueError(f"Unknown table: {table_name}")
@@ -96,7 +81,18 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
             filepath = table_dir / filename
             print(f"Reading {filepath}")
             columns = [col for col in table.columns.keys() if col not in excluded_columns]
-            df = pd.read_csv(filepath, header=None, names=columns, dtype = str, index_col=False)
+            dtypes = map_sqla_dtypes(table, columns)
+            
+            df = pd.read_csv(filepath, header=None, names=columns, dtype = dtypes, index_col=False)
+            
+            # Convert boolean and BIT columns from string to bool
+            for col in columns:
+                col_type = table.columns[col].type
+                if isinstance(col_type, (Boolean)):
+                    # Map string values to boolean, then convert dtype
+                    df[col] = df[col].map({'True': True, 'False': False, '': False, 'true': True, 'false': False})
+                    df[col] = df[col].astype('bool')
+            
             all_dfs.append(df)
     
     if not all_dfs:
@@ -107,22 +103,22 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     
     # Add excluded columns
     for col in excluded_columns:
-        combined_df[col] = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+        combined_df[col] = datetime.datetime.now()
         
     return combined_df
 
 
-def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
-    """Insert DataFrame into table using SQLAlchemy ORM. Previous versions used
-    pandas.to_sql functionality but this proved opaque and tricky to debug.
+def insert_data_to_table(table_name: str, df: pd.DataFrame, engine, schema=None) -> int:
+    """Insert DataFrame into table using SQLAlchemy ORM for proper type handling
     """
+
     
-    sqla_model = TABLE_MODEL_MAP[table_name]["sqla_model"]
+    model_class = TABLE_MODEL_MAP[table_name]["sqla_model"]
     
     # Delete existing data
     print(f"Deleting existing data from {table_name}")
     with Session(engine) as session:
-        session.query(sqla_model).delete()
+        session.query(model_class).delete()
         session.commit()
     
     # Insert new data
@@ -139,7 +135,9 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
             for _, row in chunk.iterrows():
                 # Convert row to dict, handling NaN/NaT values
                 row_dict = row.to_dict()
-                instances.append(sqla_model(**coerce_sqla_types(row_dict, sqla_model)))
+                # Replace pandas NA values with None
+                row_dict = {k: (None if pd.isna(v) else v) for k, v in row_dict.items()}
+                instances.append(model_class(**row_dict))
             
             try:
                 session.add_all(instances)
@@ -155,8 +153,7 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
 
 
 def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
-    """Applies some light cleaning. At the moment this is just code
-    deduplication but it could be expanded in the future.
+    """Clean DataFrame by removing duplicates and rows with missing key values.
     """
     if table_name not in TABLE_MODEL_MAP:
         return df
@@ -181,7 +178,7 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
         print(f"WARNING: Removed {missing_count} rows with missing key values in {table_name}")
     else:
         print(f"No data cleaning applied to data loaded into {table_name}")
-
+        
     return cleaned_df
 
 
@@ -198,7 +195,7 @@ def load_data(table_name: str, engine, schema = None) -> int:
         return
     
     # Insert data into table
-    total_rows = insert_data_to_table(table_name, df, engine)
+    total_rows = insert_data_to_table(table_name, df, engine, schema = schema)
     
     print(f"Total rows inserted for {table_name}: {total_rows}")
     return total_rows

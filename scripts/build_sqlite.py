@@ -1,4 +1,5 @@
-from registry_codes.utils import TABLE_MODEL_MAP,LARGE_TABLES, create_table, load_data
+from registry_codes.utils import create_table, load_data
+from registry_codes.schema import TABLE_MODEL_MAP,LARGE_TABLES
 from sqlalchemy import create_engine
 import argparse 
 

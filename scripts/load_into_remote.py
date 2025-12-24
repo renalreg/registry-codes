@@ -1,3 +1,7 @@
+"""
+Utility script which is useful for doing one of table syncs to an arbitary
+table.
+"""
 from sqlalchemy import create_engine
 from registry_codes.utils import load_data
 

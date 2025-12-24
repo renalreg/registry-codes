@@ -7,8 +7,8 @@ packages = [{ include = "registry_codes" }]
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
 pandas = "^2.3.3"
-ukrdc-sqla = "^2.9.2"
 psycopg = {extras = ["binary"], version = "^3.2.12"}
+ukrdc-sqla = "^3.0.1"
 
 
 [build-system]
