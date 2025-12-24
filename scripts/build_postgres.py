@@ -86,7 +86,7 @@ def main():
     # Second pass: create tables and load data
     for table in tables:
         create_table(table, engine, schema="extract")
-        load_data(table, engine, schema="extract")
+        load_data(table, engine)
         print(table)
 
 
