@@ -198,16 +198,16 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
     return cleaned_df
 
 
-def load_data(table_name: str, engine, schema=None) -> int:
+def load_data(table_name: str, engine) -> int:
     """Load all CSV files from the specified table directory and insert into database."""
     # Load data into DataFrame
     df = load_data_to_df(table_name)
 
     # Validate and clean data
-    if len(df) >0:
+    if len(df) > 0:
         df = clean_data(table_name, df)
     else:
-        return
+        return 0
 
     # Insert data into table
     total_rows = insert_data_to_table(table_name, df, engine)
