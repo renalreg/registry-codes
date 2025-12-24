@@ -204,7 +204,7 @@ def load_data(table_name: str, engine, schema=None) -> int:
     df = load_data_to_df(table_name)
 
     # Validate and clean data
-    if df is not None:
+    if len(df) >0:
         df = clean_data(table_name, df)
     else:
         return
