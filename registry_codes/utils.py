@@ -7,7 +7,7 @@ from sqlalchemy.exc import SQLAlchemyError
 import pandas as pd
 from sqlalchemy import inspect
 from pathlib import Path
-from sqlalchemy import Integer, Boolean, DateTime
+from sqlalchemy import Integer, Boolean, DateTime, Numeric
 from sqlalchemy.orm import Session
 from sqlalchemy.dialects.postgresql import BIT, ARRAY
 from ukrdc_sqla.ukrdc import Base
@@ -20,24 +20,34 @@ def coerce_sqla_types(data_row: dict, sqla_model: Base) -> dict:
     we need to cast some of the types.
     """
 
+    # Get mapper to access columns by their attribute names
+    mapper = sqla_model.__mapper__
+
     coerced_data = {}
     for key, value in data_row.items():
         if pd.isna(value) or value == "":
             value = None
 
-        match sqla_model.__table__.columns[key].type:
+        # Get the column by its attribute key, not database name
+        column = mapper.columns[key]
+
+        match column.type:
             case Boolean():
                 value = bool(value)
             case ARRAY():
                 if value:
                     value = json.loads(value)
             case DateTime():
-                # if (key == "startdate" or key == "enddate") and value:
                 if value and isinstance(value, pd.Timestamp):
                     value = value.to_pydatetime()
                 elif value and isinstance(value, str):
                     value = pd.to_datetime(value).to_pydatetime()
-
+            case Numeric():
+                # Handle NULL strings and convert to proper numeric or None
+                if value and value != "NULL":
+                    value = float(value)
+                else:
+                    value = None
         coerced_data[key] = value
 
     return coerced_data
@@ -101,7 +111,9 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
             filepath = table_dir / filename
             print(f"Reading {filepath}")
             columns = [
-                col for col in table.columns.keys() if col not in excluded_columns
+                col.key
+                for col in table_info["sqla_model"].__mapper__.column_attrs
+                if col.key not in excluded_columns
             ]
             df = pd.read_csv(
                 filepath, header=None, names=columns, dtype=str, index_col=False
