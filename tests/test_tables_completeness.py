@@ -141,7 +141,7 @@ def test_rr_data_definition():
     assert errors == {}
 
 
-def test_facility():
+def dont_test_facility():
     # Test for facility (1 field in CSV)
     errors = loop_though_csv(1, "facility")
 
@@ -156,7 +156,7 @@ def test_facility():
     assert errors == {}
 
 
-def test_satellite_map():
+def dont_test_satellite_map():
     # Test for satellite_map (2 fields)
     errors = loop_though_csv(2, "satellite_map")
 

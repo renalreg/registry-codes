@@ -98,7 +98,7 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
         raise ValueError(f"Unknown table: {table_name}")
 
     table_info = TABLE_MODEL_MAP[table_name]
-    table = table_info["sqla_model"].__table__
+    table = table_info["sqla_model"]
     excluded_columns = table_info["excluded_columns"]
     table_dir = Path("tables") / table_name
 
@@ -112,7 +112,7 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
             print(f"Reading {filepath}")
             columns = [
                 col.key
-                for col in table_info["sqla_model"].__mapper__.column_attrs
+                for col in table.__mapper__.column_attrs
                 if col.key not in excluded_columns
             ]
             df = pd.read_csv(
