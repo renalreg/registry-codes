@@ -21,12 +21,11 @@ jobs:
     - name: Get latest stable tag
       id: latest_tag
       run: |
-        LATEST=$(git describe --tags --abbrev=0 --match='v*' --exclude='*-rolling' 2>/dev/null || echo "v0.0.0")
-        ROLLING_TAG="${LATEST}-rolling"
+        LATEST=$(git describe --tags --abbrev=0 --match='v*' --exclude='rolling' 2>/dev/null || echo "v0.0.0")
         echo "stable_tag=${LATEST}" >> $GITHUB_OUTPUT
-        echo "rolling_tag=${ROLLING_TAG}" >> $GITHUB_OUTPUT
+        echo "rolling_tag=rolling" >> $GITHUB_OUTPUT
         echo "Latest stable tag: ${LATEST}"
-        echo "Rolling tag: ${ROLLING_TAG}"
+        echo "Rolling tag: rolling"
 
     - name: Delete old rolling release and tag
       run: |
@@ -87,7 +86,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ steps.latest_tag.outputs.rolling_tag }}
-        name: Registry Codes ${{ steps.latest_tag.outputs.rolling_tag }} (Rolling)
+        name: Registry Codes Rolling (from ${{ steps.latest_tag.outputs.stable_tag }})
         body_path: rolling_notes.md
         files: |
           output/registry_codes.sqlite
