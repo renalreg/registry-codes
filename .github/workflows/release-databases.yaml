@@ -49,6 +49,22 @@ jobs:
             echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
           fi
 
+      - name: Fetch existing release notes
+        id: existing_notes
+        run: |
+          TAG_NAME="${{ env.TAG_NAME }}"
+          
+          # Try to get existing release notes
+          EXISTING=$(gh release view "${TAG_NAME}" --json body --jq '.body' 2>/dev/null || echo "")
+          
+          if [ -n "$EXISTING" ]; then
+            echo "$EXISTING" > existing_notes.md
+          else
+            touch existing_notes.md
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate release notes
         run: |
           TAG_NAME="${{ env.TAG_NAME }}"
@@ -76,13 +92,16 @@ jobs:
           psql -U postgres -d your_database_name -f registry_codes.dump
           \`\`\`
           EOF
+          
+          # Combine existing notes with generated notes
+          cat existing_notes.md extra_notes.md > combined_notes.md
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.TAG_NAME }}
           name: Registry Codes ${{ env.TAG_NAME }}
-          body_path: extra_notes.md
+          body_path: combined_notes.md
           files: |
             output/registry_codes.sqlite
             output/registry_codes.dump
