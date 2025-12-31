@@ -92,6 +92,5 @@ jobs:
           output/registry_codes.sqlite
           output/registry_codes.dump
         fail_on_unmatched_files: true
-        prerelease: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
