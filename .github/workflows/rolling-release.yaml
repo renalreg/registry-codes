@@ -1,0 +1,96 @@
+name: Rolling Release Build
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rolling-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history and tags
+
+    - name: Get latest stable tag
+      id: latest_tag
+      run: |
+        LATEST=$(git describe --tags --abbrev=0 --match='v*' --exclude='*-rolling' 2>/dev/null || echo "v0.0.0")
+        ROLLING_TAG="${LATEST}-rolling"
+        echo "stable_tag=${LATEST}" >> $GITHUB_OUTPUT
+        echo "rolling_tag=${ROLLING_TAG}" >> $GITHUB_OUTPUT
+        echo "Latest stable tag: ${LATEST}"
+        echo "Rolling tag: ${ROLLING_TAG}"
+
+    - name: Delete old rolling release and tag
+      run: |
+        gh release delete ${{ steps.latest_tag.outputs.rolling_tag }} --yes || echo "No existing rolling release to delete"
+        git push origin :refs/tags/${{ steps.latest_tag.outputs.rolling_tag }} || echo "No existing rolling tag to delete"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout latest stable tag
+      run: git checkout ${{ steps.latest_tag.outputs.stable_tag }}
+
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v3
+
+    - name: Prepare output directory
+      run: mkdir -p output && chmod -R 777 output
+    
+    - name: Fix script permissions
+      run: chmod +x scripts/*.sh
+
+    - name: Build Docker images
+      run: docker compose up --build --detach
+
+    - name: Stop container
+      run: docker compose down
+
+    - name: Verify output files
+      run: ls -la output/
+      
+    - name: Fetch stable release notes
+      id: stable_notes
+      run: |
+        STABLE_TAG="${{ steps.latest_tag.outputs.stable_tag }}"
+        
+        # Try to get release notes from stable release
+        NOTES=$(gh release view "${STABLE_TAG}" --json body --jq '.body' 2>/dev/null || echo "")
+        
+        # Create rolling release notes
+        cat <<EOF > rolling_notes.md
+        # Rolling Release (Built from ${STABLE_TAG})
+        
+        **Auto-generated:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+        
+        This rolling release is automatically rebuilt weekly from the latest stable tag (${STABLE_TAG}).
+        Database files reflect the current state of the tables in that release.
+        
+        ---
+        
+        ${NOTES}
+        EOF
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create rolling release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ steps.latest_tag.outputs.rolling_tag }}
+        name: Registry Codes ${{ steps.latest_tag.outputs.rolling_tag }} (Rolling)
+        body_path: rolling_notes.md
+        files: |
+          output/registry_codes.sqlite
+          output/registry_codes_ods.sqlite
+          output/registry_codes.dump
+        fail_on_unmatched_files: true
+        prerelease: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
