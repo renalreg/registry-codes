@@ -30,7 +30,9 @@ jobs:
         run: chmod +x scripts/*.sh
 
       - name: Build Docker images
-        run: docker compose up --build --detach
+        run: INCLUDE_ODS=false docker compose up --build --detach
+        env:
+          INCLUDE_ODS: false
 
       - name: Stop container
         run: docker compose down
@@ -57,8 +59,8 @@ jobs:
           Generated on $(date)
 
           ## Contents
-          - **registry_codes.sqlite**: SQLite database file with all registry codes
-          - **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes
+          - **registry_codes.sqlite**: SQLite database file with registry codes (excludes large ODS tables)
+          - **registry_codes.dump**: PostgreSQL SQL dump file with all registry codes including ODS
 
           ## Download Examples
 
@@ -83,7 +85,6 @@ jobs:
           body_path: extra_notes.md
           files: |
             output/registry_codes.sqlite
-            output/registry_codes_ods.sqlite
             output/registry_codes.dump
           fail_on_unmatched_files: true
         env:

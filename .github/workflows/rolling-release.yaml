@@ -48,7 +48,9 @@ jobs:
       run: chmod +x scripts/*.sh
 
     - name: Build Docker images
-      run: docker compose up --build --detach
+      run: INCLUDE_ODS=true docker compose up --build --detach
+      env:
+        INCLUDE_ODS: true
 
     - name: Stop container
       run: docker compose down
@@ -71,7 +73,8 @@ jobs:
         **Auto-generated:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
         
         This rolling release is automatically rebuilt weekly from the latest stable tag (${STABLE_TAG}).
-        Database files reflect the current state of the tables in that release.
+        
+        **Note:** The SQLite database in this rolling release **includes ODS codes** (large tables), unlike the stable release which excludes them for size.
         
         ---
         
@@ -88,7 +91,6 @@ jobs:
         body_path: rolling_notes.md
         files: |
           output/registry_codes.sqlite
-          output/registry_codes_ods.sqlite
           output/registry_codes.dump
         fail_on_unmatched_files: true
         prerelease: true
