@@ -44,8 +44,9 @@ You can download the release assets directly using `curl`. Here is an example:
    ```bash
    rm registry_codes.dump
    ```
+## Rolling Release
 
-## TODO: Syncing reference tables with sqlserver
+Some of the codes in the database are updated via external sources. Particularly this the ukrdc_ods_gp_codes are subject to change on a short timescale. For this reason there is also a rolling release which gets rebuilt on a weekly basis. Where ods lookup is required this release should be used as these tables are large and excluded from the stable release. 
 
 ## Local caching with sqlite 
 Here is an example of how to use the sqlite database with Python and the `ukrdc-sqla` models:
@@ -98,20 +99,6 @@ Here is an example of how to use the sqlite database with Python and the `ukrdc-
 
    This example demonstrates how to configure a session with the `ukrdc-sqla` ORM and query the `modality_codes` table within the SQLite database.
 
-## TODO: Local caching with redis
-
-## TODO: Integrate auto importer of ods codes
-
-## Available tables 
-- modality_codes. TODO: v5 dataset codes.
-- TODO: satellite_map
-- TODO: code_list
-- TODO: code_map
-- TODO: code_exclusion
-- TODO: rr_codes  
-- TODO: rr_data_definition
-- TODO: facility
-
 
 # Modifying Codeset (Non-technical)
 
@@ -157,10 +144,30 @@ When satisfied that a new version of the codes is ready to be released and has b
 3. Generate change log and make any manual changes required.
 4. Publish draft release.
 
-# Automatically sync databases 
-Schedule periodic checks for new releases using `cron` and trigger a sync if a new release is found. Example:
-  ```bash
-  0 * * * * TAG=$(curl -s https://api.github.com/repos/renalreg/registry-codes/releases/latest | grep '"tag_name":' | awk -F'"' '{print $4}') && \
-  [ "$TAG" != "$(cat latest_release.txt)" ] && echo "$TAG" > latest_release.txt && /path/to/sync_script.sh
-  ```
-where path/to/sync_script.sh follows the steps in the sync postgres section. 
+# Automatically sync databases
+
+Schedule periodic checks for new releases using `cron` and trigger a sync if a new release is found.
+
+## Sync from stable releases
+
+For stable tagged releases (excludes ODS codes in SQLite):
+```bash
+0 * * * * TAG=$(curl -s https://api.github.com/repos/renalreg/registry-codes/releases/latest | grep '"tag_name":' | awk -F'"' '{print $4}') && \
+[ "$TAG" != "$(cat latest_release.txt)" ] && echo "$TAG" > latest_release.txt && /path/to/sync_script.sh
+```
+
+## Sync from rolling release
+
+For weekly rolling builds (includes ODS codes in SQLite):
+```bash
+# Download rolling release databases (static URL)
+curl -L -o registry_codes.sqlite https://github.com/renalreg/registry-codes/releases/download/rolling/registry_codes.sqlite
+curl -L -o registry_codes.dump https://github.com/renalreg/registry-codes/releases/download/rolling/registry_codes.dump
+```
+
+The sync script should follow the steps in the sync postgres section above.
+
+# The Future
+- Build mssql dump 
+- Merge data models between renalreg and ukrdc 
+- Expand validation of codes via pytest
