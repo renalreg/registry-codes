@@ -1,14 +1,14 @@
-UKT4,A,Active
-UKT4,DA,Died while Active
-UKT4,DS,Died while Suspended
-UKT4,L,Live Transplant
-UKT4,LA,Live Transplant while Active
-UKT4,LS,Live Transplant while Suspended
-UKT4,RA,Removed from Active
-UKT4,RS,Removed from Suspended
-UKT4,S,Suspended
-UKT4,SA,Suspended from Active
-UKT4,T,Transplanted
-UKT4,TA,Transplanted while Active
-UKT4,TR,Transplanted when Removed
-UKT4,TS,Transplanted while Suspended
+UKT4,A,Active,,,,
+UKT4,DA,Died while Active,,,,
+UKT4,DS,Died while Suspended,,,,
+UKT4,L,Live Transplant,,,,
+UKT4,LA,Live Transplant while Active,,,,
+UKT4,LS,Live Transplant while Suspended,,,,
+UKT4,RA,Removed from Active,,,,
+UKT4,RS,Removed from Suspended,,,,
+UKT4,S,Suspended,,,,
+UKT4,SA,Suspended from Active,,,,
+UKT4,T,Transplanted,,,,
+UKT4,TA,Transplanted while Active,,,,
+UKT4,TR,Transplanted when Removed,,,,
+UKT4,TS,Transplanted while Suspended,,,,

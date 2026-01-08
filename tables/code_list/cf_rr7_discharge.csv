@@ -1,9 +1,9 @@
-CF_RR7_DISCHARGE,30,Kidney Transplant Failure
-CF_RR7_DISCHARGE,38,Patient Transferred Out
-CF_RR7_DISCHARGE,84,ARF - Recovered
-CF_RR7_DISCHARGE,85,ARF - Stopped Dialysis (without recovery of function)
-CF_RR7_DISCHARGE,86,ARF - Transferred Out
-CF_RR7_DISCHARGE,90,Treatment Stopped (Renal Function Recovered)
-CF_RR7_DISCHARGE,91,Treatment Stopped (Without Recovery of Function)
-CF_RR7_DISCHARGE,92,Conservative Management - Treatment stopped without recovery
-CF_RR7_DISCHARGE,95,Patient - Lost to follow-up
+CF_RR7_DISCHARGE,30,Kidney Transplant Failure,,,,
+CF_RR7_DISCHARGE,38,Patient Transferred Out,,,,
+CF_RR7_DISCHARGE,84,ARF - Recovered,,,,
+CF_RR7_DISCHARGE,85,ARF - Stopped Dialysis (without recovery of function),,,,
+CF_RR7_DISCHARGE,86,ARF - Transferred Out,,,,
+CF_RR7_DISCHARGE,90,Treatment Stopped (Renal Function Recovered),,,,
+CF_RR7_DISCHARGE,91,Treatment Stopped (Without Recovery of Function),,,,
+CF_RR7_DISCHARGE,92,Conservative Management - Treatment stopped without recovery,,,,
+CF_RR7_DISCHARGE,95,Patient - Lost to follow-up,,,,

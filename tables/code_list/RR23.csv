@@ -1,11 +1,11 @@
-CF_RR23,l,Litres
-CF_RR23,dl,Decilitres
-CF_RR23,ml,Mililitres
-CF_RR23,g,Grams
-CF_RR23,mg,Miligrams
-CF_RR23,μg,Micrograms
-CF_RR23,ng,Nanograms
-CF_RR23,tab,Tablets
-CF_RR23,units,Units (i.e. for Epoetins)
-CF_RR23,mmol,Minimols
-CF_RR23,other,Other
+CF_RR23,l,Litres,,,,
+CF_RR23,dl,Decilitres,,,,
+CF_RR23,ml,Mililitres,,,,
+CF_RR23,g,Grams,,,,
+CF_RR23,mg,Miligrams,,,,
+CF_RR23,μg,Micrograms,,,,
+CF_RR23,ng,Nanograms,,,,
+CF_RR23,tab,Tablets,,,,
+CF_RR23,units,Units (i.e. for Epoetins),,,,
+CF_RR23,mmol,Minimols,,,,
+CF_RR23,other,Other,,,,

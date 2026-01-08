@@ -1,9 +1,9 @@
-SNOMED,1076781000000103,Cadaver donor with donation after brain stem death
-SNOMED,1128041000000103,Live related sibling donor
-SNOMED,1128051000000100,Live related father donor
-SNOMED,1128071000000109,Live related mother donor
-SNOMED,1128061000000102,Live related child donor
-SNOMED,220751000000102,Live Related Donor
-SNOMED,220741000000100,Live Unrelated Donor
-SNOMED,1076791000000101,Cadaver donor with donation after cardiac death
-SNOMED,105455006,Donor for medical or surgical procedure
+SNOMED,1076781000000103,Cadaver donor with donation after brain stem death,,,,
+SNOMED,1128041000000103,Live related sibling donor,,,,
+SNOMED,1128051000000100,Live related father donor,,,,
+SNOMED,1128071000000109,Live related mother donor,,,,
+SNOMED,1128061000000102,Live related child donor,,,,
+SNOMED,220751000000102,Live Related Donor,,,,
+SNOMED,220741000000100,Live Unrelated Donor,,,,
+SNOMED,1076791000000101,Cadaver donor with donation after cardiac death,,,,
+SNOMED,105455006,Donor for medical or surgical procedure,,,,

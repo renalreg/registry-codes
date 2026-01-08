@@ -1,28 +1,28 @@
-SNOMED,73211009,Diabetes - Unspecified
-SNOMED,46635009,Diabetes - Type I
-SNOMED,44054006,Diabetes - Type II
-SNOMED,414545008,Ischaemic Heart Disease
-SNOMED,401303003,STEMI First Date
-SNOMED,401314000,NSTEMI First Date
-SNOMED,194828000,Angina Date First Diagnosed
-SNOMED,232717009,CABG or Coronary Angioplasty
-SNOMED,84114007,Episode of Heart Failure
-SNOMED,49436004,Arterial Fibrillation Date First Diagnosed
-SNOMED,86049000,Malignancy Date First Diagnosed
-SNOMED,62914000,Cerebrovascular Disease
-SNOMED,266257000,TIA First Date
-SNOMED,230690007,CVE / Stroke First Date
-SNOMED,77176002,Smoking - Current
-SNOMED,8517006,Smoking - Ex
-SNOMED,8392000,Smoking - Non
-SNOMED,13645005,COPD Date Diagnosed
-SNOMED,235856003,Liver Disease Date Diagnosed
-SNOMED,400047006,PVD Date Diagnosed
-SNOMED,81723002,Date of Amputation for PVD
-SNOMED,275520000,Claudication Date Diagnosed
-SNOMED,13954005,Ischaemic or Neuropathic Ulcers
-SNOMED,418285008,Non-Coronary Vascular Intervention - Angioplasty
-SNOMED,312288001,Non-Coronary Vascular Intervention - Vascular graft
-SNOMED,432119003,Non-Coronary Vascular Intervention - Aneurysm
-SNOMED,360042007,Non-Coronary Vascular Intervention - Stent
-SNOMED,52448006,Dementia Date Diagnosed
+SNOMED,73211009,Diabetes - Unspecified,,,,
+SNOMED,46635009,Diabetes - Type I,,,,
+SNOMED,44054006,Diabetes - Type II,,,,
+SNOMED,414545008,Ischaemic Heart Disease,,,,
+SNOMED,401303003,STEMI First Date,,,,
+SNOMED,401314000,NSTEMI First Date,,,,
+SNOMED,194828000,Angina Date First Diagnosed,,,,
+SNOMED,232717009,CABG or Coronary Angioplasty,,,,
+SNOMED,84114007,Episode of Heart Failure,,,,
+SNOMED,49436004,Arterial Fibrillation Date First Diagnosed,,,,
+SNOMED,86049000,Malignancy Date First Diagnosed,,,,
+SNOMED,62914000,Cerebrovascular Disease,,,,
+SNOMED,266257000,TIA First Date,,,,
+SNOMED,230690007,CVE / Stroke First Date,,,,
+SNOMED,77176002,Smoking - Current,,,,
+SNOMED,8517006,Smoking - Ex,,,,
+SNOMED,8392000,Smoking - Non,,,,
+SNOMED,13645005,COPD Date Diagnosed,,,,
+SNOMED,235856003,Liver Disease Date Diagnosed,,,,
+SNOMED,400047006,PVD Date Diagnosed,,,,
+SNOMED,81723002,Date of Amputation for PVD,,,,
+SNOMED,275520000,Claudication Date Diagnosed,,,,
+SNOMED,13954005,Ischaemic or Neuropathic Ulcers,,,,
+SNOMED,418285008,Non-Coronary Vascular Intervention - Angioplasty,,,,
+SNOMED,312288001,Non-Coronary Vascular Intervention - Vascular graft,,,,
+SNOMED,432119003,Non-Coronary Vascular Intervention - Aneurysm,,,,
+SNOMED,360042007,Non-Coronary Vascular Intervention - Stent,,,,
+SNOMED,52448006,Dementia Date Diagnosed,,,,
