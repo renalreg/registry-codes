@@ -1,7 +1,7 @@
-RR22,1,Oral,,,,
-RR22,2,Topical,,,,
-RR22,3,Inhalation,,,,
-RR22,4,Injection,,,,
-RR22,5,Intra peritoneal,,,,
-RR22,6,Rectal,,,,
-RR22,9,Other - please specify in comments,,,,
+RR22,1,Oral
+RR22,2,Topical
+RR22,3,Inhalation
+RR22,4,Injection
+RR22,5,Intra peritoneal
+RR22,6,Rectal
+RR22,9,Other - please specify in comments

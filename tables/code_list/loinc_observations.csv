@@ -1,86 +1,86 @@
-LOINC,32294-1,Albumin:creatinine ratio,result,mg/mmol,,
-LOINC,19072-8,Adjusted Calcium,result,mmol/L,,
-LOINC,1751-7,Albumin,result,g/L,,
-LOINC,6768-6,AlkP,result,U/L,,
-LOINC,1742-6,ALT,result,U/L,,
-LOINC,1798-8,Amylase,result,U/L,,
-LOINC,1920-8,AST,result,U/L,,
-LOINC,14631-6,Bilirubin,result,umol/L,,
-LOINC,1996-8,Calcium,result,mmol/L,,
-LOINC,14647-2,Cholesterol,result,mmol/L,,
-LOINC,14682-9,Creatinine,result,umol/L,,
-LOINC,1988-5,C-reactive Protein,result,mg/L,,
-LOINC,69405-9,eGFR,result,mL/min/1.73m2,,
-LOINC,77147-7,eGFR (MDRD),result,mL/min/1.73m2,,
-LOINC,2276-4,Ferritin,result,ng/mL or ug/L,,
-LOINC,14928-6,Free T3,result,pmol/L,,
-LOINC,14920-3,Free T4,result,pmol/L,,
-LOINC,2324-2,GGT,result,U/L,,
-LOINC,14749-6,glucose,result,mmol/L,,
-LOINC,718-7,hb,result,g/L,,
-LOINC,59261-8,hba1c,result,mmol/mol,,
-LOINC,13952-7,hbv,result,,,
-LOINC,1959-6,hco3,result,mmol/L,,
-LOINC,4544-3,hct,result,%,,
-LOINC,16128-1,Hepatitis C Antibody,result,,,
-LOINC,14646-4,HDL,result,mmol/L,,
-LOINC,6301-6,INR,result,,,
-LOINC,14798-3,Iron,result,umol/L,,
-LOINC,2502-3,Iron Saturation,result,%,,
-LOINC,70961-8,Kt/V,result,,,
-LOINC,2532-0,LDH,result,U/L,,
-LOINC,39469-2,LDL,result,mmol/L,,
-LOINC,44915-7,LDL:HDL Ratio,result,,,
-LOINC,3040-3,Lipase,result,U/L,,
-LOINC,14334-7,Lithium Level,result,mmol/L,,
-LOINC,2601-3,Magnesium,result,mmol/L,,
-LOINC,751-8,Neutrophils,result,billion/L or 10^9/L,,
-LOINC,34366-5,Protein Creatinine Ratio,result,mg/mmol,,
-LOINC,14879-1,Phosphate,result,mmol/L,,
-LOINC,777-3,Platelets,result,10^9/L,,
-LOINC,2823-3,Potassium,result,mmol/L,,
-LOINC,2857-1,Prostate Specific Antigen,result,ng/mL,,
-LOINC,14866-8,Parathyroid Hormone,result,pmol/L,,
-LOINC,42810-2,Reticulocyte Haemoglobin,result,pg,,
-LOINC,2951-2,Sodium,result,mmol/L,,
-LOINC,3024-7,Total Thyroxine,result,ng/L,,
-LOINC,11253-2,Tacrolimus,result,ng/mL,,
-LOINC,2986-8,Testosterone,result,ng/dL,,
-LOINC,2571-8,Triglycerides,result,mg/dL,,
-LOINC,91141-2,TPMT,result,mU/L,,
-LOINC,3034-6,Transferrin,result,mg/dL,,
-LOINC,6598-7,Troponin-T,result,ng/mL,,
-LOINC,3016-3,Thyroid stimulating hormone,result,mU/L,,
-LOINC,6942-7,Urine Albumin,result,mg/L,,
-LOINC,14683-7,Urine Creatinine,result,mmol/L,,
-LOINC,2888-6,Urine Protein,result,mmol/L,,
-LOINC,14933-6,Urate,result,mmol/L,,
-LOINC,14937-7,Urea,result,mmol/L,,
-LOINC,54456-9,URR,result,,,
-LOINC,2132-9,Vitamin B12,result,ng/L or pg/mL,,
-LOINC,46269-7,Vitamin D,result,nmol/L,,
-LOINC,6690-2,White Blood Cell Count,result,billion/L or 10^9/L,,
-LOINC,29247-4,Sirolimus,result,ng/mL,,
-LOINC,51620-3,Creatinine (Post-Dialysis),result,mmol/L,,
-LOINC,39776-0,Urea (Post-Dialysis),result,mmol/L,,
-LOINC,29349-8,Potassium (Post-Dialysis),result,mmol/L,,
-LOINC,74688-3,Sodium (Post-Dialysis),result,mmol/L,,
-LOINC,48631-6,hco3 (Post-Dialysis),result,mmol/L,,
-LOINC,2284-8,Serum Folate,result,ng/mL,,
-LOINC,34381-4,TGN,result,ng/mL,,
-LOINC,90294-0,MMP,result,U/mL,,
-LOINC,4548-4,hba1c,result,%,,
-LOINC,38445-3,Faecal Calprotectin,result,ug/g,,
-LOINC,95209-3,Covid-19 Lateral Flow Test,result,,,
-LOINC,95542-7,Covid-19 Antibody Test,result,,,
-LOINC,94500-6,Covid-19 PCR Test,result,,,
-LOINC,732-8,ALC,result,10^3/uL,,
-LOINC,76069-4,Hypochromic Red Cells,result,%,,
-LOINC,59467-1,MCH,result,mmol/L,,
-LOINC,2283-0,Red Cell Folate,result,ng/mL,,
-LOINC,29265-6,Corrected Calcium,result,mmol/L,,
-LOINC,69949-6,EBV Status,result,,,
-LOINC,56888-1,HIV Antigen,result,,,
-LOINC,55972-4,Phosphate (Post),result,mmol/L,,
-LOINC,59148-7,Calcium (Post),result,mmol/L,,
-LOINC,3520-4,Ciclosporin,result,ng/mL,,
+LOINC,32294-1,Albumin:creatinine ratio,result,mg/mmol
+LOINC,19072-8,Adjusted Calcium,result,mmol/L
+LOINC,1751-7,Albumin,result,g/L
+LOINC,6768-6,AlkP,result,U/L
+LOINC,1742-6,ALT,result,U/L
+LOINC,1798-8,Amylase,result,U/L
+LOINC,1920-8,AST,result,U/L
+LOINC,14631-6,Bilirubin,result,umol/L
+LOINC,1996-8,Calcium,result,mmol/L
+LOINC,14647-2,Cholesterol,result,mmol/L
+LOINC,14682-9,Creatinine,result,umol/L
+LOINC,1988-5,C-reactive Protein,result,mg/L
+LOINC,69405-9,eGFR,result,mL/min/1.73m2
+LOINC,77147-7,eGFR (MDRD),result,mL/min/1.73m2
+LOINC,2276-4,Ferritin,result,ng/mL or ug/L
+LOINC,14928-6,Free T3,result,pmol/L
+LOINC,14920-3,Free T4,result,pmol/L
+LOINC,2324-2,GGT,result,U/L
+LOINC,14749-6,glucose,result,mmol/L
+LOINC,718-7,hb,result,g/L
+LOINC,59261-8,hba1c,result,mmol/mol
+LOINC,13952-7,hbv,result,
+LOINC,1959-6,hco3,result,mmol/L
+LOINC,4544-3,hct,result,%
+LOINC,16128-1,Hepatitis C Antibody,result,
+LOINC,14646-4,HDL,result,mmol/L
+LOINC,6301-6,INR,result,
+LOINC,14798-3,Iron,result,umol/L
+LOINC,2502-3,Iron Saturation,result,%
+LOINC,70961-8,Kt/V,result,
+LOINC,2532-0,LDH,result,U/L
+LOINC,39469-2,LDL,result,mmol/L
+LOINC,44915-7,LDL:HDL Ratio,result,
+LOINC,3040-3,Lipase,result,U/L
+LOINC,14334-7,Lithium Level,result,mmol/L
+LOINC,2601-3,Magnesium,result,mmol/L
+LOINC,751-8,Neutrophils,result,billion/L or 10^9/L
+LOINC,34366-5,Protein Creatinine Ratio,result,mg/mmol
+LOINC,14879-1,Phosphate,result,mmol/L
+LOINC,777-3,Platelets,result,10^9/L
+LOINC,2823-3,Potassium,result,mmol/L
+LOINC,2857-1,Prostate Specific Antigen,result,ng/mL
+LOINC,14866-8,Parathyroid Hormone,result,pmol/L
+LOINC,42810-2,Reticulocyte Haemoglobin,result,pg
+LOINC,2951-2,Sodium,result,mmol/L
+LOINC,3024-7,Total Thyroxine,result,ng/L
+LOINC,11253-2,Tacrolimus,result,ng/mL
+LOINC,2986-8,Testosterone,result,ng/dL
+LOINC,2571-8,Triglycerides,result,mg/dL
+LOINC,91141-2,TPMT,result,mU/L
+LOINC,3034-6,Transferrin,result,mg/dL
+LOINC,6598-7,Troponin-T,result,ng/mL
+LOINC,3016-3,Thyroid stimulating hormone,result,mU/L
+LOINC,6942-7,Urine Albumin,result,mg/L
+LOINC,14683-7,Urine Creatinine,result,mmol/L
+LOINC,2888-6,Urine Protein,result,mmol/L
+LOINC,14933-6,Urate,result,mmol/L
+LOINC,14937-7,Urea,result,mmol/L
+LOINC,54456-9,URR,result,
+LOINC,2132-9,Vitamin B12,result,ng/L or pg/mL
+LOINC,46269-7,Vitamin D,result,nmol/L
+LOINC,6690-2,White Blood Cell Count,result,billion/L or 10^9/L
+LOINC,29247-4,Sirolimus,result,ng/mL
+LOINC,51620-3,Creatinine (Post-Dialysis),result,mmol/L
+LOINC,39776-0,Urea (Post-Dialysis),result,mmol/L
+LOINC,29349-8,Potassium (Post-Dialysis),result,mmol/L
+LOINC,74688-3,Sodium (Post-Dialysis),result,mmol/L
+LOINC,48631-6,hco3 (Post-Dialysis),result,mmol/L
+LOINC,2284-8,Serum Folate,result,ng/mL
+LOINC,34381-4,TGN,result,ng/mL
+LOINC,90294-0,MMP,result,U/mL
+LOINC,4548-4,hba1c,result,%
+LOINC,38445-3,Faecal Calprotectin,result,ug/g
+LOINC,95209-3,Covid-19 Lateral Flow Test,result,
+LOINC,95542-7,Covid-19 Antibody Test,result,
+LOINC,94500-6,Covid-19 PCR Test,result,
+LOINC,732-8,ALC,result,10^3/uL
+LOINC,76069-4,Hypochromic Red Cells,result,%
+LOINC,59467-1,MCH,result,mmol/L
+LOINC,2283-0,Red Cell Folate,result,ng/mL
+LOINC,29265-6,Corrected Calcium,result,mmol/L
+LOINC,69949-6,EBV Status,result,
+LOINC,56888-1,HIV Antigen,result,
+LOINC,55972-4,Phosphate (Post),result,mmol/L
+LOINC,59148-7,Calcium (Post),result,mmol/L
+LOINC,3520-4,Ciclosporin,result,ng/mL

@@ -1,0 +1,47 @@
+SNOMED,1107001000000108,Substance concentration of creatinine in serum
+SNOMED,1110281000000107,Substance concentration of urea in serum
+SNOMED,1106011000000107,Substance concentration of bicarbonate in serum
+SNOMED,1107871000000107,Substance concentration of sodium in serum
+SNOMED,1107761000000109,Substance concentration of potassium in serum
+SNOMED,1107411000000104,Estimated glomerular filtration rate by laboratory calculation
+SNOMED,1109851000000106,Substance concentration of urate in serum
+SNOMED,857971000000104,Estimated glomerular filtration rate using Chronic Kidney Disease Epidemiology Collaboration formula
+SNOMED,1020291000000106,Glomerular filtration rate calculated by abbreviated Modification of Diet in Renal Disease Study Group calculation
+SNOMED,1107711000000107,Substance concentration of phosphate in serum
+SNOMED,1106621000000109,Substance concentration of calcium in serum
+SNOMED,1107251000000104,Substance concentration of calcium in serum adjusted for albumin
+SNOMED,1106051000000106,Enzyme activity of alkaline phosphatase in serum
+SNOMED,1105861000000106,Albumin mass concentration in serum
+SNOMED,1109581000000102,Mass concentration of parathyroid hormone in serum
+SNOMED,1023491000000104,Urine albumin:creatinine ratio
+SNOMED,1106541000000101,Substance concentration of cholesterol in serum
+SNOMED,1107681000000108,Substance concentration of high density lipoprotein cholesterol in serum
+SNOMED,1108551000000102,Substance concentration of low density lipoprotein cholesterol in serum
+SNOMED,1109831000000104,Substance concentration of triglyceride in serum
+SNOMED,1106741000000105,Mass concentration of C reactive protein in serum
+SNOMED,999791000000106,Haemoglobin A1c level - IFCC standardised
+SNOMED,1022471000000107,Mean corpuscular haemoglobin
+SNOMED,1108041000000107,Platelet count in blood
+SNOMED,1110441000000100,White blood cell count in blood
+SNOMED,1108611000000102,Mass concentration of ferritin in serum
+SNOMED,1111581000000104,Hypochromic red blood cells percent count in blood
+SNOMED,1108651000000103,Mass concentration of folate in serum
+SNOMED,1108641000000101,Mass concentration of folate in red blood cells
+SNOMED,12711000237100,Substance concentration of aluminium in serum
+SNOMED,1111311000000103,Mass concentration of tacrolimus in whole blood
+SNOMED,1107851000000103,Mass concentration of sirolimus in whole blood
+SNOMED,1107021000000104,Mass concentration of cyclosporin in whole blood
+SNOMED,1110411000000101,Urea reduction ratio in serum
+SNOMED,1107011000000105,Substance concentration of creatinine in urine
+SNOMED,1106081000000100,Enzyme activity of alanine aminotransferase in serum
+SNOMED,1108071000000101,Neutrophil count in blood
+SNOMED,1107961000000106,Lymphocyte count in blood
+SNOMED,1111161000000103,Presence of hepatitis B virus core antibody in serum
+SNOMED,1111171000000105,Presence of hepatitis B virus surface antigen in serum
+SNOMED,1111131000000108,Presence of hepatitis C virus antibody in serum
+SNOMED,1111211000000108,Presence of cytomegalovirus antibody in serum
+SNOMED,1111341000000102,Presence of human immunodeficiency virus 1 antibody in serum
+SNOMED,1111351000000104,Presence of varicella zoster virus antibody in serum
+SNOMED,1111041000000100,Presence of Epstein-Barr virus antibody in serum
+SNOMED,996101000000106,Epstein-Barr virus viral load
+SNOMED,165581004,International normalized ratio

@@ -1,0 +1,11 @@
+SNOMED,27113001,Weight,obs,kg
+SNOMED,162755006,Height,obs,cm
+SNOMED,301331008,BMI,obs,kg/m^2
+SNOMED,162986007,Pulse,obs,bpm
+SNOMED,163030003,Systolic Blood Pressure,obs,mmHg (systolic)
+SNOMED,163031004,Diastolic Blood Pressure,obs,mmHg (diastolic)
+SNOMED,75367002,Blood Pressure,obs
+SNOMED,763264000,Canadian Study of Health and Aging Clinical Frailty Scale score (observable entity),obs
+SNOMED,1366111000000102,Kidney Failure Risk Equation (4 Variable ) 2 year risk score (observable entity),obs
+SNOMED,1365921000000102,Kidney Failure Risk Equation (4 Variable) 5 year risk score (observable entity),obs
+SNOMED,386725007,Body temperature (observable entity),obs

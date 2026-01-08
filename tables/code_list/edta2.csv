@@ -1,283 +1,284 @@
-﻿EDTA2,1003,Adult nephrotic syndrome - no histology,,,,
-EDTA2,1026,Congenital nephrotic syndrome (CNS) - no histology,,,,
-EDTA2,1035,Congenital nephrotic syndrome (CNS) - Finnish type - no histology,,,,
-EDTA2,1042,Congenital nephrotic syndrome (CNS) - Finnish type - histologically proven,,,,
-EDTA2,1057,Congenital nephrotic syndrome (CNS) - diffuse mesangial sclerosis,,,,
-EDTA2,1061,Congenital nephrotic syndrome (CNS) - focal segmental glomerulosclerosis (FSGS),,,,
-EDTA2,1074,Denys-Drash syndrome,,,,
-EDTA2,1088,Congenital nephrotic syndrome (CNS) - congenital infection,,,,
-EDTA2,1090,Minimal change nephropathy - no histology,,,,
-EDTA2,1100,Minimal change nephropathy - histologically proven,,,,
-EDTA2,1116,IgA nephropathy - no histology,,,,
-EDTA2,1128,IgA nephropathy - histologically proven,,,,
-EDTA2,1137,Familial IgA nephropathy - no histology,,,,
-EDTA2,1144,Familial IgA nephropathy - histologically proven,,,,
-EDTA2,1159,IgA nephropathy secondary to liver cirrhosis - no histology,,,,
-EDTA2,1163,IgA nephropathy secondary to liver cirrhosis - histologically proven,,,,
-EDTA2,1171,IgM - associated nephropathy,,,,
-EDTA2,1185,Membranous nephropathy - idiopathic,,,,
-EDTA2,1192,Membranous nephropathy - malignancy associated,,,,
-EDTA2,1205,Membranous nephropathy - drug induced,,,,
-EDTA2,1214,Membranous nephropathy - infection associated,,,,
-EDTA2,1222,Mesangiocapillary glomerulonephritis type 1,,,,
-EDTA2,1233,Mesangiocapillary glomerulonephritis type 2 (dense deposit disease),,,,
-EDTA2,1246,Mesangiocapillary glomerulonephritis type 3,,,,
-EDTA2,1251,Idiopathic rapidly progressive (crescentic) glomerulonephritis,,,,
-EDTA2,1267,Primary focal segmental glomerulosclerosis (FSGS),,,,
-EDTA2,1279,Familial focal segmental glomerulosclerosis (FSGS) - autosomal recessive - no histology,,,,
-EDTA2,1280,Familial focal segmental glomerulosclerosis (FSGS) - autosomal recessive - histologically proven,,,,
-EDTA2,1298,Familial focal segmental glomerulosclerosis (FSGS) - autosomal dominant - no histology,,,,
-EDTA2,1308,Familial focal segmental glomerulosclerosis (FSGS) - autosomal dominant - histologically proven,,,,
-EDTA2,1312,Focal segmental glomerulosclerosis (FSGS) secondary to obesity - no histology,,,,
-EDTA2,1320,Focal segmental glomerulosclerosis (FSGS) secondary to obesity - histologically proven,,,,
-EDTA2,1331,Diffuse endocapillary glomerulonephritis,,,,
-EDTA2,1349,Mesangial proliferative glomerulonephritis ,,,,
-EDTA2,1354,Focal and segmental proliferative glomerulonephritis,,,,
-EDTA2,1365,Glomerulonephritis - secondary to other systemic disease,,,,
-EDTA2,1377,Glomerulonephritis - histologically indeterminate,,,,
-EDTA2,1383,Systemic vasculitis - ANCA negative - histologically proven,,,,
-EDTA2,1396,Systemic vasculitis - ANCA positive - no histology,,,,
-EDTA2,1401,Granulomatosis with polyangiitis - no histology,,,,
-EDTA2,1417,Granulomatosis with polyangiitis - histologically proven,,,,
-EDTA2,1429,Microscopic polyangiitis - histologically proven,,,,
-EDTA2,1438,Churg-Strauss syndrome - no histology,,,,
-EDTA2,1440,Churg-Strauss syndrome - histologically proven,,,,
-EDTA2,1455,Polyarteritis nodosa,,,,
-EDTA2,1464,Anti-Glomerular basement membrane (GBM) disease / Goodpasture's syndrome - no histology,,,,
-EDTA2,1472,Anti-Glomerular basement membrane (GBM) disease / Goodpasture's syndrome - histologically proven,,,,
-EDTA2,1486,Systemic lupus erythematosus / nephritis - no histology,,,,
-EDTA2,1493,Systemic lupus erythematosus / nephritis - histologically proven,,,,
-EDTA2,1504,Henoch-Schönlein purpura / nephritis - no histology,,,,
-EDTA2,1515,Henoch-Schönlein purpura / nephritis - histologically proven,,,,
-EDTA2,1527,Renal scleroderma / systemic sclerosis - no histology,,,,
-EDTA2,1536,Renal scleroderma / systemic sclerosis - histologically proven,,,,
-EDTA2,1543,Essential mixed cryoglobulinaemia - no histology,,,,
-EDTA2,1558,Essential mixed cryoglobulinaemia - histologically proven,,,,
-EDTA2,1562,Cryoglobulinaemia secondary to hepatitis C - no histology,,,,
-EDTA2,1570,Cryoglobulinaemia secondary to hepatitis C - histologically proven,,,,
-EDTA2,1589,Cryoglobulinaemia secondary to systemic disease - no histology,,,,
-EDTA2,1591,Cryoglobulinaemia secondary to systemic disease - histologically proven,,,,
-EDTA2,1602,Primary reflux nephropathy - sporadic,,,,
-EDTA2,1618,Familial reflux nephropathy,,,,
-EDTA2,1625,Congenital dysplasia / hypoplasia,,,,
-EDTA2,1639,Multicystic dysplastic kidneys,,,,
-EDTA2,1641,Dysplasia due to fetal ACE-inhibitor exposure,,,,
-EDTA2,1656,Glomerulocystic disease,,,,
-EDTA2,1660,Congenital pelvi-ureteric junction obstruction,,,,
-EDTA2,1673,Congenital vesico-ureteric junction obstruction,,,,
-EDTA2,1687,Posterior urethral valves,,,,
-EDTA2,1694,Syndrome of agenesis of abdominal muscles - prune belly syndrome,,,,
-EDTA2,1706,Congenital neurogenic bladder,,,,
-EDTA2,1710,Bladder exstrophy,,,,
-EDTA2,1723,Megacystis-megaureter,,,,
-EDTA2,1734,Oligomeganephronia,,,,
-EDTA2,1747,Renal papillary necrosis,,,,
-EDTA2,1752,Acquired obstructive uropathy / nephropathy,,,,
-EDTA2,1768,Acquired obstructive nephropathy due to neurogenic bladder,,,,
-EDTA2,1775,Obstructive nephropathy due to prostatic hypertrophy,,,,
-EDTA2,1781,Obstructive nephropathy due to prostate cancer,,,,
-EDTA2,1799,Obstructive nephropathy due to bladder cancer,,,,
-EDTA2,1809,Obstructive nephropathy due to other malignancies,,,,
-EDTA2,1813,Idiopathic retroperitoneal fibrosis,,,,
-EDTA2,1821,Retroperitoneal fibrosis secondary to malignancies,,,,
-EDTA2,1832,Calculus nephropathy / urolithiasis,,,,
-EDTA2,1845,Calcium oxalate urolithiasis,,,,
-EDTA2,1850,Enteric hyperoxaluria ,,,,
-EDTA2,1866,Magnesium ammonium phosphate (struvite) urolithiasis,,,,
-EDTA2,1878,Uric acid urolithiasis,,,,
-EDTA2,1884,Tubulointerstitial nephritis - no histology,,,,
-EDTA2,1897,Tubulointerstitial nephritis - histologically proven,,,,
-EDTA2,1907,Familial interstitial nephropathy - no histology,,,,
-EDTA2,1911,Familial interstitial nephropathy - histologically proven,,,,
-EDTA2,1924,Tubulointerstitial nephritis associated with autoimmune disease - no histology,,,,
-EDTA2,1930,Tubulointerstitial nephritis associated with autoimmune disease - histologically proven,,,,
-EDTA2,1948,Tubulointerstitial nephritis with uveitis (TINU) - no histology,,,,
-EDTA2,1953,Tubulointerstitial nephritis with uveitis (TINU) - histologically proven,,,,
-EDTA2,1969,Renal sarcoidosis - no histology,,,,
-EDTA2,1976,Renal sarcoidosis - histologically proven,,,,
-EDTA2,1982,Aristolochic acid nephropathy (Balkan / Chinese herb / endemic nephropathy) - no histology,,,,
-EDTA2,1995,Aristolochic acid nephropathy (Balkan / Chinese herb / endemic nephropathy) - histologically proven,,,,
-EDTA2,2005,Drug-induced tubulointerstitial nephritis - no histology,,,,
-EDTA2,2014,Drug-induced tubulointerstitial nephritis - histologically proven,,,,
-EDTA2,2022,Nephropathy due to analgesic drugs - no histology,,,,
-EDTA2,2033,Nephropathy due to analgesic drugs - histologically proven,,,,
-EDTA2,2046,Nephropathy due to ciclosporin - no histology,,,,
-EDTA2,2051,Nephropathy due to ciclosporin - histologically proven,,,,
-EDTA2,2067,Nephropathy due to tacrolimus - no histology,,,,
-EDTA2,2079,Nephropathy due to tacrolimus - histologically proven,,,,
-EDTA2,2080,Nephropathy due to aminoglycosides - no histology,,,,
-EDTA2,2098,Nephropathy due to aminoglycosides - histologically proven,,,,
-EDTA2,2108,Nephropathy due to amphotericin - no histology,,,,
-EDTA2,2112,Nephropathy due to amphotericin - histologically proven,,,,
-EDTA2,2120,Nephropathy due to cisplatin - no histology,,,,
-EDTA2,2131,Nephropathy due to cisplatin - histologically proven,,,,
-EDTA2,2149,Nephropathy due to lithium - no histology,,,,
-EDTA2,2154,Nephropathy due to lithium - histologically proven,,,,
-EDTA2,2165,Lead induced nephropathy - no histology,,,,
-EDTA2,2177,Lead induced nephropathy - histologically proven,,,,
-EDTA2,2183,Acute urate nephropathy - no histology,,,,
-EDTA2,2196,Acute urate nephropathy - histologically proven,,,,
-EDTA2,2203,Chronic urate nephropathy - histologically proven,,,,
-EDTA2,2219,Radiation nephritis,,,,
-EDTA2,2226,Renal / perinephric abscess,,,,
-EDTA2,2235,Renal tuberculosis,,,,
-EDTA2,2242,Leptospirosis,,,,
-EDTA2,2257,Hantavirus nephropathy,,,,
-EDTA2,2261,Xanthogranulomatous pyelonephritis,,,,
-EDTA2,2274,Nephropathy related to HIV - no histology,,,,
-EDTA2,2288,Nephropathy related to HIV - histologically proven,,,,
-EDTA2,2290,Schistosomiasis,,,,
-EDTA2,2300,Other specific infection,,,,
-EDTA2,2316,Diabetic nephropathy in type I diabetes - no histology,,,,
-EDTA2,2328,Diabetic nephropathy in type I diabetes - histologically proven,,,,
-EDTA2,2337,Diabetic nephropathy in type II diabetes - no histology,,,,
-EDTA2,2344,Diabetic nephropathy in type II diabetes - histologically proven,,,,
-EDTA2,2359,Chronic hypertensive nephropathy - no histology,,,,
-EDTA2,2363,Chronic hypertensive nephropathy - histologically proven,,,,
-EDTA2,2371,Malignant hypertensive nephropathy / accelerated hypertensive nephropathy - no histology,,,,
-EDTA2,2385,Malignant hypertensive nephropathy / accelerated hypertensive nephropathy - histologically proven,,,,
-EDTA2,2392,Ageing kidney - no histology,,,,
-EDTA2,2407,Ischaemic nephropathy - no histology,,,,
-EDTA2,2411,Ischaemic nephropathy / microvascular disease - histologically proven,,,,
-EDTA2,2424,Renal artery stenosis,,,,
-EDTA2,2430,Atheroembolic renal disease - no histology,,,,
-EDTA2,2448,Atheroembolic renal disease - histologically proven,,,,
-EDTA2,2453,Fibromuscular dysplasia of renal artery,,,,
-EDTA2,2469,Renal arterial thrombosis / occlusion,,,,
-EDTA2,2476,Renal vein thrombosis,,,,
-EDTA2,2482,Cardiorenal syndrome,,,,
-EDTA2,2495,Hepatorenal syndrome,,,,
-EDTA2,2509,Renal amyloidosis,,,,
-EDTA2,2513,AA amyloid secondary to chronic inflammation,,,,
-EDTA2,2521,AL amyloid secondary to plasma cell dyscrasia,,,,
-EDTA2,2532,Familial amyloid secondary to protein mutations - no histology,,,,
-EDTA2,2545,Familial amyloid secondary to protein mutations - histologically proven,,,,
-EDTA2,2550,Familial AA amyloid secondary to familial Mediterranean fever / TRAPS (Hibernian fever) - no histology,,,,
-EDTA2,2566,Familial AA amyloid secondary to familial Mediterranean fever / TRAPS (Hibernian fever) - histologically proven,,,,
-EDTA2,2578,Myeloma kidney - no histology,,,,
-EDTA2,2584,Myeloma cast nephropathy - histologically proven,,,,
-EDTA2,2597,Light chain deposition disease,,,,
-EDTA2,2606,Immunotactoid / fibrillary nephropathy,,,,
-EDTA2,2610,Haemolytic uraemic syndrome (HUS) - diarrhoea associated,,,,
-EDTA2,2623,Atypical haemolytic uraemic syndrome (HUS) - diarrhoea negative,,,,
-EDTA2,2634,Thrombotic thrombocytopenic purpura (TTP),,,,
-EDTA2,2647,Haemolytic uraemic syndrome (HUS) secondary to systemic disease,,,,
-EDTA2,2652,Congenital haemolytic uraemic syndrome (HUS) ,,,,
-EDTA2,2668,Familial haemolytic uraemic syndrome (HUS),,,,
-EDTA2,2675,Familial thrombotic thrombocytopenic purpura (TTP),,,,
-EDTA2,2681,Nephropathy due to eclampsia,,,,
-EDTA2,2699,Sickle cell nephropathy - no histology,,,,
-EDTA2,2702,Sickle cell nephropathy - histologically proven,,,,
-EDTA2,2718,Autosomal dominant (AD) polycystic kidney disease,,,,
-EDTA2,2725,Autosomal dominant (AD) polycystic kidney disease type I,,,,
-EDTA2,2739,Autosomal dominant (AD) polycystic kidney disease type II,,,,
-EDTA2,2741,Autosomal recessive (AR) polycystic kidney disease,,,,
-EDTA2,2756,Alport syndrome - no histology,,,,
-EDTA2,2760,Alport syndrome - histologically proven,,,,
-EDTA2,2773,Benign familial haematuria,,,,
-EDTA2,2787,Thin basement membrane disease,,,,
-EDTA2,2794,Cystic kidney disease,,,,
-EDTA2,2804,Medullary cystic kidney disease type I,,,,
-EDTA2,2815,Medullary cystic kidney disease type II,,,,
-EDTA2,2827,Uromodulin-associated nephropathy (familial juvenile hyperuricaemic nephropathy),,,,
-EDTA2,2836,Nephronophthisis,,,,
-EDTA2,2843,Nephronophthisis - type 1 (juvenile type),,,,
-EDTA2,2858,Nephronophthisis - type 2 (infantile type),,,,
-EDTA2,2862,Nephronophthisis - type 3 (adolescent type),,,,
-EDTA2,2870,Nephronophthisis - type 4 (juvenile type),,,,
-EDTA2,2889,Nephronophthisis - type 5,,,,
-EDTA2,2891,Nephronophthisis - type 6,,,,
-EDTA2,2901,Primary Fanconi syndrome,,,,
-EDTA2,2917,Tubular disorder as part of inherited metabolic diseases,,,,
-EDTA2,2929,Dent disease,,,,
-EDTA2,2938,Lowe syndrome (oculocerebrorenal syndrome),,,,
-EDTA2,2940,Inherited aminoaciduria,,,,
-EDTA2,2955,Cystinuria,,,,
-EDTA2,2964,Cystinosis,,,,
-EDTA2,2972,Inherited renal glycosuria,,,,
-EDTA2,2986,Hypophosphataemic rickets X-linked (XL),,,,
-EDTA2,2993,Hypophosphataemic rickets autosomal recessive (AR),,,,
-EDTA2,3000,Primary renal tubular acidosis (RTA),,,,
-EDTA2,3016,Proximal renal tubular acidosis (RTA) - type II,,,,
-EDTA2,3028,Distal renal tubular acidosis (RTA) - type I,,,,
-EDTA2,3037,Distal renal tubular acidosis with sensorineural deafness - gene mutations,,,,
-EDTA2,3044,Nephrogenic diabetes insipidus,,,,
-EDTA2,3059,Lesch Nyhan syndrome - hypoxanthine guanine phosphoribosyl transferase deficiency ,,,,
-EDTA2,3063,Phosphoribosyl pyrophosphate synthetase (PRPPS) superactivity,,,,
-EDTA2,3071,Alagille syndrome,,,,
-EDTA2,3085,Bartter syndrome,,,,
-EDTA2,3092,Gitelman syndrome,,,,
-EDTA2,3102,Liddle syndrome,,,,
-EDTA2,3118,Apparent mineralocorticoid excess,,,,
-EDTA2,3125,Glucocorticoid suppressible hyperaldosteronism,,,,
-EDTA2,3139,Inherited / genetic diabetes mellitus type II,,,,
-EDTA2,3141,Pseudohypoaldosteronism type 1,,,,
-EDTA2,3156,Pseudohypoaldosteronism type 2 (Gordon syndrome),,,,
-EDTA2,3160,Familial hypocalciuric hypercalcaemia,,,,
-EDTA2,3173,Familial hypercalciuric hypocalcaemia,,,,
-EDTA2,3187,Familial hypomagnesaemia,,,,
-EDTA2,3194,Primary hyperoxaluria,,,,
-EDTA2,3207,Primary hyperoxaluria type I,,,,
-EDTA2,3211,Primary hyperoxaluria type II,,,,
-EDTA2,3224,Fabry disease - no histology,,,,
-EDTA2,3230,Fabry disease - histologically proven,,,,
-EDTA2,3248,Xanthinuria,,,,
-EDTA2,3253,Nail-patella syndrome,,,,
-EDTA2,3269,Rubinstein-Taybi syndrome,,,,
-EDTA2,3276,Tuberous sclerosis,,,,
-EDTA2,3282,Von Hippel-Lindau disease,,,,
-EDTA2,3295,Medullary sponge kidneys,,,,
-EDTA2,3305,Horse-shoe kidney,,,,
-EDTA2,3314,Frasier syndrome,,,,
-EDTA2,3322,Branchio-oto-renal syndrome,,,,
-EDTA2,3333,Williams syndrome,,,,
-EDTA2,3346,Townes-Brocks syndrome,,,,
-EDTA2,3351,Lawrence-Moon-Biedl / Bardet-Biedl syndrome,,,,
-EDTA2,3367,Mitochondrial cytopathy,,,,
-EDTA2,3379,Familial nephropathy,,,,
-EDTA2,3380,Acute kidney injury,,,,
-EDTA2,3398,Acute kidney injury due to hypovolaemia ,,,,
-EDTA2,3403,Acute kidney injury due to circulatory failure,,,,
-EDTA2,3419,Acute kidney injury due to sepsis,,,,
-EDTA2,3426,Acute kidney injury due to rhabdomyolysis,,,,
-EDTA2,3435,Acute kidney injury due to nephrotoxicity,,,,
-EDTA2,3442,Acute cortical necrosis,,,,
-EDTA2,3457,Acute pyelonephritis,,,,
-EDTA2,3461,Kidney tumour,,,,
-EDTA2,3474,Renal cell carcinoma - histologically proven,,,,
-EDTA2,3488,Transitional cell carcinoma - histologically proven,,,,
-EDTA2,3490,Wilms tumour - histologically proven,,,,
-EDTA2,3501,Mesoblastic nephroma - histologically proven,,,,
-EDTA2,3517,Single kidney identified in adulthood,,,,
-EDTA2,3529,Chronic kidney disease (CKD) / chronic renal failure (CRF) caused by tumour nephrectomy,,,,
-EDTA2,3538,Chronic kidney disease (CKD) / chronic renal failure (CRF) due to traumatic loss of kidney,,,,
-EDTA2,3540,Chronic kidney disease (CKD) / chronic renal failure (CRF) due to donor nephrectomy,,,,
-EDTA2,3555,Chronic kidney disease (CKD) / chronic renal failure (CRF) - aetiology uncertain / unknown - no histology,,,,
-EDTA2,3564,Chronic kidney disease (CKD) / chronic renal failure (CRF) - aetiology uncertain / unknown - histologically proven,,,,
-EDTA2,3572,Haematuria and proteinuria - no histology,,,,
-EDTA2,3604,Nephrotic syndrome of childhood - steroid resistant - no histology,,,,
-EDTA2,3615,Nephrotic syndrome of childhood - no trial of steroids - no histology,,,,
-EDTA2,3627,Renal cysts and diabetes syndrome,,,,
-EDTA2,3636,Chronic urate nephropathy - no histology,,,,
-EDTA2,3643,Chronic renal failure due to systemic infection,,,,
-EDTA2,3658,Renal coloboma syndrome,,,,
-EDTA2,3662,Hypercalcaemic nephropathy ,,,,
-EDTA2,3670,Retroperitoneal fibrosis secondary to peri-aortitis,,,,
-EDTA2,3689,Retroperitoneal fibrosis secondary to drugs,,,,
-EDTA2,3691,Renal failure,,,,
-EDTA2,3708,Chronic renal failure,,,,
-EDTA2,3712,Isolated haematuria - no histology,,,,
-EDTA2,3720,Isolated proteinuria - no histology,,,,
-EDTA2,3731,Primary hyperoxaluria type III,,,,
-EDTA2,3749,Glomerulonephritis - no histology,,,,
-EDTA2,3754,Focal segmental glomerulosclerosis (FSGS) secondary to HIV ,,,,
-EDTA2,3765,Focal segmental glomerulosclerosis (FSGS) secondary to lithium ,,,,
-EDTA2,3777,Focal segmental glomerulosclerosis (FSGS) secondary to sickle cell,,,,
-EDTA2,3783,Renal papillary necrosis caused by diabetes,,,,
-EDTA2,3796,Renal papillary necrosis caused by analgesics,,,,
-EDTA2,3806,Renal papillary necrosis caused by sickle cell,,,,
-EDTA2,3810,Kidney stones due to ARPT deficiency,,,,
-EDTA2,3823,Infiltration by lymphoma - histologically proven,,,,
-EDTA2,3834,Nephropathy due to pre- eclampsia,,,,
-EDTA2,3847,Systemic vasculitis - ANCA negative - no histology,,,,
-EDTA2,3852,Systemic vasculitis - ANCA positive - histologically proven,,,,
+﻿EDTA2,1003,Adult nephrotic syndrome - no histology
+EDTA2,1019,Nephrotic syndrome of childhood - steroid sensitive - no histology
+EDTA2,1026,Congenital nephrotic syndrome (CNS) - no histology
+EDTA2,1035,Congenital nephrotic syndrome (CNS) - Finnish type - no histology
+EDTA2,1042,Congenital nephrotic syndrome (CNS) - Finnish type - histologically proven
+EDTA2,1057,Congenital nephrotic syndrome (CNS) - diffuse mesangial sclerosis
+EDTA2,1061,Congenital nephrotic syndrome (CNS) - focal segmental glomerulosclerosis (FSGS)
+EDTA2,1074,Denys-Drash syndrome
+EDTA2,1088,Congenital nephrotic syndrome (CNS) - congenital infection
+EDTA2,1090,Minimal change nephropathy - no histology
+EDTA2,1100,Minimal change nephropathy - histologically proven
+EDTA2,1116,IgA nephropathy - no histology
+EDTA2,1128,IgA nephropathy - histologically proven
+EDTA2,1137,Familial IgA nephropathy - no histology
+EDTA2,1144,Familial IgA nephropathy - histologically proven
+EDTA2,1159,IgA nephropathy secondary to liver cirrhosis - no histology
+EDTA2,1163,IgA nephropathy secondary to liver cirrhosis - histologically proven
+EDTA2,1171,IgM - associated nephropathy
+EDTA2,1185,Membranous nephropathy - idiopathic
+EDTA2,1192,Membranous nephropathy - malignancy associated
+EDTA2,1205,Membranous nephropathy - drug induced
+EDTA2,1214,Membranous nephropathy - infection associated
+EDTA2,1222,Mesangiocapillary glomerulonephritis type 1
+EDTA2,1233,Mesangiocapillary glomerulonephritis type 2 (dense deposit disease)
+EDTA2,1246,Mesangiocapillary glomerulonephritis type 3
+EDTA2,1251,Idiopathic rapidly progressive (crescentic) glomerulonephritis
+EDTA2,1267,Primary focal segmental glomerulosclerosis (FSGS)
+EDTA2,1279,Familial focal segmental glomerulosclerosis (FSGS) - autosomal recessive - no histology
+EDTA2,1280,Familial focal segmental glomerulosclerosis (FSGS) - autosomal recessive - histologically proven
+EDTA2,1298,Familial focal segmental glomerulosclerosis (FSGS) - autosomal dominant - no histology
+EDTA2,1308,Familial focal segmental glomerulosclerosis (FSGS) - autosomal dominant - histologically proven
+EDTA2,1312,Focal segmental glomerulosclerosis (FSGS) secondary to obesity - no histology
+EDTA2,1320,Focal segmental glomerulosclerosis (FSGS) secondary to obesity - histologically proven
+EDTA2,1331,Diffuse endocapillary glomerulonephritis
+EDTA2,1349,Mesangial proliferative glomerulonephritis 
+EDTA2,1354,Focal and segmental proliferative glomerulonephritis
+EDTA2,1365,Glomerulonephritis - secondary to other systemic disease
+EDTA2,1377,Glomerulonephritis - histologically indeterminate
+EDTA2,1383,Systemic vasculitis - ANCA negative - histologically proven
+EDTA2,1396,Systemic vasculitis - ANCA positive - no histology
+EDTA2,1401,Granulomatosis with polyangiitis - no histology
+EDTA2,1417,Granulomatosis with polyangiitis - histologically proven
+EDTA2,1429,Microscopic polyangiitis - histologically proven
+EDTA2,1438,Churg-Strauss syndrome - no histology
+EDTA2,1440,Churg-Strauss syndrome - histologically proven
+EDTA2,1455,Polyarteritis nodosa
+EDTA2,1464,Anti-Glomerular basement membrane (GBM) disease / Goodpasture's syndrome - no histology
+EDTA2,1472,Anti-Glomerular basement membrane (GBM) disease / Goodpasture's syndrome - histologically proven
+EDTA2,1486,Systemic lupus erythematosus / nephritis - no histology
+EDTA2,1493,Systemic lupus erythematosus / nephritis - histologically proven
+EDTA2,1504,Henoch-Schönlein purpura / nephritis - no histology
+EDTA2,1515,Henoch-Schönlein purpura / nephritis - histologically proven
+EDTA2,1527,Renal scleroderma / systemic sclerosis - no histology
+EDTA2,1536,Renal scleroderma / systemic sclerosis - histologically proven
+EDTA2,1543,Essential mixed cryoglobulinaemia - no histology
+EDTA2,1558,Essential mixed cryoglobulinaemia - histologically proven
+EDTA2,1562,Cryoglobulinaemia secondary to hepatitis C - no histology
+EDTA2,1570,Cryoglobulinaemia secondary to hepatitis C - histologically proven
+EDTA2,1589,Cryoglobulinaemia secondary to systemic disease - no histology
+EDTA2,1591,Cryoglobulinaemia secondary to systemic disease - histologically proven
+EDTA2,1602,Primary reflux nephropathy - sporadic
+EDTA2,1618,Familial reflux nephropathy
+EDTA2,1625,Congenital dysplasia / hypoplasia
+EDTA2,1639,Multicystic dysplastic kidneys
+EDTA2,1641,Dysplasia due to fetal ACE-inhibitor exposure
+EDTA2,1656,Glomerulocystic disease
+EDTA2,1660,Congenital pelvi-ureteric junction obstruction
+EDTA2,1673,Congenital vesico-ureteric junction obstruction
+EDTA2,1687,Posterior urethral valves
+EDTA2,1694,Syndrome of agenesis of abdominal muscles - prune belly syndrome
+EDTA2,1706,Congenital neurogenic bladder
+EDTA2,1710,Bladder exstrophy
+EDTA2,1723,Megacystis-megaureter
+EDTA2,1734,Oligomeganephronia
+EDTA2,1747,Renal papillary necrosis
+EDTA2,1752,Acquired obstructive uropathy / nephropathy
+EDTA2,1768,Acquired obstructive nephropathy due to neurogenic bladder
+EDTA2,1775,Obstructive nephropathy due to prostatic hypertrophy
+EDTA2,1781,Obstructive nephropathy due to prostate cancer
+EDTA2,1799,Obstructive nephropathy due to bladder cancer
+EDTA2,1809,Obstructive nephropathy due to other malignancies
+EDTA2,1813,Idiopathic retroperitoneal fibrosis
+EDTA2,1821,Retroperitoneal fibrosis secondary to malignancies
+EDTA2,1832,Calculus nephropathy / urolithiasis
+EDTA2,1845,Calcium oxalate urolithiasis
+EDTA2,1850,Enteric hyperoxaluria 
+EDTA2,1866,Magnesium ammonium phosphate (struvite) urolithiasis
+EDTA2,1878,Uric acid urolithiasis
+EDTA2,1884,Tubulointerstitial nephritis - no histology
+EDTA2,1897,Tubulointerstitial nephritis - histologically proven
+EDTA2,1907,Familial interstitial nephropathy - no histology
+EDTA2,1911,Familial interstitial nephropathy - histologically proven
+EDTA2,1924,Tubulointerstitial nephritis associated with autoimmune disease - no histology
+EDTA2,1930,Tubulointerstitial nephritis associated with autoimmune disease - histologically proven
+EDTA2,1948,Tubulointerstitial nephritis with uveitis (TINU) - no histology
+EDTA2,1953,Tubulointerstitial nephritis with uveitis (TINU) - histologically proven
+EDTA2,1969,Renal sarcoidosis - no histology
+EDTA2,1976,Renal sarcoidosis - histologically proven
+EDTA2,1982,Aristolochic acid nephropathy (Balkan / Chinese herb / endemic nephropathy) - no histology
+EDTA2,1995,Aristolochic acid nephropathy (Balkan / Chinese herb / endemic nephropathy) - histologically proven
+EDTA2,2005,Drug-induced tubulointerstitial nephritis - no histology
+EDTA2,2014,Drug-induced tubulointerstitial nephritis - histologically proven
+EDTA2,2022,Nephropathy due to analgesic drugs - no histology
+EDTA2,2033,Nephropathy due to analgesic drugs - histologically proven
+EDTA2,2046,Nephropathy due to ciclosporin - no histology
+EDTA2,2051,Nephropathy due to ciclosporin - histologically proven
+EDTA2,2067,Nephropathy due to tacrolimus - no histology
+EDTA2,2079,Nephropathy due to tacrolimus - histologically proven
+EDTA2,2080,Nephropathy due to aminoglycosides - no histology
+EDTA2,2098,Nephropathy due to aminoglycosides - histologically proven
+EDTA2,2108,Nephropathy due to amphotericin - no histology
+EDTA2,2112,Nephropathy due to amphotericin - histologically proven
+EDTA2,2120,Nephropathy due to cisplatin - no histology
+EDTA2,2131,Nephropathy due to cisplatin - histologically proven
+EDTA2,2149,Nephropathy due to lithium - no histology
+EDTA2,2154,Nephropathy due to lithium - histologically proven
+EDTA2,2165,Lead induced nephropathy - no histology
+EDTA2,2177,Lead induced nephropathy - histologically proven
+EDTA2,2183,Acute urate nephropathy - no histology
+EDTA2,2196,Acute urate nephropathy - histologically proven
+EDTA2,2203,Chronic urate nephropathy - histologically proven
+EDTA2,2219,Radiation nephritis
+EDTA2,2226,Renal / perinephric abscess
+EDTA2,2235,Renal tuberculosis
+EDTA2,2242,Leptospirosis
+EDTA2,2257,Hantavirus nephropathy
+EDTA2,2261,Xanthogranulomatous pyelonephritis
+EDTA2,2274,Nephropathy related to HIV - no histology
+EDTA2,2288,Nephropathy related to HIV - histologically proven
+EDTA2,2290,Schistosomiasis
+EDTA2,2300,Other specific infection
+EDTA2,2316,Diabetic nephropathy in type I diabetes - no histology
+EDTA2,2328,Diabetic nephropathy in type I diabetes - histologically proven
+EDTA2,2337,Diabetic nephropathy in type II diabetes - no histology
+EDTA2,2344,Diabetic nephropathy in type II diabetes - histologically proven
+EDTA2,2359,Chronic hypertensive nephropathy - no histology
+EDTA2,2363,Chronic hypertensive nephropathy - histologically proven
+EDTA2,2371,Malignant hypertensive nephropathy / accelerated hypertensive nephropathy - no histology
+EDTA2,2385,Malignant hypertensive nephropathy / accelerated hypertensive nephropathy - histologically proven
+EDTA2,2392,Ageing kidney - no histology
+EDTA2,2407,Ischaemic nephropathy - no histology
+EDTA2,2411,Ischaemic nephropathy / microvascular disease - histologically proven
+EDTA2,2424,Renal artery stenosis
+EDTA2,2430,Atheroembolic renal disease - no histology
+EDTA2,2448,Atheroembolic renal disease - histologically proven
+EDTA2,2453,Fibromuscular dysplasia of renal artery
+EDTA2,2469,Renal arterial thrombosis / occlusion
+EDTA2,2476,Renal vein thrombosis
+EDTA2,2482,Cardiorenal syndrome
+EDTA2,2495,Hepatorenal syndrome
+EDTA2,2509,Renal amyloidosis
+EDTA2,2513,AA amyloid secondary to chronic inflammation
+EDTA2,2521,AL amyloid secondary to plasma cell dyscrasia
+EDTA2,2532,Familial amyloid secondary to protein mutations - no histology
+EDTA2,2545,Familial amyloid secondary to protein mutations - histologically proven
+EDTA2,2550,Familial AA amyloid secondary to familial Mediterranean fever / TRAPS (Hibernian fever) - no histology
+EDTA2,2566,Familial AA amyloid secondary to familial Mediterranean fever / TRAPS (Hibernian fever) - histologically proven
+EDTA2,2578,Myeloma kidney - no histology
+EDTA2,2584,Myeloma cast nephropathy - histologically proven
+EDTA2,2597,Light chain deposition disease
+EDTA2,2606,Immunotactoid / fibrillary nephropathy
+EDTA2,2610,Haemolytic uraemic syndrome (HUS) - diarrhoea associated
+EDTA2,2623,Atypical haemolytic uraemic syndrome (HUS) - diarrhoea negative
+EDTA2,2634,Thrombotic thrombocytopenic purpura (TTP)
+EDTA2,2647,Haemolytic uraemic syndrome (HUS) secondary to systemic disease
+EDTA2,2652,Congenital haemolytic uraemic syndrome (HUS) 
+EDTA2,2668,Familial haemolytic uraemic syndrome (HUS)
+EDTA2,2675,Familial thrombotic thrombocytopenic purpura (TTP)
+EDTA2,2681,Nephropathy due to eclampsia
+EDTA2,2699,Sickle cell nephropathy - no histology
+EDTA2,2702,Sickle cell nephropathy - histologically proven
+EDTA2,2718,Autosomal dominant (AD) polycystic kidney disease
+EDTA2,2725,Autosomal dominant (AD) polycystic kidney disease type I
+EDTA2,2739,Autosomal dominant (AD) polycystic kidney disease type II
+EDTA2,2741,Autosomal recessive (AR) polycystic kidney disease
+EDTA2,2756,Alport syndrome - no histology
+EDTA2,2760,Alport syndrome - histologically proven
+EDTA2,2773,Benign familial haematuria
+EDTA2,2787,Thin basement membrane disease
+EDTA2,2794,Cystic kidney disease
+EDTA2,2804,Medullary cystic kidney disease type I
+EDTA2,2815,Medullary cystic kidney disease type II
+EDTA2,2827,Uromodulin-associated nephropathy (familial juvenile hyperuricaemic nephropathy)
+EDTA2,2836,Nephronophthisis
+EDTA2,2843,Nephronophthisis - type 1 (juvenile type)
+EDTA2,2858,Nephronophthisis - type 2 (infantile type)
+EDTA2,2862,Nephronophthisis - type 3 (adolescent type)
+EDTA2,2870,Nephronophthisis - type 4 (juvenile type)
+EDTA2,2889,Nephronophthisis - type 5
+EDTA2,2891,Nephronophthisis - type 6
+EDTA2,2901,Primary Fanconi syndrome
+EDTA2,2917,Tubular disorder as part of inherited metabolic diseases
+EDTA2,2929,Dent disease
+EDTA2,2938,Lowe syndrome (oculocerebrorenal syndrome)
+EDTA2,2940,Inherited aminoaciduria
+EDTA2,2955,Cystinuria
+EDTA2,2964,Cystinosis
+EDTA2,2972,Inherited renal glycosuria
+EDTA2,2986,Hypophosphataemic rickets X-linked (XL)
+EDTA2,2993,Hypophosphataemic rickets autosomal recessive (AR)
+EDTA2,3000,Primary renal tubular acidosis (RTA)
+EDTA2,3016,Proximal renal tubular acidosis (RTA) - type II
+EDTA2,3028,Distal renal tubular acidosis (RTA) - type I
+EDTA2,3037,Distal renal tubular acidosis with sensorineural deafness - gene mutations
+EDTA2,3044,Nephrogenic diabetes insipidus
+EDTA2,3059,Lesch Nyhan syndrome - hypoxanthine guanine phosphoribosyl transferase deficiency 
+EDTA2,3063,Phosphoribosyl pyrophosphate synthetase (PRPPS) superactivity
+EDTA2,3071,Alagille syndrome
+EDTA2,3085,Bartter syndrome
+EDTA2,3092,Gitelman syndrome
+EDTA2,3102,Liddle syndrome
+EDTA2,3118,Apparent mineralocorticoid excess
+EDTA2,3125,Glucocorticoid suppressible hyperaldosteronism
+EDTA2,3139,Inherited / genetic diabetes mellitus type II
+EDTA2,3141,Pseudohypoaldosteronism type 1
+EDTA2,3156,Pseudohypoaldosteronism type 2 (Gordon syndrome)
+EDTA2,3160,Familial hypocalciuric hypercalcaemia
+EDTA2,3173,Familial hypercalciuric hypocalcaemia
+EDTA2,3187,Familial hypomagnesaemia
+EDTA2,3194,Primary hyperoxaluria
+EDTA2,3207,Primary hyperoxaluria type I
+EDTA2,3211,Primary hyperoxaluria type II
+EDTA2,3224,Fabry disease - no histology
+EDTA2,3230,Fabry disease - histologically proven
+EDTA2,3248,Xanthinuria
+EDTA2,3253,Nail-patella syndrome
+EDTA2,3269,Rubinstein-Taybi syndrome
+EDTA2,3276,Tuberous sclerosis
+EDTA2,3282,Von Hippel-Lindau disease
+EDTA2,3295,Medullary sponge kidneys
+EDTA2,3305,Horse-shoe kidney
+EDTA2,3314,Frasier syndrome
+EDTA2,3322,Branchio-oto-renal syndrome
+EDTA2,3333,Williams syndrome
+EDTA2,3346,Townes-Brocks syndrome
+EDTA2,3351,Lawrence-Moon-Biedl / Bardet-Biedl syndrome
+EDTA2,3367,Mitochondrial cytopathy
+EDTA2,3379,Familial nephropathy
+EDTA2,3380,Acute kidney injury
+EDTA2,3398,Acute kidney injury due to hypovolaemia 
+EDTA2,3403,Acute kidney injury due to circulatory failure
+EDTA2,3419,Acute kidney injury due to sepsis
+EDTA2,3426,Acute kidney injury due to rhabdomyolysis
+EDTA2,3435,Acute kidney injury due to nephrotoxicity
+EDTA2,3442,Acute cortical necrosis
+EDTA2,3457,Acute pyelonephritis
+EDTA2,3461,Kidney tumour
+EDTA2,3474,Renal cell carcinoma - histologically proven
+EDTA2,3488,Transitional cell carcinoma - histologically proven
+EDTA2,3490,Wilms tumour - histologically proven
+EDTA2,3501,Mesoblastic nephroma - histologically proven
+EDTA2,3517,Single kidney identified in adulthood
+EDTA2,3529,Chronic kidney disease (CKD) / chronic renal failure (CRF) caused by tumour nephrectomy
+EDTA2,3538,Chronic kidney disease (CKD) / chronic renal failure (CRF) due to traumatic loss of kidney
+EDTA2,3540,Chronic kidney disease (CKD) / chronic renal failure (CRF) due to donor nephrectomy
+EDTA2,3555,Chronic kidney disease (CKD) / chronic renal failure (CRF) - aetiology uncertain / unknown - no histology
+EDTA2,3564,Chronic kidney disease (CKD) / chronic renal failure (CRF) - aetiology uncertain / unknown - histologically proven
+EDTA2,3572,Haematuria and proteinuria - no histology
+EDTA2,3604,Nephrotic syndrome of childhood - steroid resistant - no histology
+EDTA2,3615,Nephrotic syndrome of childhood - no trial of steroids - no histology
+EDTA2,3627,Renal cysts and diabetes syndrome
+EDTA2,3636,Chronic urate nephropathy - no histology
+EDTA2,3643,Chronic renal failure due to systemic infection
+EDTA2,3658,Renal coloboma syndrome
+EDTA2,3662,Hypercalcaemic nephropathy 
+EDTA2,3670,Retroperitoneal fibrosis secondary to peri-aortitis
+EDTA2,3689,Retroperitoneal fibrosis secondary to drugs
+EDTA2,3691,Renal failure
+EDTA2,3708,Chronic renal failure
+EDTA2,3712,Isolated haematuria - no histology
+EDTA2,3720,Isolated proteinuria - no histology
+EDTA2,3731,Primary hyperoxaluria type III
+EDTA2,3749,Glomerulonephritis - no histology
+EDTA2,3754,Focal segmental glomerulosclerosis (FSGS) secondary to HIV 
+EDTA2,3765,Focal segmental glomerulosclerosis (FSGS) secondary to lithium 
+EDTA2,3777,Focal segmental glomerulosclerosis (FSGS) secondary to sickle cell
+EDTA2,3783,Renal papillary necrosis caused by diabetes
+EDTA2,3796,Renal papillary necrosis caused by analgesics
+EDTA2,3806,Renal papillary necrosis caused by sickle cell
+EDTA2,3810,Kidney stones due to ARPT deficiency
+EDTA2,3823,Infiltration by lymphoma - histologically proven
+EDTA2,3834,Nephropathy due to pre- eclampsia
+EDTA2,3847,Systemic vasculitis - ANCA negative - no histology
+EDTA2,3852,Systemic vasculitis - ANCA positive - histologically proven

@@ -1,51 +1,51 @@
-CF_RR7_TREATMENT,1,Haemodialysis,,,,
-CF_RR7_TREATMENT,2,Haemofiltration,,,,
-CF_RR7_TREATMENT,3,Haemodiafiltration,,,,
-CF_RR7_TREATMENT,4,Haemodialysis > 4 days per week / daily,,,,
-CF_RR7_TREATMENT,5,Ultrafiltration,,,,
-CF_RR7_TREATMENT,9,Haemodialysis - Type Unknown,,,,
-CF_RR7_TREATMENT,10,CAPD Connect,,,,
-CF_RR7_TREATMENT,11,CAPD Disconnect,,,,
-CF_RR7_TREATMENT,12,Cycling PD >= 6 Nights/Week Dry,,,,
-CF_RR7_TREATMENT,13,Cycling PD < 6 Nights/Week Dry,,,,
-CF_RR7_TREATMENT,14,Cycling PD >= 6 Nights/Week Wet (Day Dwell),,,,
-CF_RR7_TREATMENT,15,Cycling PD < 6 Nights/Week Wet (Day Dwell),,,,
-CF_RR7_TREATMENT,16,Assisted Cycling PD >= 6 nights/Week Dry,,,,
-CF_RR7_TREATMENT,17,Assisted Cycling PD >= 6 nights/Week Wet (Day Dwell),,,,
-CF_RR7_TREATMENT,19,Peritoneal Dialysis - Type Unknown,,,,
-CF_RR7_TREATMENT,20,Transplant; Cadaver Donor,,,,
-CF_RR7_TREATMENT,21,Transplant; Live Related - Sibling,,,,
-CF_RR7_TREATMENT,22,Transplant; Live Related - Parent or Child,,,,
-CF_RR7_TREATMENT,23,Transplant; Live Related - Other,,,,
-CF_RR7_TREATMENT,24,Transplant; Live Genetically Unrelated,,,,
-CF_RR7_TREATMENT,25,Transplant; Cadaver + Transp Other Organ,,,,
-CF_RR7_TREATMENT,26,Transplant; Live Donor + Transp Other Organ,,,,
-CF_RR7_TREATMENT,27,Transplant; Live Donor Non-UK Transplant,,,,
-CF_RR7_TREATMENT,28,Transplant; Non-Heart Beating Donor,,,,
-CF_RR7_TREATMENT,29,Transplant; Type Unknown,,,,
-CF_RR7_TREATMENT,31,Graft Acute Rejection Episode - Biopsy Proven,,,,
-CF_RR7_TREATMENT,32,Graft Acute Rejection Episode - No Biopsy,,,,
-CF_RR7_TREATMENT,74,Transplant; Live Related - Father,,,,
-CF_RR7_TREATMENT,75,Transplant; Live Related - Mother,,,,
-CF_RR7_TREATMENT,77,Transplant; Live Related - Child,,,,
-CF_RR7_TREATMENT,78,Transplant; Live Donor,,,,
-CF_RR7_TREATMENT,80,Acute Renal Failure Not Dialysed,,,,
-CF_RR7_TREATMENT,81,Acute Kidney Injury - Haemodialysis,,,,
-CF_RR7_TREATMENT,82,Acute Kidney Injury - Haemofiltration,,,,
-CF_RR7_TREATMENT,83,Acute Kidney Injury - Peritoneal Dialysis,,,,
-CF_RR7_TREATMENT,88,Acute Kidney Injury receiving RRT not by renal service,,,,
-CF_RR7_TREATMENT,93,Conservative Management - Mutual Decision not to offer RRT,,,,
-CF_RR7_TREATMENT,94,Conservative Management - Clinical Decision not to offer RRT,,,,
-CF_RR7_TREATMENT,101,First Assessment by Renal Service,,,,
-CF_RR7_TREATMENT,110,Plasmapharesis / Plasma Exchange,,,,
-CF_RR7_TREATMENT,111,Assisted CAPD,,,,
-CF_RR7_TREATMENT,120,Transplant Clinic Followup,,,,
-CF_RR7_TREATMENT,121,Assisted APD,,,,
-CF_RR7_TREATMENT,201,Hybrid CAPD with HD,,,,
-CF_RR7_TREATMENT,202,Hybrid APD with HD,,,,
-CF_RR7_TREATMENT,203,Hybrid APD with CAPD,,,,
-CF_RR7_TREATMENT,900,CKD (Not on RRT),,,,
-CF_RR7_TREATMENT,901,Patient - ESKD with no RRT,,,,
-CF_RR7_TREATMENT,902,Patient - CKD-advanced MDT clinic,,,,
-CF_RR7_TREATMENT,903,Patient - CKD-clinic follow-up,,,,
-CF_RR7_TREATMENT,904,Patient - CKD-remote monitoring,,,,
+CF_RR7_TREATMENT,1,Haemodialysis
+CF_RR7_TREATMENT,2,Haemofiltration
+CF_RR7_TREATMENT,3,Haemodiafiltration
+CF_RR7_TREATMENT,4,Haemodialysis > 4 days per week / daily
+CF_RR7_TREATMENT,5,Ultrafiltration
+CF_RR7_TREATMENT,9,Haemodialysis - Type Unknown
+CF_RR7_TREATMENT,10,CAPD Connect
+CF_RR7_TREATMENT,11,CAPD Disconnect
+CF_RR7_TREATMENT,12,Cycling PD >= 6 Nights/Week Dry
+CF_RR7_TREATMENT,13,Cycling PD < 6 Nights/Week Dry
+CF_RR7_TREATMENT,14,Cycling PD >= 6 Nights/Week Wet (Day Dwell)
+CF_RR7_TREATMENT,15,Cycling PD < 6 Nights/Week Wet (Day Dwell)
+CF_RR7_TREATMENT,16,Assisted Cycling PD >= 6 nights/Week Dry
+CF_RR7_TREATMENT,17,Assisted Cycling PD >= 6 nights/Week Wet (Day Dwell)
+CF_RR7_TREATMENT,19,Peritoneal Dialysis - Type Unknown
+CF_RR7_TREATMENT,20,Transplant; Cadaver Donor
+CF_RR7_TREATMENT,21,Transplant; Live Related - Sibling
+CF_RR7_TREATMENT,22,Transplant; Live Related - Parent or Child
+CF_RR7_TREATMENT,23,Transplant; Live Related - Other
+CF_RR7_TREATMENT,24,Transplant; Live Genetically Unrelated
+CF_RR7_TREATMENT,25,Transplant; Cadaver + Transp Other Organ
+CF_RR7_TREATMENT,26,Transplant; Live Donor + Transp Other Organ
+CF_RR7_TREATMENT,27,Transplant; Live Donor Non-UK Transplant
+CF_RR7_TREATMENT,28,Transplant; Non-Heart Beating Donor
+CF_RR7_TREATMENT,29,Transplant; Type Unknown
+CF_RR7_TREATMENT,31,Graft Acute Rejection Episode - Biopsy Proven
+CF_RR7_TREATMENT,32,Graft Acute Rejection Episode - No Biopsy
+CF_RR7_TREATMENT,74,Transplant; Live Related - Father
+CF_RR7_TREATMENT,75,Transplant; Live Related - Mother
+CF_RR7_TREATMENT,77,Transplant; Live Related - Child
+CF_RR7_TREATMENT,78,Transplant; Live Donor
+CF_RR7_TREATMENT,80,Acute Renal Failure Not Dialysed
+CF_RR7_TREATMENT,81,Acute Kidney Injury - Haemodialysis
+CF_RR7_TREATMENT,82,Acute Kidney Injury - Haemofiltration
+CF_RR7_TREATMENT,83,Acute Kidney Injury - Peritoneal Dialysis
+CF_RR7_TREATMENT,88,Acute Kidney Injury receiving RRT not by renal service
+CF_RR7_TREATMENT,93,Conservative Management - Mutual Decision not to offer RRT
+CF_RR7_TREATMENT,94,Conservative Management - Clinical Decision not to offer RRT
+CF_RR7_TREATMENT,101,First Assessment by Renal Service
+CF_RR7_TREATMENT,110,Plasmapharesis / Plasma Exchange
+CF_RR7_TREATMENT,111,Assisted CAPD
+CF_RR7_TREATMENT,120,Transplant Clinic Followup
+CF_RR7_TREATMENT,121,Assisted APD
+CF_RR7_TREATMENT,201,Hybrid CAPD with HD
+CF_RR7_TREATMENT,202,Hybrid APD with HD
+CF_RR7_TREATMENT,203,Hybrid APD with CAPD
+CF_RR7_TREATMENT,900,CKD (Not on RRT)
+CF_RR7_TREATMENT,901,Patient - ESKD with no RRT
+CF_RR7_TREATMENT,902,Patient - CKD-advanced MDT clinic
+CF_RR7_TREATMENT,903,Patient - CKD-clinic follow-up
+CF_RR7_TREATMENT,904,Patient - CKD-remote monitoring
