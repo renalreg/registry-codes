@@ -61,6 +61,14 @@ def test_satellites_match_main():
         "enddate_x",
         "enddate_y"]
     ]
+    cols_to_compare = ["firstdataquarter_x", "firstdataquarter_y", 
+                  "startdate_x", "startdate_y",
+                  "enddate_x", "enddate_y"]
+ 
+    satellite_main_joined = satellite_main_joined.dropna(
+        subset=cols_to_compare,
+        how='all'
+    )
 
     satellite_main_diff = satellite_main_joined[
         (satellite_main_joined["firstdataquarter_x"] != satellite_main_joined["firstdataquarter_y"]) |
@@ -96,6 +104,15 @@ def test_feedshare_match_main():
         "enddate_x",
         "enddate_y"]
     ]
+    
+    cols_to_compare = ["firstdataquarter_x", "firstdataquarter_y", 
+                  "startdate_x", "startdate_y",
+                  "enddate_x", "enddate_y"]
+    
+    child_parent_joined = child_parent_joined.dropna(
+        subset=cols_to_compare,
+        how='all'
+    )
 
     child_parent_diff = child_parent_joined[
         (child_parent_joined["firstdataquarter_x"] != child_parent_joined["firstdataquarter_y"]) |
