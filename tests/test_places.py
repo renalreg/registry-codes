@@ -2,11 +2,37 @@
 Validation of codes which refer to places
 """
 from registry_codes.utils import load_data_to_df
-import pytest
+import pandas as pd
 
 FACILITIES = load_data_to_df("facility_new")
 CODELIST = load_data_to_df("code_list")
 CODEMAP = load_data_to_df("code_map")
+
+def test_rr1_plus_descriptions():
+    """RR1 and RR1+ codes should be based on the nhs ods codes which can just
+    be downloaded from the nhs ods api.  
+    """
+
+    etr_url = "https://www.odsdatasearchandexport.nhs.uk/api/getReport?report=etr"
+    ets_url = "https://www.odsdatasearchandexport.nhs.uk/api/getReport?report=ets"
+    
+    ets_df  = pd.read_csv(ets_url, header=None).iloc[:, [0, 1, 4]]
+    ect_df = pd.read_csv(etr_url, header = None).iloc[:, [0, 1, 4]]
+    rr1_ods_combined = pd.concat([ets_df, ect_df], ignore_index=True)
+    rr1_ods_combined.columns = ['code', 'name1', 'name2']  # Rename columns 0,1,4
+    rr1_plus = CODELIST[CODELIST.coding_standard == "RR1+"]
+    rr1_plus = rr1_plus.merge(rr1_ods_combined, on="code", how="inner")
+
+    rr1_plus_filtered = rr1_plus[
+        (rr1_plus.description != rr1_plus.name1) &
+        (rr1_plus.description != rr1_plus.name2)
+    ]
+
+    assert len(rr1_plus_filtered) == 0, (
+        f"Found {len(rr1_plus_filtered)} rr1+ codes which do not match to ods codes: "
+        f"{rr1_plus_filtered[['code','description','name1','name2']].to_dict('records')}"
+    )
+
 
 def test_check_facility_codelist():
     """
