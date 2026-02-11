@@ -76,9 +76,12 @@ def test_satellites_match_main():
 def test_feedshare_match_main():
     """Ensure feedshare facilities metadata matches parent facility"""
     
+    # Filter to feedshare facilities
+    feedshare_facilities_map = CODEMAP[CODEMAP.source_coding_standard=="RR1+_FEEDSHARE_CHILD"]
+
     # Join facilities table to itself via the feedshare mapping
     merged_df = FACILITIES.merge(
-        CODEMAP[CODEMAP.source_coding_standard=="FEEDSHARE_CHILD"], 
+        feedshare_facilities_map, 
         left_on="facilitycode", 
         right_on="source_code", 
         how="inner"
