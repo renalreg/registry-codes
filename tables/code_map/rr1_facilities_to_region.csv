@@ -1,411 +1,411 @@
-﻿RR1+,SNC01,URTS_region,Scotland
-RR1+,RMB05,URTS_region,North West
-RR1+,RCB23,URTS_region,Yorkshire and Humber
-RR1+,RGT01,URTS_region,East of England
-RR1+,RW402,URTS_region,North West
-RR1+,9RCF31,URTS_region,Yorkshire and Humber
-RR1+,RGQ03,URTS_region,East of England
-RR1+,RBS25,URTS_region,North West
-RR1+,RTD03,URTS_region,North East
-RR1+,RM403,URTS_region,North West
-RR1+,24027,URTS_region,NIreland
-RR1+,RBL14,URTS_region,North West
-RR1+,RWL25,URTS_region,Midlands
-RR1+,RVL01,URTS_region,London
-RR1+,RFRAA,URTS_region,Yorkshire and Humber
-RR1+,RH8G3,URTS_region,South West
-RR1+,RNJ00,URTS_region,London
-RR1+,RAJ12,URTS_region,East of England
-RR1+,RDDH0,URTS_region,East of England
-RR1+,9RN506,URTS_region,South East
-RR1+,RP5BA,URTS_region,Yorkshire and Humber
-RR1+,RCPAA,URTS_region,Yorkshire and Humber
-RR1+,9RFU,URTS_region,East of England
-RR1+,9RQR13,URTS_region,Yorkshire and Humber
-RR1+,2020,URTS_region,NIreland
-RR1+,9RFBAK,URTS_region,Midlands
-RR1+,RDM03,URTS_region,South East
-RR1+,RQ3,URTS_region,Midlands
-RR1+,9RJ866,URTS_region,South West
-RR1+,RJ866,URTS_region,South West
-RR1+,RPK40,URTS_region,South East
-RR1+,99RJ121,URTS_region,London
-RR1+,9RP7LA,URTS_region,Midlands
-RR1+,RAE01,URTS_region,Yorkshire and Humber
-RR1+,O0J8Z,URTS_region,South West
-RR1+,9RF201,URTS_region,Yorkshire and Humber
-RR1+,9REE01,URTS_region,South West
-RR1+,RA702,URTS_region,South West
-RR1+,RA723,URTS_region,South West
-RR1+,RQ601,URTS_region,North West
-RR1+,99RJZ,URTS_region,London
-RR1+,RKUAJ,URTS_region,Wales
-RR1+,RAJ32,URTS_region,East of England
-RR1+,RQ8L0,URTS_region,East of England
-RR1+,9RQ8L0,URTS_region,East of England
-RR1+,RPC20,URTS_region,South East
-RR1+,RW5CA,URTS_region,North West
-RR1+,RJE55,URTS_region,Midlands
-RR1+,RGA02,URTS_region,Yorkshire and Humber
-RR1+,TAF21,URTS_region,London
-RR1+,9TAF,URTS_region,London
-RR1+,8TAF,URTS_region,London
-RR1+,RBH14,URTS_region,Midlands
-RR1+,RRE14,URTS_region,Midlands
-RR1+,99RRBBV,URTS_region,Wales
-RR1+,XXX01,URTS_region,Wales
-RR1+,9RJH01,URTS_region,Midlands
-RR1+,9RCSLB,URTS_region,Midlands
-RR1+,RM574OCT,URTS_region,North West
-RR1+,RAU31,URTS_region,London
-RR1+,9RKD,URTS_region,South East
-RR1+,RY5K7,URTS_region,Midlands
-RR1+,RQN01,URTS_region,London
-RR1+,RJR01,URTS_region,North West
-RR1+,9RJR0,URTS_region,North West
-RR1+,RFSDA,URTS_region,Yorkshire and Humber
-RR1+,RWM51,URTS_region,Wales
-RR1+,RJU01,URTS_region,North West
-RR1+,RNX02,URTS_region,South East
-RR1+,RLW01,URTS_region,Midlands
-RR1+,RBL20,URTS_region,North West
-RR1+,RTVA1,URTS_region,Midlands
-RR1+,RXL06,URTS_region,North West
-RR1+,RE7CB,URTS_region,North East
-RR1+,RDEE4,URTS_region,East of England
-RR1+,98RJ701,URTS_region,London
-RR1+,RR803,URTS_region,Yorkshire and Humber
-RR1+,99RFBAK,URTS_region,Midlands
-RR1+,9RVJ21,URTS_region,South West
-RR1+,RJR05,URTS_region,North West
-RR1+,RLT14,URTS_region,Midlands
-RR1+,RKB02,URTS_region,Midlands
-RR1+,9RTP02,URTS_region,South East
-RR1+,RTP02,URTS_region,London
-RR1+,RM131,URTS_region,East of England
-RR1+,RLGAY,URTS_region,North East
-RR1+,33020,URTS_region,NIreland
-RR1+,RN7,URTS_region,London
-RR1+,RLBCH,URTS_region,North East
-RR1+,RFHFG,URTS_region,Midlands
-RR1+,RK950,URTS_region,South West
-RR1+,RML03,URTS_region,North West
-RR1+,RMW10,URTS_region,Yorkshire and Humber
-RR1+,RJL,URTS_region,Yorkshire and Humber
-RR1+,RP5,URTS_region,Yorkshire and Humber
-RR1+,RBD01,URTS_region,South West
-RR1+,9RJZ,URTS_region,London
-RR1+,SYC02,URTS_region,Scotland
-RR1+,RC368,URTS_region,London
-RR1+,RL701,URTS_region,Midlands
-RR1+,RXC02,URTS_region,South East
-RR1+,RVL07,URTS_region,London
-RR1+,99RXX,URTS_region,London
-RR1+,RVR50,URTS_region,London
-RR1+,RJ122,URTS_region,London
-RR1+,RG303A,URTS_region,London
-RR1+,RG303,URTS_region,London
-RR1+,RTJ,URTS_region,London
-RR1+,9RTQ,URTS_region,South West
-RR1+,RTD01,URTS_region,North East
-RR1+,RTR45,URTS_region,North East
-RR1+,RBBP3,URTS_region,South West
-RR1+,RKB15,URTS_region,Midlands
-RR1+,RKTAG,URTS_region,Wales
-RR1+,RH641,URTS_region,South West
-RR1+,RA503,URTS_region,South West
-RR1+,RJH01,URTS_region,Midlands
-RR1+,9RWD,URTS_region,Midlands
-RR1+,RP4,URTS_region,London
-RR1+,RVNCA,URTS_region,South East
-RR1+,RPG04,URTS_region,London
-RR1+,9RJ121,URTS_region,London
-RR1+,RJ121,URTS_region,London
-RR1+,RBN63,URTS_region,North West
-RR1+,98RFBAK,URTS_region,Midlands
-RR1+,9RNS15,URTS_region,Midlands
-RR1+,RNS15,URTS_region,Midlands
-RR1+,RT301,URTS_region,London
-RR1+,RF4HA,URTS_region,London
-RR1+,RCD35,URTS_region,Yorkshire and Humber
-RR1+,99RHU02,URTS_region,South East
-RR1+,RTK02,URTS_region,London
-RR1+,9RW,URTS_region,South East
-RR1+,RL7,URTS_region,Midlands
-RR1+,9RB712,URTS_region,Midlands
-RR1+,RLQ02,URTS_region,Midlands
-RR1+,RM574HEX,URTS_region,North West
-RR1+,9RAL01,URTS_region,London
-RR1+,RQQ31,URTS_region,East of England
-RR1+,RH854,URTS_region,South West
-RR1+,RH840,URTS_region,South West
-RR1+,RBF33,URTS_region,South East
-RR1+,RGB04,URTS_region,Yorkshire and Humber
-RR1+,RF201,URTS_region,Yorkshire and Humber
-RR1+,RXM56,URTS_region,Midlands
-RR1+,RGQ02,URTS_region,East of England
-RR1+,RCJAT,URTS_region,North East
-RR1+,RGP75,URTS_region,East of England
-RR1+,RP1L2,URTS_region,South East
-RR1+,RN704,URTS_region,London
-RR1+,RVVKC,URTS_region,South East
-RR1+,RNQ51,URTS_region,Midlands
-RR1+,9RWP31,URTS_region,Midlands
-RR1+,RWP31,URTS_region,Midlands
-RR1+,RF4DG,URTS_region,London
-RR1+,RJZ,URTS_region,London
-RR1+,RJZ01,URTS_region,London
-RR1+,RJZW,URTS_region,London
-RR1+,RFJBC,URTS_region,Midlands
-RR1+,RK5BC,URTS_region,Midlands
-RR1+,9RRK02,URTS_region,Midlands
-RR1+,9RAZ,URTS_region,London
-RR1+,RJ707,URTS_region,London
-RR1+,9RA743,URTS_region,South West
-RR1+,REFWW,URTS_region,South West
-RR1+,99RQR13,URTS_region,Yorkshire and Humber
-RR1+,RQS01,URTS_region,Midlands
-RR1+,RFBAK,URTS_region,Midlands
-RR1+,P7U2H,URTS_region,Midlands
-RR1+,RBT20,URTS_region,Midlands
-RR1+,RJ2,URTS_region,London
-RR1+,RKZDA,URTS_region,Midlands
-RR1+,RHANN,URTS_region,Midlands
-RR1+,RAQ01,URTS_region,East of England
-RR1+,9RLQ02,URTS_region,Midlands
-RR1+,9RVEB1,URTS_region,Wales
-RR1+,RJ50Z,URTS_region,London
-RR1+,RJ501,URTS_region,London
-RR1+,RJ50X,URTS_region,London
-RR1+,RTG08,URTS_region,Midlands
-RR1+,RT5DC,URTS_region,Midlands
-RR1+,RGP72,URTS_region,East of England
-RR1+,RC971,URTS_region,East of England
-RR1+,RJN71,URTS_region,North West
-RR1+,RVVMA,URTS_region,South East
-RR1+,RM574,URTS_region,North West
-RR1+,RFJBL,URTS_region,Midlands
-RR1+,RJ6,URTS_region,London
-RR1+,RPA,URTS_region,South East
-RR1+,RHBR6,URTS_region,London
-RR1+,RDZ15,URTS_region,South East
-RR1+,RD816,URTS_region,South East
-RR1+,RP5MM,URTS_region,Yorkshire and Humber
-RR1+,RQHC7,URTS_region,Wales
-RR1+,RES05,URTS_region,North West
-RR1+,9RH02,URTS_region,South West
-RR1+,9RH06,URTS_region,South West
-RR1+,RQAAM,URTS_region,Wales
-RR1+,8RJ121,URTS_region,London
-RR1+,RL403,URTS_region,Midlands
-RR1+,RGCNH,URTS_region,London
-RR1+,XXX03,URTS_region,Wales
-RR1+,RA911,URTS_region,South West
-RR1+,STC01,URTS_region,Scotland
-RR1+,RM102,URTS_region,East of England
-RR1+,RM12K,URTS_region,East of England
-RR1+,RLE,URTS_region,North East
-RR1+,RN506,URTS_region,South East
-RR1+,RW602,URTS_region,North West
-RR1+,RAPNM,URTS_region,London
-RR1+,9RCJAT,URTS_region,North East
-RR1+,RTF67,URTS_region,North East
-RR1+,99RJ701,URTS_region,London
-RR1+,RFBAT,URTS_region,Midlands
-RR1+,RNS01,URTS_region,Midlands
-RR1+,RK7CC,URTS_region,Yorkshire and Humber
-RR1+,RFZ20,URTS_region,London
-RR1+,99RCSLB,URTS_region,Midlands
-RR1+,RX1CC,URTS_region,Midlands
-RR1+,RCSLB,URTS_region,Midlands
-RR1+,RK6LB,URTS_region,Midlands
-RR1+,7RM301,URTS_region,North West
-RR1+,RAJ20,URTS_region,East of England
-RR1+,RDDH1,URTS_region,East of England
-RR1+,RKB28,URTS_region,South East
-RR1+,RPD01,URTS_region,South East
-RR1+,RGN,URTS_region,Midlands
-RR1+,RGN42,URTS_region,Midlands
-RR1+,RGE01,URTS_region,Yorkshire and Humber
-RR1+,RED03,URTS_region,South West
-RR1+,9RL403,URTS_region,Midlands
-RR1+,RXF03,URTS_region,Yorkshire and Humber
-RR1+,9RBD01,URTS_region,South West
-RR1+,RD300,URTS_region,South West
-RR1+,RD304,URTS_region,South West
-RR1+,9RXV06,URTS_region,North West
-RR1+,RRS,URTS_region,Wales
-RR1+,RRBH4,URTS_region,Wales
-RR1+,RQV00,URTS_region,East of England
-RR1+,RQWG0,URTS_region,East of England
-RR1+,RXWAT,URTS_region,Midlands
-RR1+,9RXX,URTS_region,London
-RR1+,RHU02,URTS_region,South East
-RR1+,RHU03,URTS_region,South East
-RR1+,RRK02,URTS_region,Midlands
-RR1+,RG222,URTS_region,London
-RR1+,RVV11,URTS_region,South East
-RR1+,SGC04,URTS_region,Scotland
-RR1+,SGC05,URTS_region,Scotland
-RR1+,RJ230,URTS_region,London
-RR1+,9RNJ00,URTS_region,London
-RR1+,RX1RA,URTS_region,Midlands
-RR1+,SHC01,URTS_region,Scotland
-RR1+,96RRK02,URTS_region,Midlands
-RR1+,REZ02,URTS_region,North West
-RR1+,RFRPA,URTS_region,Yorkshire and Humber
-RR1+,11023,URTS_region,NIreland
-RR1+,9RWX,URTS_region,South East
-RR1+,RHW01,URTS_region,South East
-RR1+,RHW05,URTS_region,South East
-RR1+,RXR01,URTS_region,North West
-RR1+,RMC00,URTS_region,North West
-RR1+,RDZ00,URTS_region,South West
-RR1+,RT302,URTS_region,London
-RR1+,REF12,URTS_region,South West
-RR1+,RFPFG,URTS_region,Midlands
-RR1+,RH801,URTS_region,South West
-RR1+,RH8,URTS_region,South West
-RR1+,RH802,URTS_region,South West
-RR1+,RAL01,URTS_region,London
-RR1+,SGC02,URTS_region,Scotland
-RR1+,SSC02,URTS_region,Scotland
-RR1+,RJC46,URTS_region,Midlands
-RR1+,REP17,URTS_region,North West
-RR1+,RQ617,URTS_region,North West
-RR1+,RW3RM,URTS_region,North West
-RR1+,RMF01,URTS_region,North West
-RR1+,RLZ01,URTS_region,Midlands
-RR1+,RHM02,URTS_region,South East
-RR1+,RJE01,URTS_region,Midlands
-RR1+,RGU01,URTS_region,South East
-RR1+,RD1,URTS_region,South West
-RR1+,RTD02,URTS_region,North West
-RR1+,RNA01,URTS_region,Midlands
-RR1+,RNA03,URTS_region,Midlands
-RR1+,RM301,URTS_region,North West
-RR1+,RM3,URTS_region,North West
-RR1+,RNZ02,URTS_region,South East
-RR1+,9RNG2,URTS_region,Midlands
-RR1+,RNG10,URTS_region,Midlands
-RR1+,RTG54,URTS_region,Midlands
-RR1+,RCC25,URTS_region,Yorkshire and Humber
-RR1+,RF832,URTS_region,Yorkshire and Humber
-RR1+,9RQR14,URTS_region,Yorkshire and Humber
-RR1+,RES01,URTS_region,Yorkshire and Humber
-RR1+,9RQS1,URTS_region,Yorkshire and Humber
-RR1+,RQR14,URTS_region,Yorkshire and Humber
-RR1+,9RH641,URTS_region,South West
-RR1+,9RK7CC,URTS_region,Yorkshire and Humber
-RR1+,9RWDLB,URTS_region,Midlands
-RR1+,RCF31,URTS_region,Yorkshire and Humber
-RR1+,RRK04,URTS_region,Midlands
-RR1+,RL301,URTS_region,Midlands
-RR1+,MV101,URTS_region,Midlands
-RR1+,M5O5A,URTS_region,London
-RR1+,8RA911,URTS_region,South West
-RR1+,9RA911,URTS_region,South West
-RR1+,RH879,URTS_region,South West
-RR1+,R1G55,URTS_region,South West
-RR1+,RBZ19,URTS_region,South West
-RR1+,RE9GA,URTS_region,North East
-RR1+,99RHM01,URTS_region,South East
-RR1+,RHM01,URTS_region,South East
-RR1+,RAJ01,URTS_region,East of England
-RR1+,RAJ,URTS_region,East of England
-RR1+,REE01,URTS_region,South West
-RR1+,RVY01,URTS_region,North West
-RR1+,97RRK02,URTS_region,Midlands
-RR1+,RPW02,URTS_region,East of England
-RR1+,RDA03,URTS_region,London
-RR1+,RKB03,URTS_region,Midlands
-RR1+,RJ701,URTS_region,London
-RR1+,9RBN01,URTS_region,North West
-RR1+,RAZ,URTS_region,London
-RR1+,RQR13,URTS_region,Yorkshire and Humber
-RR1+,RAE05,URTS_region,Yorkshire and Humber
-RR1+,9RAE05,URTS_region,Yorkshire and Humber
-RR1+,RR201,URTS_region,South East
-RR1+,RNZ36,URTS_region,South East
-RR1+,RTG05,URTS_region,Midlands
-RR1+,97TAF,URTS_region,London
-RR1+,98TAF,URTS_region,London
-RR1+,RKM,URTS_region,Wales
-RR1+,RUE01,URTS_region,Midlands
-RR1+,RRE01,URTS_region,Midlands
-RR1+,RJD01,URTS_region,Midlands
-RR1+,9RWJ,URTS_region,North West
-RR1+,RXQ02,URTS_region,South East
-RR1+,RJC03,URTS_region,Midlands
-RR1+,RLNGH,URTS_region,North East
-RR1+,98RQY,URTS_region,London
-RR1+,9RQY,URTS_region,London
-RR1+,98RJZ,URTS_region,London
-RR1+,RMP01,URTS_region,North West
-RR1+,RH875,URTS_region,South West
-RR1+,RG224,URTS_region,London
-RR1+,RQW,URTS_region,East of England
-RR1+,RCX01,URTS_region,East of England
-RR1+,RCB55,URTS_region,Yorkshire and Humber
-RR1+,9RNA,URTS_region,Midlands
-RR1+,9RNA2,URTS_region,Midlands
-RR1+,9RNA3,URTS_region,Midlands
-RR1+,9rna3,URTS_region,Midlands
-RR1+,8RAL01,URTS_region,London
-RR1+,RHS55,URTS_region,South East
-RR1+,9RPD01,URTS_region,London
-RR1+,45020,URTS_region,NIreland
-RR1+,45021,URTS_region,NIreland
-RR1+,48021,URTS_region,NIreland
-RR1+,7021,URTS_region,NIreland
-RR1+,9RW402,URTS_region,North West
-RR1+,RKB01,URTS_region,Midlands
-RR1+,SAC02,URTS_region,Scotland
-RR1+,RJ224,URTS_region,London
-RR1+,SLC01,URTS_region,Scotland
-RR1+,RVWAA,URTS_region,North East
-RR1+,RR9,URTS_region,North East
-RR1+,RTRNT,URTS_region,North East
-RR1+,RRBBV,URTS_region,Wales
-RR1+,SFC01,URTS_region,Scotland
-RR1+,98RBK,URTS_region,Midlands
-RR1+,99RBK,URTS_region,Midlands
-RR1+,9RBK,URTS_region,Midlands
-RR1+,RKC81,URTS_region,North West
-RR1+,9RLNGH,URTS_region,North East
-RR1+,REM26,URTS_region,North West
-RR1+,RWG02,URTS_region,London
-RR1+,RL109,URTS_region,Wales
-RR1+,98RAZ,URTS_region,London
-RR1+,99RAZ,URTS_region,London
-RR1+,REF01,URTS_region,South West
-RR1+,RNLBX,URTS_region,North East
-RR1+,RQN02,URTS_region,London
-RR1+,RFW01,URTS_region,London
-RR1+,RGR50,URTS_region,East of England
-RR1+,SSC04,URTS_region,Scotland
-RR1+,RE5BW,URTS_region,North West
-RR1+,RA301,URTS_region,South West
-RR1+,RGCKH,URTS_region,London
-RR1+,RBN01,URTS_region,North West
-RR1+,9RM301,URTS_region,North West
-RR1+,RVV20,URTS_region,South East
-RR1+,9RH108,URTS_region,South East
-RR1+,RR6BL,URTS_region,Wales
-RR1+,RQZ03,URTS_region,London
-RR1+,98RRK02,URTS_region,Midlands
-RR1+,99RRK02,URTS_region,Midlands
-RR1+,RPL04,URTS_region,South East
-RR1+,RKHA4,URTS_region,Wales
-RR1+,RXQ50,URTS_region,South East
-RR1+,RM202,URTS_region,North West
-RR1+,9RH01,URTS_region,South West
-RR1+,9RH03,URTS_region,South West
-RR1+,9RH05,URTS_region,South West
-RR1+,9RQBAU,URTS_region,Wales
-RR1+,RKGA1,URTS_region,Wales
-RR1+,RQBAU,URTS_region,Wales
-RR1+,REM,URTS_region,North West
-RR1+,RQ000,URTS_region,Yorkshire and Humber
-RR1+,SGLAS,URTS_region,Scotland
-RR1+,RJ100,URTS_region,London
+﻿RR1,SNC01,URTS_region,Scotland
+RR1,RMB05,URTS_region,North West
+RR1,RCB23,URTS_region,Yorkshire and Humber
+RR1,RGT01,URTS_region,East of England
+RR1,RW402,URTS_region,North West
+RR1,9RCF31,URTS_region,Yorkshire and Humber
+RR1,RGQ03,URTS_region,East of England
+RR1,RBS25,URTS_region,North West
+RR1,RTD03,URTS_region,North East
+RR1,RM403,URTS_region,North West
+RR1,24027,URTS_region,NIreland
+RR1,RBL14,URTS_region,North West
+RR1,RWL25,URTS_region,Midlands
+RR1,RVL01,URTS_region,London
+RR1,RFRAA,URTS_region,Yorkshire and Humber
+RR1,RH8G3,URTS_region,South West
+RR1,RNJ00,URTS_region,London
+RR1,RAJ12,URTS_region,East of England
+RR1,RDDH0,URTS_region,East of England
+RR1,9RN506,URTS_region,South East
+RR1,RP5BA,URTS_region,Yorkshire and Humber
+RR1,RCPAA,URTS_region,Yorkshire and Humber
+RR1,9RFU,URTS_region,East of England
+RR1,9RQR13,URTS_region,Yorkshire and Humber
+RR1,2020,URTS_region,NIreland
+RR1,9RFBAK,URTS_region,Midlands
+RR1,RDM03,URTS_region,South East
+RR1,RQ3,URTS_region,Midlands
+RR1,9RJ866,URTS_region,South West
+RR1,RJ866,URTS_region,South West
+RR1,RPK40,URTS_region,South East
+RR1,99RJ121,URTS_region,London
+RR1,9RP7LA,URTS_region,Midlands
+RR1,RAE01,URTS_region,Yorkshire and Humber
+RR1,O0J8Z,URTS_region,South West
+RR1,9RF201,URTS_region,Yorkshire and Humber
+RR1,9REE01,URTS_region,South West
+RR1,RA702,URTS_region,South West
+RR1,RA723,URTS_region,South West
+RR1,RQ601,URTS_region,North West
+RR1,99RJZ,URTS_region,London
+RR1,RKUAJ,URTS_region,Wales
+RR1,RAJ32,URTS_region,East of England
+RR1,RQ8L0,URTS_region,East of England
+RR1,9RQ8L0,URTS_region,East of England
+RR1,RPC20,URTS_region,South East
+RR1,RW5CA,URTS_region,North West
+RR1,RJE55,URTS_region,Midlands
+RR1,RGA02,URTS_region,Yorkshire and Humber
+RR1,TAF21,URTS_region,London
+RR1,9TAF,URTS_region,London
+RR1,8TAF,URTS_region,London
+RR1,RBH14,URTS_region,Midlands
+RR1,RRE14,URTS_region,Midlands
+RR1,99RRBBV,URTS_region,Wales
+RR1,XXX01,URTS_region,Wales
+RR1,9RJH01,URTS_region,Midlands
+RR1,9RCSLB,URTS_region,Midlands
+RR1,RM574OCT,URTS_region,North West
+RR1,RAU31,URTS_region,London
+RR1,9RKD,URTS_region,South East
+RR1,RY5K7,URTS_region,Midlands
+RR1,RQN01,URTS_region,London
+RR1,RJR01,URTS_region,North West
+RR1,9RJR0,URTS_region,North West
+RR1,RFSDA,URTS_region,Yorkshire and Humber
+RR1,RWM51,URTS_region,Wales
+RR1,RJU01,URTS_region,North West
+RR1,RNX02,URTS_region,South East
+RR1,RLW01,URTS_region,Midlands
+RR1,RBL20,URTS_region,North West
+RR1,RTVA1,URTS_region,Midlands
+RR1,RXL06,URTS_region,North West
+RR1,RE7CB,URTS_region,North East
+RR1,RDEE4,URTS_region,East of England
+RR1,98RJ701,URTS_region,London
+RR1,RR803,URTS_region,Yorkshire and Humber
+RR1,99RFBAK,URTS_region,Midlands
+RR1,9RVJ21,URTS_region,South West
+RR1,RJR05,URTS_region,North West
+RR1,RLT14,URTS_region,Midlands
+RR1,RKB02,URTS_region,Midlands
+RR1,9RTP02,URTS_region,South East
+RR1,RTP02,URTS_region,London
+RR1,RM131,URTS_region,East of England
+RR1,RLGAY,URTS_region,North East
+RR1,33020,URTS_region,NIreland
+RR1,RN7,URTS_region,London
+RR1,RLBCH,URTS_region,North East
+RR1,RFHFG,URTS_region,Midlands
+RR1,RK950,URTS_region,South West
+RR1,RML03,URTS_region,North West
+RR1,RMW10,URTS_region,Yorkshire and Humber
+RR1,RJL,URTS_region,Yorkshire and Humber
+RR1,RP5,URTS_region,Yorkshire and Humber
+RR1,RBD01,URTS_region,South West
+RR1,9RJZ,URTS_region,London
+RR1,SYC02,URTS_region,Scotland
+RR1,RC368,URTS_region,London
+RR1,RL701,URTS_region,Midlands
+RR1,RXC02,URTS_region,South East
+RR1,RVL07,URTS_region,London
+RR1,99RXX,URTS_region,London
+RR1,RVR50,URTS_region,London
+RR1,RJ122,URTS_region,London
+RR1,RG303A,URTS_region,London
+RR1,RG303,URTS_region,London
+RR1,RTJ,URTS_region,London
+RR1,9RTQ,URTS_region,South West
+RR1,RTD01,URTS_region,North East
+RR1,RTR45,URTS_region,North East
+RR1,RBBP3,URTS_region,South West
+RR1,RKB15,URTS_region,Midlands
+RR1,RKTAG,URTS_region,Wales
+RR1,RH641,URTS_region,South West
+RR1,RA503,URTS_region,South West
+RR1,RJH01,URTS_region,Midlands
+RR1,9RWD,URTS_region,Midlands
+RR1,RP4,URTS_region,London
+RR1,RVNCA,URTS_region,South East
+RR1,RPG04,URTS_region,London
+RR1,9RJ121,URTS_region,London
+RR1,RJ121,URTS_region,London
+RR1,RBN63,URTS_region,North West
+RR1,98RFBAK,URTS_region,Midlands
+RR1,9RNS15,URTS_region,Midlands
+RR1,RNS15,URTS_region,Midlands
+RR1,RT301,URTS_region,London
+RR1,RF4HA,URTS_region,London
+RR1,RCD35,URTS_region,Yorkshire and Humber
+RR1,99RHU02,URTS_region,South East
+RR1,RTK02,URTS_region,London
+RR1,9RW,URTS_region,South East
+RR1,RL7,URTS_region,Midlands
+RR1,9RB712,URTS_region,Midlands
+RR1,RLQ02,URTS_region,Midlands
+RR1,RM574HEX,URTS_region,North West
+RR1,9RAL01,URTS_region,London
+RR1,RQQ31,URTS_region,East of England
+RR1,RH854,URTS_region,South West
+RR1,RH840,URTS_region,South West
+RR1,RBF33,URTS_region,South East
+RR1,RGB04,URTS_region,Yorkshire and Humber
+RR1,RF201,URTS_region,Yorkshire and Humber
+RR1,RXM56,URTS_region,Midlands
+RR1,RGQ02,URTS_region,East of England
+RR1,RCJAT,URTS_region,North East
+RR1,RGP75,URTS_region,East of England
+RR1,RP1L2,URTS_region,South East
+RR1,RN704,URTS_region,London
+RR1,RVVKC,URTS_region,South East
+RR1,RNQ51,URTS_region,Midlands
+RR1,9RWP31,URTS_region,Midlands
+RR1,RWP31,URTS_region,Midlands
+RR1,RF4DG,URTS_region,London
+RR1,RJZ,URTS_region,London
+RR1,RJZ01,URTS_region,London
+RR1,RJZW,URTS_region,London
+RR1,RFJBC,URTS_region,Midlands
+RR1,RK5BC,URTS_region,Midlands
+RR1,9RRK02,URTS_region,Midlands
+RR1,9RAZ,URTS_region,London
+RR1,RJ707,URTS_region,London
+RR1,9RA743,URTS_region,South West
+RR1,REFWW,URTS_region,South West
+RR1,99RQR13,URTS_region,Yorkshire and Humber
+RR1,RQS01,URTS_region,Midlands
+RR1,RFBAK,URTS_region,Midlands
+RR1,P7U2H,URTS_region,Midlands
+RR1,RBT20,URTS_region,Midlands
+RR1,RJ2,URTS_region,London
+RR1,RKZDA,URTS_region,Midlands
+RR1,RHANN,URTS_region,Midlands
+RR1,RAQ01,URTS_region,East of England
+RR1,9RLQ02,URTS_region,Midlands
+RR1,9RVEB1,URTS_region,Wales
+RR1,RJ50Z,URTS_region,London
+RR1,RJ501,URTS_region,London
+RR1,RJ50X,URTS_region,London
+RR1,RTG08,URTS_region,Midlands
+RR1,RT5DC,URTS_region,Midlands
+RR1,RGP72,URTS_region,East of England
+RR1,RC971,URTS_region,East of England
+RR1,RJN71,URTS_region,North West
+RR1,RVVMA,URTS_region,South East
+RR1,RM574,URTS_region,North West
+RR1,RFJBL,URTS_region,Midlands
+RR1,RJ6,URTS_region,London
+RR1,RPA,URTS_region,South East
+RR1,RHBR6,URTS_region,London
+RR1,RDZ15,URTS_region,South East
+RR1,RD816,URTS_region,South East
+RR1,RP5MM,URTS_region,Yorkshire and Humber
+RR1,RQHC7,URTS_region,Wales
+RR1,RES05,URTS_region,North West
+RR1,9RH02,URTS_region,South West
+RR1,9RH06,URTS_region,South West
+RR1,RQAAM,URTS_region,Wales
+RR1,8RJ121,URTS_region,London
+RR1,RL403,URTS_region,Midlands
+RR1,RGCNH,URTS_region,London
+RR1,XXX03,URTS_region,Wales
+RR1,RA911,URTS_region,South West
+RR1,STC01,URTS_region,Scotland
+RR1,RM102,URTS_region,East of England
+RR1,RM12K,URTS_region,East of England
+RR1,RLE,URTS_region,North East
+RR1,RN506,URTS_region,South East
+RR1,RW602,URTS_region,North West
+RR1,RAPNM,URTS_region,London
+RR1,9RCJAT,URTS_region,North East
+RR1,RTF67,URTS_region,North East
+RR1,99RJ701,URTS_region,London
+RR1,RFBAT,URTS_region,Midlands
+RR1,RNS01,URTS_region,Midlands
+RR1,RK7CC,URTS_region,Yorkshire and Humber
+RR1,RFZ20,URTS_region,London
+RR1,99RCSLB,URTS_region,Midlands
+RR1,RX1CC,URTS_region,Midlands
+RR1,RCSLB,URTS_region,Midlands
+RR1,RK6LB,URTS_region,Midlands
+RR1,7RM301,URTS_region,North West
+RR1,RAJ20,URTS_region,East of England
+RR1,RDDH1,URTS_region,East of England
+RR1,RKB28,URTS_region,South East
+RR1,RPD01,URTS_region,South East
+RR1,RGN,URTS_region,Midlands
+RR1,RGN42,URTS_region,Midlands
+RR1,RGE01,URTS_region,Yorkshire and Humber
+RR1,RED03,URTS_region,South West
+RR1,9RL403,URTS_region,Midlands
+RR1,RXF03,URTS_region,Yorkshire and Humber
+RR1,9RBD01,URTS_region,South West
+RR1,RD300,URTS_region,South West
+RR1,RD304,URTS_region,South West
+RR1,9RXV06,URTS_region,North West
+RR1,RRS,URTS_region,Wales
+RR1,RRBH4,URTS_region,Wales
+RR1,RQV00,URTS_region,East of England
+RR1,RQWG0,URTS_region,East of England
+RR1,RXWAT,URTS_region,Midlands
+RR1,9RXX,URTS_region,London
+RR1,RHU02,URTS_region,South East
+RR1,RHU03,URTS_region,South East
+RR1,RRK02,URTS_region,Midlands
+RR1,RG222,URTS_region,London
+RR1,RVV11,URTS_region,South East
+RR1,SGC04,URTS_region,Scotland
+RR1,SGC05,URTS_region,Scotland
+RR1,RJ230,URTS_region,London
+RR1,9RNJ00,URTS_region,London
+RR1,RX1RA,URTS_region,Midlands
+RR1,SHC01,URTS_region,Scotland
+RR1,96RRK02,URTS_region,Midlands
+RR1,REZ02,URTS_region,North West
+RR1,RFRPA,URTS_region,Yorkshire and Humber
+RR1,11023,URTS_region,NIreland
+RR1,9RWX,URTS_region,South East
+RR1,RHW01,URTS_region,South East
+RR1,RHW05,URTS_region,South East
+RR1,RXR01,URTS_region,North West
+RR1,RMC00,URTS_region,North West
+RR1,RDZ00,URTS_region,South West
+RR1,RT302,URTS_region,London
+RR1,REF12,URTS_region,South West
+RR1,RFPFG,URTS_region,Midlands
+RR1,RH801,URTS_region,South West
+RR1,RH8,URTS_region,South West
+RR1,RH802,URTS_region,South West
+RR1,RAL01,URTS_region,London
+RR1,SGC02,URTS_region,Scotland
+RR1,SSC02,URTS_region,Scotland
+RR1,RJC46,URTS_region,Midlands
+RR1,REP17,URTS_region,North West
+RR1,RQ617,URTS_region,North West
+RR1,RW3RM,URTS_region,North West
+RR1,RMF01,URTS_region,North West
+RR1,RLZ01,URTS_region,Midlands
+RR1,RHM02,URTS_region,South East
+RR1,RJE01,URTS_region,Midlands
+RR1,RGU01,URTS_region,South East
+RR1,RD1,URTS_region,South West
+RR1,RTD02,URTS_region,North West
+RR1,RNA01,URTS_region,Midlands
+RR1,RNA03,URTS_region,Midlands
+RR1,RM301,URTS_region,North West
+RR1,RM3,URTS_region,North West
+RR1,RNZ02,URTS_region,South East
+RR1,9RNG2,URTS_region,Midlands
+RR1,RNG10,URTS_region,Midlands
+RR1,RTG54,URTS_region,Midlands
+RR1,RCC25,URTS_region,Yorkshire and Humber
+RR1,RF832,URTS_region,Yorkshire and Humber
+RR1,9RQR14,URTS_region,Yorkshire and Humber
+RR1,RES01,URTS_region,Yorkshire and Humber
+RR1,9RQS1,URTS_region,Yorkshire and Humber
+RR1,RQR14,URTS_region,Yorkshire and Humber
+RR1,9RH641,URTS_region,South West
+RR1,9RK7CC,URTS_region,Yorkshire and Humber
+RR1,9RWDLB,URTS_region,Midlands
+RR1,RCF31,URTS_region,Yorkshire and Humber
+RR1,RRK04,URTS_region,Midlands
+RR1,RL301,URTS_region,Midlands
+RR1,MV101,URTS_region,Midlands
+RR1,M5O5A,URTS_region,London
+RR1,8RA911,URTS_region,South West
+RR1,9RA911,URTS_region,South West
+RR1,RH879,URTS_region,South West
+RR1,R1G55,URTS_region,South West
+RR1,RBZ19,URTS_region,South West
+RR1,RE9GA,URTS_region,North East
+RR1,99RHM01,URTS_region,South East
+RR1,RHM01,URTS_region,South East
+RR1,RAJ01,URTS_region,East of England
+RR1,RAJ,URTS_region,East of England
+RR1,REE01,URTS_region,South West
+RR1,RVY01,URTS_region,North West
+RR1,97RRK02,URTS_region,Midlands
+RR1,RPW02,URTS_region,East of England
+RR1,RDA03,URTS_region,London
+RR1,RKB03,URTS_region,Midlands
+RR1,RJ701,URTS_region,London
+RR1,9RBN01,URTS_region,North West
+RR1,RAZ,URTS_region,London
+RR1,RQR13,URTS_region,Yorkshire and Humber
+RR1,RAE05,URTS_region,Yorkshire and Humber
+RR1,9RAE05,URTS_region,Yorkshire and Humber
+RR1,RR201,URTS_region,South East
+RR1,RNZ36,URTS_region,South East
+RR1,RTG05,URTS_region,Midlands
+RR1,97TAF,URTS_region,London
+RR1,98TAF,URTS_region,London
+RR1,RKM,URTS_region,Wales
+RR1,RUE01,URTS_region,Midlands
+RR1,RRE01,URTS_region,Midlands
+RR1,RJD01,URTS_region,Midlands
+RR1,9RWJ,URTS_region,North West
+RR1,RXQ02,URTS_region,South East
+RR1,RJC03,URTS_region,Midlands
+RR1,RLNGH,URTS_region,North East
+RR1,98RQY,URTS_region,London
+RR1,9RQY,URTS_region,London
+RR1,98RJZ,URTS_region,London
+RR1,RMP01,URTS_region,North West
+RR1,RH875,URTS_region,South West
+RR1,RG224,URTS_region,London
+RR1,RQW,URTS_region,East of England
+RR1,RCX01,URTS_region,East of England
+RR1,RCB55,URTS_region,Yorkshire and Humber
+RR1,9RNA,URTS_region,Midlands
+RR1,9RNA2,URTS_region,Midlands
+RR1,9RNA3,URTS_region,Midlands
+RR1,9rna3,URTS_region,Midlands
+RR1,8RAL01,URTS_region,London
+RR1,RHS55,URTS_region,South East
+RR1,9RPD01,URTS_region,London
+RR1,45020,URTS_region,NIreland
+RR1,45021,URTS_region,NIreland
+RR1,48021,URTS_region,NIreland
+RR1,7021,URTS_region,NIreland
+RR1,9RW402,URTS_region,North West
+RR1,RKB01,URTS_region,Midlands
+RR1,SAC02,URTS_region,Scotland
+RR1,RJ224,URTS_region,London
+RR1,SLC01,URTS_region,Scotland
+RR1,RVWAA,URTS_region,North East
+RR1,RR9,URTS_region,North East
+RR1,RTRNT,URTS_region,North East
+RR1,RRBBV,URTS_region,Wales
+RR1,SFC01,URTS_region,Scotland
+RR1,98RBK,URTS_region,Midlands
+RR1,99RBK,URTS_region,Midlands
+RR1,9RBK,URTS_region,Midlands
+RR1,RKC81,URTS_region,North West
+RR1,9RLNGH,URTS_region,North East
+RR1,REM26,URTS_region,North West
+RR1,RWG02,URTS_region,London
+RR1,RL109,URTS_region,Wales
+RR1,98RAZ,URTS_region,London
+RR1,99RAZ,URTS_region,London
+RR1,REF01,URTS_region,South West
+RR1,RNLBX,URTS_region,North East
+RR1,RQN02,URTS_region,London
+RR1,RFW01,URTS_region,London
+RR1,RGR50,URTS_region,East of England
+RR1,SSC04,URTS_region,Scotland
+RR1,RE5BW,URTS_region,North West
+RR1,RA301,URTS_region,South West
+RR1,RGCKH,URTS_region,London
+RR1,RBN01,URTS_region,North West
+RR1,9RM301,URTS_region,North West
+RR1,RVV20,URTS_region,South East
+RR1,9RH108,URTS_region,South East
+RR1,RR6BL,URTS_region,Wales
+RR1,RQZ03,URTS_region,London
+RR1,98RRK02,URTS_region,Midlands
+RR1,99RRK02,URTS_region,Midlands
+RR1,RPL04,URTS_region,South East
+RR1,RKHA4,URTS_region,Wales
+RR1,RXQ50,URTS_region,South East
+RR1,RM202,URTS_region,North West
+RR1,9RH01,URTS_region,South West
+RR1,9RH03,URTS_region,South West
+RR1,9RH05,URTS_region,South West
+RR1,9RQBAU,URTS_region,Wales
+RR1,RKGA1,URTS_region,Wales
+RR1,RQBAU,URTS_region,Wales
+RR1,REM,URTS_region,North West
+RR1,RQ000,URTS_region,Yorkshire and Humber
+RR1,SGLAS,URTS_region,Scotland
+RR1,RJ100,URTS_region,London
