@@ -7,7 +7,7 @@ PV,alt,LOINC,1742-6
 PV,amy,LOINC,1798-8
 PV,ast,LOINC,1920-8
 PV,bili,LOINC,14631-6
-PV,calcium,LOINC,1996-8
+PV,calcium,LOINC,2000-8
 PV,calcium_post,LOINC,59148-7
 PV,cholesterol,LOINC,14647-2
 PV,covid19antibody,LOINC,95542-7
