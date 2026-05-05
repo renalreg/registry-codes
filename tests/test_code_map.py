@@ -3,15 +3,22 @@
 import os
 import pytest
 
-ROOT_DIR = "../tables/code_map"
+ROOT_DIRS = [
+    "../tables/code_map",
+    "../tables/code_list",
+    "../tables/code_exclusion",
+]
 
 
-def find_csv_files(root_dir):
+def find_csv_files(root_dirs):
     csv_files = []
-    for root, _, files in os.walk(root_dir):
-        for file in files:
-            if file.lower().endswith(".csv"):
-                csv_files.append(os.path.join(root, file))
+
+    for root_dir in root_dirs:
+        for root, _, files in os.walk(root_dir):
+            for file in files:
+                if file.lower().endswith(".csv"):
+                    csv_files.append(os.path.join(root, file))
+
     return csv_files
 
 
@@ -47,7 +54,7 @@ def check_file(filepath):
 
 
 def test_csv_whitespace():
-    csv_files = find_csv_files(ROOT_DIR)
+    csv_files = find_csv_files(ROOT_DIRS)
 
     all_issues = []
 

@@ -2,14 +2,20 @@
 
 import os
 
-ROOT_DIR = "../tables/code_map"
+
+ROOT_DIRS = [
+    "../tables/code_map",
+    "../tables/code_list",
+    "../tables/code_exclusion",
+]
 
 
-def find_csv_files(root_dir):
-    for root, _, files in os.walk(root_dir):
-        for file in files:
-            if file.lower().endswith(".csv"):
-                yield os.path.join(root, file)
+def find_csv_files(root_dirs):
+    for root_dir in root_dirs:
+        for root, _, files in os.walk(root_dir):
+            for file in files:
+                if file.lower().endswith(".csv"):
+                    yield os.path.join(root, file)
 
 
 def clean_line(line):
@@ -58,7 +64,7 @@ def clean_file(filepath):
 
 
 def main():
-    for filepath in find_csv_files(ROOT_DIR):
+    for filepath in find_csv_files(ROOT_DIRS):
         print(f"Cleaning {filepath}")
         clean_file(filepath)
 
