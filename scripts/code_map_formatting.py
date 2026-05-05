@@ -1,9 +1,9 @@
 # fix_csv_whitespace.py
 
 import os
-import re
 
 ROOT_DIR = "../tables/code_map"
+
 
 def find_csv_files(root_dir):
     for root, _, files in os.walk(root_dir):
@@ -14,7 +14,7 @@ def find_csv_files(root_dir):
 
 def clean_line(line):
     # replace non-breaking spaces with normal spaces (or remove entirely)
-    line = line.replace("\u00A0", " ")
+    line = line.replace("\u00a0", " ")
 
     # remove leading whitespace
     line = line.lstrip(" \t")

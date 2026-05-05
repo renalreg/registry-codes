@@ -17,7 +17,7 @@ def loop_though_csv(items_per_line: int, table_name: str, allow_empty: bool = Tr
     errors = {}
 
     # Table directory path
-    table_dir = Path(f"../tables/{table_name}")
+    table_dir = Path(f"tables/{table_name}")
 
     if not table_dir.exists():
         raise FileNotFoundError(f"Table directory {table_dir} does not exist")

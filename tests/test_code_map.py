@@ -1,8 +1,6 @@
-
 # test_csv_whitespace.py
 
 import os
-import re
 import pytest
 
 ROOT_DIR = "../tables/code_map"
@@ -18,7 +16,7 @@ def find_csv_files(root_dir):
 
 
 def has_leading_whitespace(line):
-    return line.startswith((" ", "\t", "\u00A0"))
+    return line.startswith((" ", "\t", "\u00a0"))
 
 
 def find_comma_whitespace_issues(line):
@@ -28,7 +26,7 @@ def find_comma_whitespace_issues(line):
         if char == '"':
             in_quotes = not in_quotes
         elif char == "," and not in_quotes:
-            if i + 1 < len(line) and line[i + 1] in (" ", "\t", "\u00A0"):
+            if i + 1 < len(line) and line[i + 1] in (" ", "\t", "\u00a0"):
                 return True
 
     return False
