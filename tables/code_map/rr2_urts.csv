@@ -1,4 +1,5 @@
-﻿RR02,AVF,URTS_VASCULAR,AVF/AVG
+source_coding_standard,source_code,destination_coding_standard,destination_code
+RR02,AVF,URTS_VASCULAR,AVF/AVG
 RR02,AVFUO,URTS_VASCULAR,AVF/AVG
 RR02,AVG,URTS_VASCULAR,AVF/AVG
 RR02,TLN,URTS_VASCULAR,TL

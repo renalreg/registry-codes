@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 PV_RAW,mg,PV,magnesium
 PV_RAW,faecalcalprotectin,PV,FaecalCalprotectin
 PV_RAW,targetweight,PV,TargetWeight

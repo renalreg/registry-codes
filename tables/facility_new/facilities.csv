@@ -1,4 +1,5 @@
-﻿11021,RR1+,Adult Renal Centre,False,,False,False,,,,,
+facilitycode,facilitycodestd,facilitytype,pkbout,pkbmsgexclusions,ukrdcoutpkb,pvoutpkb,startdate,enddate,firstdataquarter,pkboutstartdate
+11021,RR1+,Adult Renal Centre,False,,False,False,,,,,
 11023,RR1+,Paediatric Renal Centre,False,,False,False,,,,,
 2020,RR1+,Adult Renal Centre,True,,False,True,,,,,
 24027,RR1+,Adult Renal Centre,True,,False,True,,,,,

@@ -1,3 +1,4 @@
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 SNOMED,1076781000000103,Cadaver donor with donation after brain stem death,,,,
 SNOMED,1128041000000103,Live related sibling donor,,,,
 SNOMED,1128051000000100,Live related father donor,,,,

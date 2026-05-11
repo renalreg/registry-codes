@@ -1,5 +1,4 @@
 import os
-import datetime
 import logging
 import json
 
@@ -15,7 +14,7 @@ from ukrdc_sqla.ukrdc import Base
 from registry_codes.schema import TABLE_MODEL_MAP
 
 
-def coerce_sqla_types(data_row: dict, sqla_model: Base) -> dict:
+def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
     """Data from csv files is loaded into python as strings. To keep sqla happy
     we need to cast some of the types.
     """
@@ -75,7 +74,7 @@ def create_table(table_name: str, engine, schema=None) -> None:
         model.__table__.schema = schema
 
     if not inspector.has_table(table_name, schema=schema):
-        model.__table__.create(engine)
+        model.__table__.create(engine)  # type: ignore[attr-defined]
         print(
             f"Created table: {schema}.{table_name}"
             if schema
@@ -97,42 +96,24 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     if table_name not in TABLE_MODEL_MAP:
         raise ValueError(f"Unknown table: {table_name}")
 
-    table_info = TABLE_MODEL_MAP[table_name]
-    table = table_info["sqla_model"]
-    excluded_columns = table_info["excluded_columns"]
     table_dir = Path("tables") / table_name
 
     if not os.path.exists(table_dir):
         raise FileNotFoundError(f"Table directory not found: {table_dir}")
 
     all_dfs = []
+
     for filename in os.listdir(table_dir):
         if filename.endswith(".csv"):
             filepath = table_dir / filename
-            print(f"Reading {filepath}")
-            columns = [
-                col.key
-                for col in table.__mapper__.column_attrs
-                if col.key not in excluded_columns
-            ]
-            df = pd.read_csv(
-                filepath, header=None, names=columns, dtype=str, index_col=False
-            )
+            df = pd.read_csv(filepath, dtype=str, encoding="utf-8", index_col=False)
             all_dfs.append(df)
 
     if not all_dfs:
         print(f"WARNING: No CSV files found in directory {table_dir}")
         return pd.DataFrame()
 
-    combined_df = pd.concat(all_dfs, ignore_index=True)
-
-    # Add excluded columns
-    for col in excluded_columns:
-        combined_df[col] = datetime.datetime.now().replace(
-            hour=0, minute=0, second=0, microsecond=0
-        )
-
-    return combined_df
+    return pd.concat(all_dfs, ignore_index=True)
 
 
 def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
@@ -177,7 +158,9 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
     return total_rows
 
 
-def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
+def clean_data(
+    table_name: str, df: pd.DataFrame, fill_creation_date: bool = False
+) -> pd.DataFrame:
     """Applies some light cleaning. At the moment this is just code
     deduplication but it could be expanded in the future.
     """
@@ -207,17 +190,26 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
     else:
         print(f"No data cleaning applied to data loaded into {table_name}")
 
+    if fill_creation_date:
+        if hasattr(TABLE_MODEL_MAP[table_name]["sqla_model"], "creation_date"):
+            cleaned_df["creation_date"] = pd.Timestamp.now()
+        if hasattr(TABLE_MODEL_MAP[table_name]["sqla_model"], "update_date"):
+            cleaned_df["update_date"] = pd.Timestamp.now()
+
     return cleaned_df
 
 
 def load_data(table_name: str, engine) -> int:
     """Load all CSV files from the specified table directory and insert into database."""
-    # Load data into DataFrame
+    # Load data into DataFrame to allow more flexibly with cleaning/validation etc.
     df = load_data_to_df(table_name)
 
     # Validate and clean data
     if len(df) > 0:
-        df = clean_data(table_name, df)
+        if engine.dialect.name == "sqlite":
+            df = clean_data(table_name, df, fill_creation_date=True)
+        else:
+            df = clean_data(table_name, df)
     else:
         return 0
 

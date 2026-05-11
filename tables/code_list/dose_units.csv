@@ -1,3 +1,4 @@
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 RADAR,l,litre,dose_unit,,,
 RADAR,dl,decilitre,dose_unit,,,
 RADAR,ml,millilitre,dose_unit,,,
@@ -14,7 +15,7 @@ RADAR,drop,drop,dose_unit,,,
 RADAR,capsule,capsule,dose_unit,,,
 RADAR,patch,patch,dose_unit,,,
 RADAR,sachet,sachet,dose_unit,,,
-RADAR,µg,microgram,dose_unit,,,
+RADAR,Âµg,microgram,dose_unit,,,
 RADAR,tbsp,table_spoon,dose_unit,,,
 RADAR,units,units,dose_unit,,,
 RADAR,other,other,dose_unit,,,
