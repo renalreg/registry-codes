@@ -1,5 +1,4 @@
 import os
-import datetime
 import logging
 import json
 
@@ -15,7 +14,7 @@ from ukrdc_sqla.ukrdc import Base
 from registry_codes.schema import TABLE_MODEL_MAP
 
 
-def coerce_sqla_types(data_row: dict, sqla_model: Base) -> dict:
+def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
     """Data from csv files is loaded into python as strings. To keep sqla happy
     we need to cast some of the types.
     """
@@ -75,7 +74,7 @@ def create_table(table_name: str, engine, schema=None) -> None:
         model.__table__.schema = schema
 
     if not inspector.has_table(table_name, schema=schema):
-        model.__table__.create(engine)
+        model.__table__.create(engine)  # type: ignore[attr-defined]
         print(
             f"Created table: {schema}.{table_name}"
             if schema

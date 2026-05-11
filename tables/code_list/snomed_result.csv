@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 SNOMED,1107001000000108,Substance concentration of creatinine in serum,,,,
 SNOMED,1110281000000107,Substance concentration of urea in serum,,,,
 SNOMED,1106011000000107,Substance concentration of bicarbonate in serum,,,,

@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 LOINC,32294-1,Albumin:creatinine ratio,result,mg/mmol,,
 LOINC,19072-8,Adjusted Calcium,result,mmol/L,,
 LOINC,1751-7,Albumin,result,g/L,,

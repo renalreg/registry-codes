@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 PV_RAW_RRTSTATUS,AAPD,,,,,
 PV_RAW_RRTSTATUS,ACUTE ITU,,,,,
 PV_RAW_RRTSTATUS,ACUTE,,,,,

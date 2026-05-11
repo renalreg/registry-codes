@@ -80,7 +80,7 @@ def main():
 
     # First pass: set schema on all models
 
-    #dev mcdevface 
+    # dev mcdevface
     for table in tables[:2]:
         model = TABLE_MODEL_MAP[table]["sqla_model"]
         model.__table__.schema = "extract"

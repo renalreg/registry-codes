@@ -32,13 +32,18 @@ gp_and_practice_codes_df.iloc[:, 2] = gp_and_practice_codes_df.iloc[:, 3].apply(
     lambda x: x[:35] if len(x) > 35 else x
 )
 
-gp_and_practice_codes_df.columns = ["code", "name", "address1", "postcode", "phone", "type"]
+gp_and_practice_codes_df.columns = [
+    "code",
+    "name",
+    "address1",
+    "postcode",
+    "phone",
+    "type",
+]
 
 gp_and_practice_codes_filepath = (
     Path("tables") / "ukrdc_ods_gp_codes" / "gp_and_prac_ods.csv"
 )
-gp_and_practice_codes_df.to_csv(
-    gp_and_practice_codes_filepath, index=False
-)
+gp_and_practice_codes_df.to_csv(gp_and_practice_codes_filepath, index=False)
 gp_codes_path.unlink()
 practice_codes_path.unlink()

@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 RR51,1,Unsuitable,,,,
 RR51,2,Workup commenced,,,,
 RR51,3,Suitable,,,,

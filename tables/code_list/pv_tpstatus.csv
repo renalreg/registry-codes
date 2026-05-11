@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 PV_TPSTATUS,A,Active,,,,
 PV_TPSTATUS,S,Suspended,,,,
 PV_TPSTATUS,T,Transplanted,,,,

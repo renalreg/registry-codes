@@ -1,4 +1,4 @@
-coding_standard,code,description,object_type,units,pkb_reference_range
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 CF_RR7_DISCHARGE,30,Kidney Transplant Failure,,,,
 CF_RR7_DISCHARGE,38,Patient Transferred Out,,,,
 CF_RR7_DISCHARGE,84,ARF - Recovered,,,,
