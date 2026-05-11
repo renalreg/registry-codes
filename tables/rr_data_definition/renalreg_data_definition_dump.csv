@@ -1,4 +1,4 @@
-﻿upload_key,TABLE_NAME,field_name,code_id,mandatory,TYPE,alt_constraint,alt_desc,extra_val,error_type,paed_mand,ckd5_mand,dependant_field,alt_validation,file_prefix,load_min,load_max,remove_min,remove_max,in_month,aki_mand,rrt_mand,cons_mand,ckd4_mand,valid_before_dob,valid_after_dod,in_quarter,v4
+upload_key,TABLE_NAME,field_name,code_id,mandatory,TYPE,alt_constraint,alt_desc,extra_val,error_type,paed_mand,ckd5_mand,dependant_field,alt_validation,file_prefix,load_min,load_max,remove_min,remove_max,in_month,aki_mand,rrt_mand,cons_mand,ckd4_mand,valid_before_dob,valid_after_dod,in_quarter
 AKI17,AKI,ACCESS_AT_3_MONTHS,NULL,NULL,U,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 AKI12,AKI,ACCESS_USED_AT_FIRST_DIALYSIS,VA02,NULL,U,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 AKI20,AKI,ANGINA,NULL,NULL,NULL,NULL,NULL,4,NULL,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL

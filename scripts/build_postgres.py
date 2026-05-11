@@ -79,9 +79,7 @@ def main():
     print(f"Table creation order: {tables}")
 
     # First pass: set schema on all models
-
-    # dev mcdevface
-    for table in tables[:2]:
+    for table in tables:
         model = TABLE_MODEL_MAP[table]["sqla_model"]
         model.__table__.schema = "extract"
 

@@ -1,6 +1,6 @@
 source_coding_standard,source_code,destination_coding_standard,destination_code
-CF_RR23,microgram,RADAR,µg
-CF_RR23,ug,RADAR,µg
-CF_RR23,µg,RADAR,µg
-CF_RR23,microg,RADAR,µg
+CF_RR23,microgram,RADAR,Âµg
+CF_RR23,ug,RADAR,Âµg
+CF_RR23,Âµg,RADAR,Âµg
+CF_RR23,microg,RADAR,Âµg
 CF_RR23,tab,RADAR,tab

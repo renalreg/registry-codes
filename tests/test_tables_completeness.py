@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+from registry_codes.schema import TABLE_MODEL_MAP
 
 
 def loop_though_csv(items_per_line: int, table_name: str, allow_empty: bool = True):
@@ -169,3 +170,27 @@ def dont_test_satellite_map():
         print(f"  Content: {details['content']}")
 
     assert errors == {}
+
+
+def test_column_headers():
+    # make sure all the file headers are actual attributes of sqla models
+    tables = TABLE_MODEL_MAP.keys()
+
+    for table in tables:
+        # Get the sqla model for this table
+        model = TABLE_MODEL_MAP[table]["sqla_model"]
+
+        # Get list of csvs for table
+        csv_files = list(Path(f"tables/{table}").glob("*.csv"))
+
+        # check header against model
+        for csv_file in csv_files:
+            with open(csv_file, "r") as f:
+                reader = csv.reader(f)
+                header = next(reader)
+                for column in header:
+                    if column in ("TYPE"):
+                        continue
+                    assert hasattr(model, column.lower()), (
+                        f"Column '{column}' not found in {model.__name__} (file: {csv_file})"
+                    )
