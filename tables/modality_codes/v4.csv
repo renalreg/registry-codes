@@ -1,4 +1,5 @@
-﻿1,HAEMODIALYSIS,HD,0,0,0,0,1,1,0,0,,0
+﻿registry_code,registry_code_desc,registry_code_type,acute,transfer_in,ckd,cons,rrt,equiv_modality,end_of_care,is_imprecise,nhsbt_transplant_type,transfer_out
+1,HAEMODIALYSIS,HD,0,0,0,0,1,1,0,0,,0
 10,CAPD STANDARD,PD,0,0,0,0,1,10,0,0,,0
 11,CAPD DISCONNECT,PD,0,0,0,0,1,11,0,0,,0
 110,PLAMSMAPHARESIS / PLASMA EXCHANGE,PX,1,0,0,0,0,110,0,0,,0

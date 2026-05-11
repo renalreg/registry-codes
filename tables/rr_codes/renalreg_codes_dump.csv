@@ -1,4 +1,5 @@
-﻿RR02,AVF,Arteriovenous fistula,NULL,NULL,NULL,NULL,NULL
+﻿id,rr_code,description_1,description_2,description_3,old_value,old_value_2,new_value
+RR02,AVF,Arteriovenous fistula,NULL,NULL,NULL,NULL,NULL
 RR02,AVG,Arteriovenous graft,NULL,NULL,NULL,NULL,NULL
 RR02,HER,HeRO  graft,NULL,NULL,NULL,NULL,NULL
 RR02,NLN,Non-tunnelled line,NULL,NULL,NULL,NULL,NULL

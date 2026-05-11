@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 SURVEY,EQ5D,SNOMED,821531000000101
 SURVEY,PAM,SNOMED,925401000000103
 SURVEY,PROM,SNOMED,761865002

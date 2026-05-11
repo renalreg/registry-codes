@@ -97,42 +97,24 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     if table_name not in TABLE_MODEL_MAP:
         raise ValueError(f"Unknown table: {table_name}")
 
-    table_info = TABLE_MODEL_MAP[table_name]
-    table = table_info["sqla_model"]
-    excluded_columns = table_info["excluded_columns"]
     table_dir = Path("tables") / table_name
 
     if not os.path.exists(table_dir):
         raise FileNotFoundError(f"Table directory not found: {table_dir}")
 
     all_dfs = []
+
     for filename in os.listdir(table_dir):
         if filename.endswith(".csv"):
             filepath = table_dir / filename
-            print(f"Reading {filepath}")
-            columns = [
-                col.key
-                for col in table.__mapper__.column_attrs
-                if col.key not in excluded_columns
-            ]
-            df = pd.read_csv(
-                filepath, header=None, names=columns, dtype=str, index_col=False
-            )
+            df = pd.read_csv(filepath, dtype=str, encoding="utf-8", index_col=False)
             all_dfs.append(df)
 
     if not all_dfs:
         print(f"WARNING: No CSV files found in directory {table_dir}")
         return pd.DataFrame()
 
-    combined_df = pd.concat(all_dfs, ignore_index=True)
-
-    # Add excluded columns
-    for col in excluded_columns:
-        combined_df[col] = datetime.datetime.now().replace(
-            hour=0, minute=0, second=0, microsecond=0
-        )
-
-    return combined_df
+    return pd.concat(all_dfs, ignore_index=True)
 
 
 def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
@@ -212,7 +194,7 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
 
 def load_data(table_name: str, engine) -> int:
     """Load all CSV files from the specified table directory and insert into database."""
-    # Load data into DataFrame
+    # Load data into DataFrame to allow more flexibly with cleaning/validation etc.
     df = load_data_to_df(table_name)
 
     # Validate and clean data

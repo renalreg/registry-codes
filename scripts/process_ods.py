@@ -9,7 +9,7 @@ practice_codes_df = pd.read_csv(practice_codes_path, header=None)
 gp_codes_df = pd.read_csv(gp_codes_path, header=None)
 
 
-# Future Note: colums 4-8 should probably be concatenated
+# Future Note: columns 4-8 should probably be concatenated
 
 gp_codes_df = gp_codes_df.iloc[:, [0, 1, 4, 9, 17]]
 gp_codes_df.loc[:, "type"] = "GP"
@@ -32,11 +32,13 @@ gp_and_practice_codes_df.iloc[:, 2] = gp_and_practice_codes_df.iloc[:, 3].apply(
     lambda x: x[:35] if len(x) > 35 else x
 )
 
+gp_and_practice_codes_df.columns = ["code", "name", "address1", "postcode", "phone", "type"]
+
 gp_and_practice_codes_filepath = (
     Path("tables") / "ukrdc_ods_gp_codes" / "gp_and_prac_ods.csv"
 )
 gp_and_practice_codes_df.to_csv(
-    gp_and_practice_codes_filepath, index=False, header=False
+    gp_and_practice_codes_filepath, index=False
 )
 gp_codes_path.unlink()
 practice_codes_path.unlink()

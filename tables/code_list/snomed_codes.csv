@@ -1,3 +1,4 @@
+coding_standard,code,description,object_type,units,pkb_reference_range
 SNOMED,27113001,Weight,obs,kg,,
 SNOMED,162755006,Height,obs,cm,,
 SNOMED,301331008,BMI,obs,kg/m^2,,

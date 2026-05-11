@@ -1,3 +1,4 @@
+coding_standard,code,description,object_type,units,pkb_reference_range
 NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,01,Employed,,,,
 NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,02,Unemployed and actively seeking work,,,,
 NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,03,Undertaking full (at least 16 hours per week) or part-time (less than 16 hours per week) education or training as a student and not working or actively seeking work,,,,
