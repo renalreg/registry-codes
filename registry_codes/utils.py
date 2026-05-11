@@ -158,7 +158,9 @@ def insert_data_to_table(table_name: str, df: pd.DataFrame, engine) -> int:
     return total_rows
 
 
-def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
+def clean_data(
+    table_name: str, df: pd.DataFrame, fill_creation_date: bool = False
+) -> pd.DataFrame:
     """Applies some light cleaning. At the moment this is just code
     deduplication but it could be expanded in the future.
     """
@@ -188,6 +190,12 @@ def clean_data(table_name: str, df: pd.DataFrame) -> pd.DataFrame:
     else:
         print(f"No data cleaning applied to data loaded into {table_name}")
 
+    if fill_creation_date:
+        if hasattr(TABLE_MODEL_MAP[table_name]["sqla_model"], "creation_date"):
+            cleaned_df["creation_date"] = pd.Timestamp.now()
+        if hasattr(TABLE_MODEL_MAP[table_name]["sqla_model"], "update_date"):
+            cleaned_df["update_date"] = pd.Timestamp.now()
+
     return cleaned_df
 
 
@@ -198,7 +206,10 @@ def load_data(table_name: str, engine) -> int:
 
     # Validate and clean data
     if len(df) > 0:
-        df = clean_data(table_name, df)
+        if engine.dialect.name == "sqlite":
+            df = clean_data(table_name, df, fill_creation_date=True)
+        else:
+            df = clean_data(table_name, df)
     else:
         return 0
 
