@@ -1,5 +1,4 @@
 from registry_codes.utils import load_data_to_df
-import pandas as pd
 
 FACILITIES = load_data_to_df("facility_new")
 CODELIST = load_data_to_df("code_list")
