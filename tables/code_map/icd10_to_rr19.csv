@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 ICD-10,C02.9,RR19,115
 ICD-10,C15,RR19,104
 ICD-10,C15.0,RR19,104

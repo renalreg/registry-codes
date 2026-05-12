@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 SNOMED,821531000000101,SURVEY,EQ5D
 SNOMED,925401000000103,SURVEY,PAM
 SNOMED,761865002,SURVEY,PROM

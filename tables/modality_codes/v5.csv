@@ -1,4 +1,5 @@
-﻿78,Kidney Transplant ; Live donor,TX,0,0,0,0,1,78,0,0,LIVE,0
+registry_code,registry_code_desc,registry_code_type,acute,transfer_in,ckd,cons,rrt,equiv_modality,end_of_care,is_imprecise,nhsbt_transplant_type,transfer_out
+78,Kidney Transplant ; Live donor,TX,0,0,0,0,1,78,0,0,LIVE,0
 88,Acute Kidney Injury receiving RRT not by renal service,HD,1,0,0,0,1,88,0,0,,0
 101,First assessment in Kidney Service,x,0,0,0,0,0,101,0,0,,0
 120,Patient - Transplant clinic follow up,TX,0,0,0,0,1,120,0,0,,0

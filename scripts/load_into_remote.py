@@ -13,7 +13,7 @@ from registry_codes.utils import load_data
 
 load_dotenv()
 URL = os.getenv("URL")
-TABLE_NAME = "facility_new"
+TABLE_NAME = "code_list"
 
 if not URL:
     raise RuntimeError("Missing required environment variable: URL")
