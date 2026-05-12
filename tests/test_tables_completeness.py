@@ -1,3 +1,12 @@
+"""
+Originally the csv file had no headers so the aim of this was to ensure there
+were the correct number of columns so the loading code does load the wrong csv
+column into a mismatched database column.
+
+Probably no longer necessary, however should be replaced with things like 
+ensuring column naming matches sqla etc.
+"""
+
 import csv
 from pathlib import Path
 from registry_codes.schema import TABLE_MODEL_MAP
