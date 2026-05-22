@@ -61,7 +61,7 @@ PV,sodium_post,LOINC,74688-3
 PV,t4,LOINC,3024-7
 PV,tacrolimus,LOINC,11253-2
 PV,testosterone,LOINC,2986-8
-PV,tg,LOINC,2571-8
+PV,tg,LOINC,14927-8
 PV,tgn,LOINC,34381-4
 PV,tpmt,LOINC,91141-2
 PV,transferrin,LOINC,3034-6
