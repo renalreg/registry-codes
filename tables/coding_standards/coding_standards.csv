@@ -45,7 +45,7 @@ RR50,Assessment Type
 RR51,Assessment Outcome
 SIMPLIFIED_UNIT,Simplified project unit codes
 SNOMED,SNOMED Primary Renal Disease codes and other SNOMED codes
-SNOMED_unofficial,SNOMED Primary Renal Disease codes (additional, sent by RJZ, RJ121, RJ122)
+SNOMED_unofficial,"SNOMED Primary Renal Disease codes (additional, sent by RJZ, RJ121, RJ122)"
 STATISTICIAN_CODE,Statistician-defined coding values
 SURVEY,Survey data
 UKRDC,UKRDC/RDA standard codes
