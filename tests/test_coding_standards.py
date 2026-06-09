@@ -8,16 +8,17 @@ import pytest
 
 from tests.test_csv_formatting import find_csv_files
 
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_TABLES = os.path.join(_HERE, "..", "tables")
+
 ROOT_DIRS = [
-    "../tables/code_map",
-    "../tables/code_list",
-    "../tables/code_exclusion",
-    "../tables/facility_new",
+    os.path.join(_TABLES, "code_map"),
+    os.path.join(_TABLES, "code_list"),
+    os.path.join(_TABLES, "code_exclusion"),
+    os.path.join(_TABLES, "facility_new"),
 ]
 
-
-MASTER_CSV = "../tables/coding_standards/coding_standards.csv"
-
+MASTER_CSV = os.path.join(_TABLES, "coding_standards", "coding_standards.csv")
 
 
 def normalize(value):
@@ -54,11 +55,7 @@ def master_data():
     if "description" not in master_df.columns:
         pytest.fail("master.csv missing required column: 'description'")
 
-    master_names = {
-        normalize(v)
-        for v in master_df["coding_standard"]
-        if normalize(v)
-    }
+    master_names = {normalize(v) for v in master_df["coding_standard"] if normalize(v)}
 
     return master_df, master_names
 
@@ -87,12 +84,10 @@ def test_all_standards_exist_in_master(master_data):
 
         matching_cols = find_matching_columns(df.columns, ["standard", "std"])
 
-        values = set()
+        values = set()  # type: ignore
         for col in matching_cols:
             values.update(
-                v
-                for v in df[col].dropna().astype(str).unique()
-                if normalize(v)
+                v for v in df[col].dropna().astype(str).unique() if normalize(v)
             )
 
         missing = {v for v in values if normalize(v) not in master_names}
@@ -135,10 +130,7 @@ def test_master_standards_have_description(master_data):
         name = normalize(row.get("name"))
         description = row.get("description")
 
-        if name and (
-            pd.isna(description)
-            or not str(description).strip()
-        ):
+        if name and (pd.isna(description) or not str(description).strip()):
             errors.append(
                 f"master.csv row {idx}: standard '{name}' missing description"
             )
