@@ -17,7 +17,7 @@ _TABLES = _HERE / ".." / "tables"
 
 def find_csv_files(dirs):
     """Return all CSV files found under the given directories."""
-    files = [] # type: ignore
+    files = []  # type: ignore
     for d in dirs:
         files.extend(Path(d).glob("*.csv"))
     return files
