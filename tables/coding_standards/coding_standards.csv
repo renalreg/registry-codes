@@ -1,5 +1,4 @@
 coding_standard,description
-Adult Renal Centre,Codes identifying adult renal centres
 BHLY,"Bradford, Hull, Leeds, York"
 CF_RR7_DISCHARGE,Discharge reason codes
 CF_RR7_TREATMENT,Treatment modality codes
@@ -11,13 +10,10 @@ HL7_0004,HL7 Patient class codes
 ICD-10,International Classification of Diseases
 LOCAL,Local organisation-specific codes
 LOINC,LOINC codes for lab results
-Multiple Centre,Codes identifying multiple centres
 NHS_DATA_DICTIONARY,NHS Data Dictionary reference codes
 NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,NHS Data Dictionary employment status codes
 NHS_DATA_DICTIONARY_LANGUAGE_CODE,NHS Data Dictionary language codes
 ODS,NHS Organisation Data Service codes
-Other,Other
-Paediatric Renal Centre,Codes identifying paediatric renal centres
 PHOSPHATE_UNIT,Phosphate project unit codes
 PKB_MAIN,PKB main
 PKB_SITE,PKB site

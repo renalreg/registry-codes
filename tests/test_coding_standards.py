@@ -38,7 +38,7 @@ def find_matching_columns(columns, match_terms):
     for col in columns:
         col_lower = col.lower()
 
-        if any(term.lower() in col_lower for term in match_terms):
+        if any(col_lower.endswith(term.lower()) for term in match_terms):
             matches.append(col)
 
     return matches
@@ -89,9 +89,13 @@ def test_all_standards_exist_in_master(master_data):
 
         values = set()
         for col in matching_cols:
-            values.update(df[col].dropna().astype(str).unique())
+            values.update(
+                v
+                for v in df[col].dropna().astype(str).unique()
+                if normalize(v)
+            )
 
-        missing = values - master_names
+        missing = {v for v in values if normalize(v) not in master_names}
 
         # accumulate globally (NOT per file reset)
         for value in missing:
