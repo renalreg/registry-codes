@@ -56,4 +56,5 @@ cover/
 # Translations
 *.mo
 *.pot
+.env
 
