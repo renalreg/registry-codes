@@ -32,6 +32,10 @@ RR1+,Treatment locations (main renal units and satellites)
 RR1+_MAIN,Main renal units for satellites mapping
 RR1+_RAW,Raw renal unit codes
 RR1+_SATELLITE,Satellites codes for satellites mapping
+RR1+_CURRENT,
+RR1+_DEPRECATED,
+RR1+_FEEDSHARE_CHILD,
+RR1+_FEEDSHARE_PARENT,
 RR1,Main renal units
 RR2,Access type
 RR02,RR02 codes

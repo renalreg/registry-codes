@@ -8,6 +8,7 @@ from ukrdc_sqla.ukrdc import (
     GPInfo,
     Facility,
     Base,
+    CodingStandards,
 )
 from typing import TypedDict
 from sqlalchemy import String, Integer, Boolean, DateTime, Numeric
@@ -37,6 +38,12 @@ SQLA_TO_PANDAS_DTYPE = {
 # Map directory names to ukrdc-sqla models, define automatically filled columns
 # (not in csv files) and specify the key relationship
 TABLE_MODEL_MAP: dict[str, TableInfo] = {
+    "coding_standards": {
+        "sqla_model": CodingStandards,
+        "excluded_columns": [],
+        "unique_columns": ["coding_standard"],
+        "dependencies": [],
+    },
     "code_exclusion": {
         "sqla_model": CodeExclusion,
         "excluded_columns": [],
