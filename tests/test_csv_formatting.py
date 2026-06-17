@@ -1,6 +1,9 @@
 # test_csv_whitespace.py
 
 import os
+import warnings
+
+import pandas as pd
 import pytest
 
 ROOT_DIRS = [
@@ -63,3 +66,30 @@ def test_csv_whitespace():
 
     if all_issues:
         pytest.fail("Whitespace issues found:\n" + "\n".join(all_issues))
+
+
+def check_column_count_mismatch(filepath):
+    """Check for rows where column count doesn't match the header,
+    which causes pandas ParserWarning with index_col=False."""
+    issues = []
+
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        pd.read_csv(filepath, dtype=str, encoding="utf-8", index_col=False)
+
+    for w in caught:
+        if issubclass(w.category, pd.errors.ParserWarning):
+            issues.append(f"{filepath} -> pandas ParserWarning: {w.message}")
+
+    return issues
+
+
+def test_csv_column_count():
+    csv_files = find_csv_files(ROOT_DIRS)
+    all_issues = []
+
+    for file in csv_files:
+        all_issues.extend(check_column_count_mismatch(file))
+
+    if all_issues:
+        pytest.fail("Column count mismatch found:\n" + "\n".join(all_issues))
