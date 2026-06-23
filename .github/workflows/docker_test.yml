@@ -1,0 +1,36 @@
+# Test to ensure the codes will successfully build based on incoming changes
+
+name: Docker Test Build
+
+on:
+  pull_request:
+    branches:
+      - "main"
+
+  workflow_dispatch:
+
+jobs:
+  docker-build:
+    name: Docker Build Test
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Prepare output directory
+        run: mkdir -p output && chmod -R 777 output
+
+      - name: Fix script permissions
+        run: chmod +x scripts/*.sh
+
+      - name: Build Docker images
+        run: INCLUDE_ODS=true docker compose up --build --detach
+        env:
+          INCLUDE_ODS: true
+
+      - name: Stop container
+        run: docker compose down
