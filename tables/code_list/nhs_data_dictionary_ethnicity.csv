@@ -1,3 +1,4 @@
+coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
 NHS_DATA_DICTIONARY,A,British,,,,
 NHS_DATA_DICTIONARY,B,Irish,,,,
 NHS_DATA_DICTIONARY,C,Any other White Background,,,,
@@ -15,3 +16,4 @@ NHS_DATA_DICTIONARY,P,Any other black background,,,,
 NHS_DATA_DICTIONARY,R,Chinese,,,,
 NHS_DATA_DICTIONARY,S,Any other ethnic group,,,,
 NHS_DATA_DICTIONARY,Z,Not stated,,,,
+NHS_DATA_DICTIONARY,99,Not known,,,,

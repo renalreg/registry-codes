@@ -1,0 +1,59 @@
+coding_standard,description
+CF_RR7_DISCHARGE,Discharge reason codes
+CF_RR7_TREATMENT,Treatment modality codes
+CF_RR23,Medication units
+EDTA,EDTA Primary Renal Disease codes (old)
+EDTA2,EDTA Primary Renal Disease codes (new)
+EDTA_COD,EDTA Cause of Death codes
+HL7_0004,HL7 Patient class codes
+ICD-10,International Classification of Diseases
+LOCAL,Local organisation-specific codes
+LOINC,LOINC codes for lab results
+NHS_DATA_DICTIONARY,NHS Data Dictionary reference codes
+NHS_DATA_DICTIONARY_EMPLOYMENT_STATUS,NHS Data Dictionary employment status codes
+NHS_DATA_DICTIONARY_LANGUAGE_CODE,NHS Data Dictionary language codes
+ODS,NHS Organisation Data Service codes
+PHOSPHATE_UNIT,Phosphate project unit codes
+PKB_MAIN,PKB main
+PKB_SITE,PKB site
+PV,PV standard codes
+PV_RAW,Raw PV source values
+PV_RAW_ETHNICITY,Raw PV ethnicity values
+PV_RAW_RRTSTATUS,Raw PV renal replacement therapy status values
+PV_RRTSTATUS,PV renal replacement therapy status codes
+PV_TPSTATUS,PV transplant status codes
+PVMIGRATE,PV migrate
+PVMIGRATION,PV migration
+RADAR,RaDaR specific codes
+RATIO,Ratio
+RR1+,Treatment locations (main renal units and satellites)
+RR1+_CURRENT,
+RR1+_DEPRECATED,
+RR1+_FEEDSHARE_CHILD,
+RR1+_FEEDSHARE_PARENT,
+RR1+_MAIN,Main renal units for satellites mapping
+RR1+_RAW,Raw renal unit codes
+RR1+_SATELLITE,Satellites codes for satellites mapping
+RR1,Main renal units
+RR2,Access type
+RR02,RR02 codes
+RR19,Malignancy site
+RR22,Medication route
+RR50,Assessment Type
+RR51,Assessment Outcome
+SIMPLIFIED_UNIT,Simplified project unit codes
+SNOMED,SNOMED Primary Renal Disease codes and other SNOMED codes
+SNOMED_unofficial,"SNOMED Primary Renal Disease codes (additional, sent by RJZ, RJ121, RJ122)"
+STATISTICIAN_CODE,Statistician-defined coding values
+SURVEY,Survey data
+UKRDC,UKRDC/RDA standard codes
+UKRR,UKRR standard codes
+UKRR_QBL, QBL Item
+UKRR_QUA, QUA Item
+UKT3,Transplant considered for
+UKT4,Registration end status
+URTS_ETHNIC_GROUPING,URTS ethnicity codes
+URTS_REGION,URTS region codes
+URTS_region,URTS region codes
+URTS_VASCULAR,URTS vascular codes
+YOURHEALTH_UNITNAME,Your Health codes

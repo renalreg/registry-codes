@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 PV,acr,LOINC,32294-1
 PV,adjustedcalcium,LOINC,19072-8
 PV,albumin,LOINC,1751-7
@@ -7,7 +8,7 @@ PV,alt,LOINC,1742-6
 PV,amy,LOINC,1798-8
 PV,ast,LOINC,1920-8
 PV,bili,LOINC,14631-6
-PV,calcium,LOINC,1996-8
+PV,calcium,LOINC,2000-8
 PV,calcium_post,LOINC,59148-7
 PV,cholesterol,LOINC,14647-2
 PV,covid19antibody,LOINC,95542-7
@@ -60,9 +61,9 @@ PV,sodium_post,LOINC,74688-3
 PV,t4,LOINC,3024-7
 PV,tacrolimus,LOINC,11253-2
 PV,testosterone,LOINC,2986-8
-PV,tg,LOINC,2571-8
+PV,tg,LOINC,14927-8
 PV,tgn,LOINC,34381-4
-PV,tpmt,LOINC,91141-2
+PV,tpmt,LOINC,43421-7
 PV,transferrin,LOINC,3034-6
 PV,trop,LOINC,6598-7
 PV,tsh,LOINC,3016-3

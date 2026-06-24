@@ -135,7 +135,7 @@ Follow these steps to update the registry codes:
 
 5. **Approval and release** - Once approved, systems will handle merging and creating a new version tag
 
-The GitHub Actions workflow will automatically create a new release with updated database files.
+The GitHub Actions workflow will automatically create a new release with updated database files. In general the number of changes in each pull request should be limited in a logical way to allow clear changelogging and versioning. 
 
 # Releasing new codeset
 When satisfied that a new version of the codes is ready to be released and has been merged in main it can be published via a github action.

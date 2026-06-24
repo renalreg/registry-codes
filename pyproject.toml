@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "registry_codes"
-version = "3.13.0"
+version = "4.0.0"
 description = "A short description of the project."
 packages = [{ include = "registry_codes" }]
 
@@ -8,8 +8,9 @@ packages = [{ include = "registry_codes" }]
 python = ">=3.10,<4.0"
 pandas = "^2.3.3"
 psycopg = {extras = ["binary"], version = "^3.2.12"}
-ukrdc-sqla = "^3.0.3"
+ukrdc-sqla = "^4.0.0"
 sqlalchemy = "^2.0.45"
+python-dotenv = "^1.2.1"
 
 
 [build-system]

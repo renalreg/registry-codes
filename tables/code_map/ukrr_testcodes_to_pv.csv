@@ -1,3 +1,4 @@
+source_coding_standard,source_code,destination_coding_standard,destination_code
 UKRR,QBLA1,PV,creatinine
 UKRR,QBLA3,PV,urea
 UKRR,QBLA4,PV,hco3
@@ -25,7 +26,6 @@ UKRR,QBLE4,PV,platelets
 UKRR,QBLE5,PV,wbc
 UKRR,QBLEB,PV,hb
 UKRR,QBLF1,PV,ferritin
-UKRR,QBLF3,PV,transferrin
 UKRR,QBLF7,PV,vitb12
 UKRR,QBLF9,PV,folate
 UKRR,QBLFB,PV,folate

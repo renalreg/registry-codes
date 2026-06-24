@@ -58,3 +58,5 @@ cover/
 *.pot
 .env
 
+
+.env

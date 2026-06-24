@@ -1,5 +1,26 @@
+"""
+Originally the csv file had no headers so the aim of this was to ensure there
+were the correct number of columns so the loading code does load the wrong csv
+column into a mismatched database column.
+
+Probably no longer necessary, however should be replaced with things like
+ensuring column naming matches sqla etc.
+"""
+
 import csv
 from pathlib import Path
+from registry_codes.schema import TABLE_MODEL_MAP
+
+_HERE = Path(__file__).parent.resolve()
+_TABLES = _HERE / ".." / "tables"
+
+
+def find_csv_files(dirs):
+    """Return all CSV files found under the given directories."""
+    files = []  # type: ignore
+    for d in dirs:
+        files.extend(Path(d).glob("*.csv"))
+    return files
 
 
 def loop_though_csv(items_per_line: int, table_name: str, allow_empty: bool = True):
@@ -17,15 +38,14 @@ def loop_though_csv(items_per_line: int, table_name: str, allow_empty: bool = Tr
     errors = {}
 
     # Table directory path
-    table_dir = Path(f"tables/{table_name}")
+    table_dir = _TABLES / table_name
 
     if not table_dir.exists():
         raise FileNotFoundError(f"Table directory {table_dir} does not exist")
 
     # Loop through all CSV files in the directory
     for file_path in table_dir.glob("*.csv"):
-        # print(file_path)
-        relative_path = file_path.relative_to(Path("."))
+        relative_path = file_path.relative_to(_HERE / "..")
 
         with open(file_path, "r", newline="") as csvfile:
             reader = csv.reader(csvfile)
@@ -169,3 +189,27 @@ def dont_test_satellite_map():
         print(f"  Content: {details['content']}")
 
     assert errors == {}
+
+
+def test_column_headers():
+    # make sure all the file headers are actual attributes of sqla models
+    tables = TABLE_MODEL_MAP.keys()
+
+    for table in tables:
+        # Get the sqla model for this table
+        model = TABLE_MODEL_MAP[table]["sqla_model"]
+
+        # Get list of csvs for table
+        csv_files = list((_TABLES / table).glob("*.csv"))
+
+        # check header against model
+        for csv_file in csv_files:
+            with open(csv_file, "r") as f:
+                reader = csv.reader(f)
+                header = next(reader)
+                for column in header:
+                    if column in ("TYPE"):
+                        continue
+                    assert hasattr(model, column.lower()), (
+                        f"Column '{column}' not found in {model.__name__} (file: {csv_file})"
+                    )
