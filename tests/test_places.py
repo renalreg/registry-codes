@@ -80,7 +80,9 @@ def test_first_data_quarter_only_for_renal_centers():
 
 
 def dont_test_satellites_match_main():
-    """Ensure satellite facilities metadata matches main facility"""
+    """Ensure satellite facilities metadata matches main facility
+    TODO: enable and fix data 
+    """
 
     # Join facilities table to itself via the satellite mapping
     merged_df = FACILITIES.merge(
