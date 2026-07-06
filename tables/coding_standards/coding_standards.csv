@@ -39,6 +39,7 @@ RR2,Access type
 RR02,RR02 codes
 RR19,Malignancy site
 RR22,Medication route
+RR35,Dialysis session type
 RR50,Assessment Type
 RR51,Assessment Outcome
 SIMPLIFIED_UNIT,Simplified project unit codes
