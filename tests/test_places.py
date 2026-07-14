@@ -81,7 +81,7 @@ def test_first_data_quarter_only_for_renal_centers():
 
 def dont_test_satellites_match_main():
     """Ensure satellite facilities metadata matches main facility
-    TODO: enable and fix data 
+    TODO: enable and fix data
     """
 
     # Join facilities table to itself via the satellite mapping
@@ -118,14 +118,21 @@ def dont_test_satellites_match_main():
         subset=cols_to_compare, how="all"
     )
 
-    satellite_main_diff = satellite_main_joined[
-        (
-            satellite_main_joined["firstdataquarter_x"]
-            != satellite_main_joined["firstdataquarter_y"]
-        )
-        | (satellite_main_joined["startdate_x"] != satellite_main_joined["startdate_y"])
-        | (satellite_main_joined["enddate_x"] != satellite_main_joined["enddate_y"])
-    ].drop_duplicates().sort_values(["facilitycode_y", "facilitycode_x"])
+    satellite_main_diff = (
+        satellite_main_joined[
+            (
+                satellite_main_joined["firstdataquarter_x"]
+                != satellite_main_joined["firstdataquarter_y"]
+            )
+            | (
+                satellite_main_joined["startdate_x"]
+                != satellite_main_joined["startdate_y"]
+            )
+            | (satellite_main_joined["enddate_x"] != satellite_main_joined["enddate_y"])
+        ]
+        .drop_duplicates()
+        .sort_values(["facilitycode_y", "facilitycode_x"])
+    )
 
     assert len(satellite_main_diff) == 0, (
         f"Found {len(satellite_main_diff)} satellites with different metadata to main facility: "
