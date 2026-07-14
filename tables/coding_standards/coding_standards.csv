@@ -41,6 +41,7 @@ RR19,Malignancy site
 RR22,Medication route
 RR50,Assessment Type
 RR51,Assessment Outcome
+RR35,Dialysis Session Type
 SIMPLIFIED_UNIT,Simplified project unit codes
 SNOMED,SNOMED Primary Renal Disease codes and other SNOMED codes
 SNOMED_unofficial,"SNOMED Primary Renal Disease codes (additional, sent by RJZ, RJ121, RJ122)"
