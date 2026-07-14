@@ -32,7 +32,7 @@ RR1+_DEPRECATED,
 RR1+_FEEDSHARE_CHILD,
 RR1+_FEEDSHARE_PARENT,
 RR1+_MAIN,Main renal units for satellites mapping
-RR1+_RAW,Raw renal unit codes
+RR1+_RAW, Coding standard for cleaning fields that should be rr1+ in the raw xml
 RR1+_SATELLITE,Satellites codes for satellites mapping
 RR1,Main renal units
 RR2,Access type
@@ -54,8 +54,8 @@ UKRR_QBL, QBL Item
 UKRR_QUA, QUA Item
 UKT3,Transplant considered for
 UKT4,Registration end status
-URTS_ETHNIC_GROUPING,URTS ethnicity codes
-URTS_REGION,URTS region codes
-URTS_region,URTS region codes
-URTS_VASCULAR,URTS vascular codes
+URTS_ETHNIC_GROUPING, Code mapping used to group ethnicities for purpose of real time stats calculations
+URTS_REGION, NHS england region as used in the real time stats calculations
+URTS_region, NHS england region as used in the real time stats calculations. (duplicate)
+URTS_VASCULAR, Picklist for types of vascular access used in the real time stats calculations.  
 YOURHEALTH_UNITNAME,Your Health codes
