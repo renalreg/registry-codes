@@ -42,6 +42,7 @@ RR22,Medication route
 RR35,Dialysis session type
 RR50,Assessment Type
 RR51,Assessment Outcome
+RR52,Diabetes
 RR35,Dialysis Session Type
 SIMPLIFIED_UNIT,Simplified project unit codes
 SNOMED,SNOMED Primary Renal Disease codes and other SNOMED codes
