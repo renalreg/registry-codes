@@ -1,7 +1,7 @@
 coding_standard,code,description,object_type,units,pkb_reference_range,pkb_comment
-RR52,1,Y,,,,
-RR52,2,N,,,,
-RR52,3,TYPE I,,,,
-RR52,4,TYPE II,,,,
-RR52,5,TYPE UNKNOWN,,,,
-RR52,6,TYPE OTHER,,,,
+RR52,Y,,,,,
+RR52,N,,,,,
+RR52,TYPE I,,,,,
+RR52,TYPE II,,,,,
+RR52,TYPE UNKNOWN,,,,,
+RR52,TYPE OTHER,,,,,
