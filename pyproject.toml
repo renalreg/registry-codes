@@ -8,7 +8,7 @@ packages = [{ include = "registry_codes" }]
 python = ">=3.10,<4.0"
 pandas = "^2.3.3"
 psycopg = {extras = ["binary"], version = "^3.2.12"}
-ukrdc-sqla = "^4.0.0"
+ukrdc-sqla = "^4.6.1"
 sqlalchemy = "^2.0.45"
 python-dotenv = "^1.2.1"
 
@@ -31,3 +31,6 @@ dev = [
 
 [tool.deptry.per_rule_ignores]
 DEP002 = ["psycopg"]
+
+[tool.bandit.assert_used]
+skips = ["*/tests/*"]
