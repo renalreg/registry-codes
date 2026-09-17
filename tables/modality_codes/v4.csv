@@ -2,7 +2,7 @@ registry_code,registry_code_desc,registry_code_type,acute,transfer_in,ckd,cons,r
 1,HAEMODIALYSIS,HD,0,0,0,0,1,1,0,0,,0
 10,CAPD CONNECT,PD,0,0,0,0,1,10,0,0,,0
 11,CAPD DISCONNECT,PD,0,0,0,0,1,11,0,0,,0
-110,PLASMAPHARESIS/PLASMA EXCHANGE,PX,1,0,0,0,0,110,0,0,,0
+110,PLASMAPHERESIS/PLASMA EXCHANGE,PX,1,0,0,0,0,110,0,0,,0
 111,ASSISTED CAPD,PD,0,0,0,0,1,111,0,0,,0
 114,Tfr in on: Transplant ; Live related - father,TX,0,1,0,0,1,74,0,0,,0
 115,Tfr in on: Transplant ; Live related - mother,TX,0,1,0,0,1,75,0,0,,0
