@@ -20,12 +20,6 @@ ROOT_DIRS = [
 ]
 
 
-def normalize(value):
-    if pd.isna(value):
-        return ""
-    return str(value).strip().lower()
-
-
 def _get_sqla_tables():
     """
     Return {table_name: sqlalchemy.Table} for every model in ukrdc_sqla.ukrdc.
@@ -105,7 +99,8 @@ def test_duplicates(root_dir):
         csv_pk_cols = [col_lookup[pk.lower()] for pk in pk_cols]
 
         for idx, row in enumerate(df[csv_pk_cols].itertuples(index=False, name=None)):
-            key = tuple(normalize(v) for v in row)
+            # raw values: no stripping or lowercasing
+            key = tuple(row)
             # +2: one for the header row, one for 1-based line numbers
             occurrences[key].append((csv_file, idx + 2))
 
