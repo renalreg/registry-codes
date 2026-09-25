@@ -9,6 +9,7 @@ from ukrdc_sqla.ukrdc import (
     Facility,
     Base,
     CodingStandards,
+    Locations,
 )
 from typing import TypedDict
 from sqlalchemy import String, Integer, Boolean, DateTime, Numeric
@@ -97,6 +98,12 @@ TABLE_MODEL_MAP: dict[str, TableInfo] = {
         "sqla_model": GPInfo,
         "excluded_columns": ["creation_date", "update_date"],
         "unique_columns": ["code"],
+        "dependencies": [],
+    },
+    "locations": {
+        "sqla_model": Locations,
+        "excluded_columns": [],
+        "unique_columns": [],
         "dependencies": [],
     },
 }
