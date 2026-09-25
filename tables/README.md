@@ -109,15 +109,6 @@ Defines data fields and their validation rules.
 | `valid_after_dod` | numeric(1,0) | Valid after date of death |
 | `in_quarter` | numeric(1,0) | Quarterly flag |
 
-### satellite_map
-
-Maps satellite units to their main units.
-
-| Column | Type | Description |
-|--------|------|-------------|
-| `satellite_code` | varchar(10) | Unique code for satellite unit |
-| `main_unit_code` | varchar(10) | Code for the main unit |
-
 ### locations
 
 List of renal centres with their country and region. Extracted from the renalreg database on RR-SQL (`renalreg.dbo.LOCATIONS`).
