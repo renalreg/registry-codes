@@ -105,7 +105,7 @@ TABLE_MODEL_MAP: dict[str, TableInfo] = {
         "excluded_columns": [],
         "unique_columns": [],
         "dependencies": [],
-
+    },
 }
 
 LARGE_TABLES = ["ukrdc_ods_gp_codes"]
