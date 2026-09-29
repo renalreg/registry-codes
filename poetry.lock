@@ -1584,14 +1584,14 @@ files = [
 
 [[package]]
 name = "ukrdc-sqla"
-version = "4.6.1"
+version = "4.8.0"
 description = "SQLAlchemy models for the UKRDC"
 optional = false
 python-versions = "<4.0,>=3.10.0"
 groups = ["main"]
 files = [
-    {file = "ukrdc_sqla-4.6.1-py3-none-any.whl", hash = "sha256:92b9cae45c45294c6e370005ff717fbedf614653288f8e65e4c0a5b695317209"},
-    {file = "ukrdc_sqla-4.6.1.tar.gz", hash = "sha256:08da4a89c9dfcbe7a5292c6e805dcb8604125cf65eb999de99e69a4cff404829"},
+    {file = "ukrdc_sqla-4.8.0-py3-none-any.whl", hash = "sha256:a7663d22315e8814767131e3b3e113b6a1c64e0e53705d069087c7c1d94de795"},
+    {file = "ukrdc_sqla-4.8.0.tar.gz", hash = "sha256:87ef8b92f31134eae3fdddd837ad59ada2b81b6648790fc9917882e365c18e67"},
 ]
 
 [package.dependencies]
@@ -1619,4 +1619,4 @@ typing-extensions = {version = ">=4.13.2", markers = "python_version < \"3.11\""
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "f1f8c0d58c734debd8ac63476c1010bf9cfe84ffccb712a9398f822f630e1ce5"
+content-hash = "6fc5a38a9719b06173b19ba28c93d217337c78a447f529a0e124f2bae7918431"

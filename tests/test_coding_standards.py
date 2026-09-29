@@ -2,9 +2,11 @@
 
 import os
 from collections import defaultdict
+from dataclasses import fields
 
 import pandas as pd
 import pytest
+import ukrdc_sqla.utils.constants
 
 from tests.test_csv_formatting import find_csv_files
 
@@ -193,3 +195,20 @@ def test_no_unused_standards_in_master(master_data):
 
     if error_lines:
         pytest.fail("\n".join(error_lines))
+
+
+def test_coding_standards_have_types_in_ukrdc_sqla(master_data):
+    df, _ = master_data
+    coding_standards = set(df["coding_standard"].tolist())
+    sqla_stds = ukrdc_sqla.utils.constants.ConstantTypes
+    for f in fields(sqla_stds):
+        if f.default in coding_standards:
+            coding_standards.remove(f.default)
+    if len(coding_standards) > 0:
+        RED = "\033[31m"
+        RESET = "\033[0m"
+
+        print(
+            f"{RED} Warning the following are not in constant types in the ukrdc_sqla, "
+            f"consider adding them: {coding_standards}{RESET}"
+        )

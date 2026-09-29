@@ -6,20 +6,20 @@ This document outlines the database tables used in the registry-codes system. Al
 
 ### code_exclusion
 
-Not sure what this does see here: https://github.com/renalreg/resources/tree/master/codes/code_exclusions
+Not sure what this does see here: <https://github.com/renalreg/resources/tree/master/codes/code_exclusions>
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `coding_standard` | varchar | The coding standard to exclude |
 | `code` | varchar | The specific code to exclude |
 | `system` | varchar | The system where exclusion applies |
 
 ### code_list
 
-Definition of codes. See here https://github.com/renalreg/resources/tree/master/codes/code_lists
+Definition of codes. See here <https://github.com/renalreg/resources/tree/master/codes/code_lists>
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `coding_standard` | varchar(256) | The coding standard |
 | `code` | varchar(256) | The code value |
 | `description` | varchar(256) | Description of the code |
@@ -29,10 +29,11 @@ Definition of codes. See here https://github.com/renalreg/resources/tree/master/
 | `pkb_comment` | text | PatientKnowsBest comments |
 
 ### code_map
-The Registry works with many coding systems - both homebred RR codes and outside ones like SNOMED. These coding systems have shifted over time, but we still need to read old data. This table lets us map codes between different systems in both forward and backward ways, linking old and new codes. See here: https://github.com/renalreg/resources/tree/master/codes/code_conv_lists
+
+The Registry works with many coding systems - both homebred RR codes and outside ones like SNOMED. These coding systems have shifted over time, but we still need to read old data. This table lets us map codes between different systems in both forward and backward ways, linking old and new codes. See here: <https://github.com/renalreg/resources/tree/master/codes/code_conv_lists>
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `source_coding_standard` | varchar(256) | Original coding system |
 | `source_code` | varchar(256) | Original code |
 | `destination_coding_standard` | varchar(256) | Target coding system |
@@ -43,7 +44,7 @@ The Registry works with many coding systems - both homebred RR codes and outside
 ** don't know what this does
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `code` | varchar(256) | Facility code |
 | `pkb_out` | boolean | PKB output flag |
 | `pkb_in` | boolean | PKB input flag |
@@ -56,7 +57,7 @@ The Registry works with many coding systems - both homebred RR codes and outside
 Stores treatment modality definitions.
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `registry_code` | varchar(8) | Unique modality code |
 | `registry_code_desc` | varchar(100) | Description of modality |
 | `registry_code_type` | varchar(3) | Type of modality code |
@@ -73,10 +74,10 @@ Stores treatment modality definitions.
 
 ### rr_codes
 
-Large picklist of codes and definitions. I think this is basically the same as code_list but it has been extracted out of the renalregistry db rather than the ukrdc. 
+Large picklist of codes and definitions. I think this is basically the same as code_list but it has been extracted out of the renalregistry db rather than the ukrdc.
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `id` | varchar(10) | Unique ID |
 | `rr_code` | varchar(10) | Registry code |
 | `description_1` | varchar(255) | Main description |
@@ -88,7 +89,7 @@ Large picklist of codes and definitions. I think this is basically the same as c
 Defines data fields and their validation rules.
 
 | Column | Type | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | `TABLE_NAME` | varchar(30) | Name of table |
 | `field_name` | varchar(30) | Name of field |
 | `mandatory` | numeric(1,0) | Whether field is required |
@@ -108,11 +109,14 @@ Defines data fields and their validation rules.
 | `valid_after_dod` | numeric(1,0) | Valid after date of death |
 | `in_quarter` | numeric(1,0) | Quarterly flag |
 
-### satellite_map
+### locations
 
-Maps satellite units to their main units.
+List of renal centres with their country and region. Extracted from the renalreg database on RR-SQL (`renalreg.dbo.LOCATIONS`).
 
 | Column | Type | Description |
-|--------|------|-------------|
-| `satellite_code` | varchar(10) | Unique code for satellite unit |
-| `main_unit_code` | varchar(10) | Code for the main unit |
+| --- | --- | --- |
+| `CENTRE_CODE` | nvarchar(10) | Renal centre code |
+| `CENTRE_NAME` | nvarchar(255) | Renal centre name |
+| `COUNTRY_CODE` | nvarchar(6) | Country the centre is in |
+| `REGION_CODE` | nvarchar(10) | Region the centre is in |
+| `PAED_UNIT` | int | Flag for paediatric units |
