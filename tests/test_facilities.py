@@ -1,8 +1,12 @@
+import pandas as pd
+
 from registry_codes.utils import load_data_to_df
 
 FACILITIES = load_data_to_df("facility_new")
 CODELIST = load_data_to_df("code_list")
 CODEMAP = load_data_to_df("code_map")
+
+RR1PLUS_FACILITIES_CSV = "tables/code_list/rr1plus_facilities.csv"
 
 
 def test_facilities_are_rr1plus():
@@ -14,6 +18,19 @@ def test_facilities_are_rr1plus():
         ~FACILITIES.facilitycode.isin(CODELIST.code[CODELIST.coding_standard == "RR1+"])
     ]
     assert len(FACILITIES_NOT_IN_CODELIST) == 0
+
+
+def test_rr1plus_codelist_in_facilities():
+    """Ensure every RR1+ code in the facilities codelist csv has a facility record"""
+    rr1plus_codes = pd.read_csv(RR1PLUS_FACILITIES_CSV)
+    rr1plus_codes = rr1plus_codes[rr1plus_codes.coding_standard == "RR1+"]
+
+    missing = rr1plus_codes[~rr1plus_codes.code.isin(FACILITIES.facilitycode)]
+
+    assert len(missing) == 0, (
+        f"Found {len(missing)} RR1+ codes in {RR1PLUS_FACILITIES_CSV} "
+        f"missing from facility_new: {sorted(missing.code.tolist())}"
+    )
 
 
 def test_feedshare_match_main():
