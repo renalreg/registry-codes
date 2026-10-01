@@ -3,6 +3,7 @@ from registry_codes.utils import load_data_to_df
 FACILITIES = load_data_to_df("facility_new")
 CODELIST = load_data_to_df("code_list")
 CODEMAP = load_data_to_df("code_map")
+LOCATIONS = load_data_to_df("locations")
 
 
 def test_facilities_are_rr1plus():
@@ -14,6 +15,13 @@ def test_facilities_are_rr1plus():
         ~FACILITIES.facilitycode.isin(CODELIST.code[CODELIST.coding_standard == "RR1+"])
     ]
     assert len(FACILITIES_NOT_IN_CODELIST) == 0
+
+
+def test_locations_are_in_codelist():
+    LOCATIONS_NOT_IN_CODELIST = LOCATIONS[
+        ~LOCATIONS.centre_code.isin(CODELIST.code[CODELIST.coding_standard == "RR1+"])
+    ]
+    assert len(LOCATIONS_NOT_IN_CODELIST) == 0
 
 
 def test_feedshare_match_main():
