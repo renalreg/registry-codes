@@ -61,3 +61,4 @@ URTS_REGION, NHS england region as used in the real time stats calculations
 URTS_region, NHS england region as used in the real time stats calculations. (duplicate)
 URTS_VASCULAR, Picklist for types of vascular access used in the real time stats calculations.  
 YOURHEALTH_UNITNAME,Your Health codes
+PKB_ORG,Renal units codes used by PKB
