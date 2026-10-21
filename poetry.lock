@@ -1103,23 +1103,6 @@ files = [
 ]
 
 [[package]]
-name = "psycopg2"
-version = "2.9.13"
-description = "psycopg2 - Python-PostgreSQL Database Adapter"
-optional = false
-python-versions = ">=3.10"
-groups = ["main"]
-files = [
-    {file = "psycopg2-2.9.13-cp310-cp310-win_amd64.whl", hash = "sha256:7d48416f6a4823ada9b33771085331b842b553df88435701bff5ddb4469905de"},
-    {file = "psycopg2-2.9.13-cp311-cp311-win_amd64.whl", hash = "sha256:d16e7a5f5e400ac51ca953d42255804eff6c8a9650b1a2074f6ca6261d740382"},
-    {file = "psycopg2-2.9.13-cp312-cp312-win_amd64.whl", hash = "sha256:10f7408b34412e8c0d4f8b1565541f1d651b1d00447857e5d8561b38f5c1a738"},
-    {file = "psycopg2-2.9.13-cp313-cp313-win_amd64.whl", hash = "sha256:165e25c1b0e616a1f28080c5c68bd2dc015051d83c90240b2171d3e76ca2b5ff"},
-    {file = "psycopg2-2.9.13-cp314-cp314-win_amd64.whl", hash = "sha256:a6f54fd8e0024f35240866b5dfff9ead2a0dbd33b8096eec438bc6093412842d"},
-    {file = "psycopg2-2.9.13-cp315-cp315-win_amd64.whl", hash = "sha256:0d2fc7eedfaca0586dcf1476454598428d0d8471d3b5cb55f92015a5f9d0af40"},
-    {file = "psycopg2-2.9.13.tar.gz", hash = "sha256:d36784fc2dae69523ba4b79c7d1d1b4d6e83e87836874f111262f4db940b16a6"},
-]
-
-[[package]]
 name = "pygments"
 version = "2.20.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -1661,22 +1644,21 @@ files = [
 
 [[package]]
 name = "ukrdc-sqla"
-version = "5.0.0"
+version = "5.0.1"
 description = "SQLAlchemy models for the UKRDC"
 optional = false
 python-versions = "<4.0,>=3.10.0"
 groups = ["main"]
 files = [
-    {file = "ukrdc_sqla-5.0.0-py3-none-any.whl", hash = "sha256:5c7f91d36fa4877f7a9a73fbe0cb3519d381c14d705b3aa8c1cf505e49e38261"},
-    {file = "ukrdc_sqla-5.0.0.tar.gz", hash = "sha256:9b16c2dfd7d0f675795b3e8ce8f285f21c40cffd26bc40cffd86cf6ca6787045"},
+    {file = "ukrdc_sqla-5.0.1-py3-none-any.whl", hash = "sha256:d158ea0a9c4a2b662d851be19c47d8e913a21a04ba222733cc0b25dac52be467"},
+    {file = "ukrdc_sqla-5.0.1.tar.gz", hash = "sha256:01ca2a92f0c0df07e5250d9f4d47e78503e78cdacb65680d284870118f383f78"},
 ]
 
 [package.dependencies]
-psycopg2 = ">=2.9.13,<3.0.0"
 SQLAlchemy = ">=2.0.0,<3.0.0"
 
 [package.extras]
-migration = ["alembic (>=1.20.0,<2.0.0)", "click (>=8.5.0,<9.0.0)", "polars (>=1.44.2,<3.0.0)", "psycopg[binary] (>=3.3.6,<4.0.0)"]
+migration = ["alembic (>=1.20.0,<2.0.0)", "click (>=8.5.0,<9.0.0)", "polars (>=1.44.2,<3.0.0)", "psycopg2 (>=2.9.13,<3.0.0)", "psycopg[binary] (>=3.3.6,<4.0.0)"]
 
 [[package]]
 name = "virtualenv"
@@ -1700,4 +1682,4 @@ typing-extensions = {version = ">=4.13.2", markers = "python_version < \"3.11\""
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "9f0f1a6fe748954a873b951134df9df4a6d379d5c7877d0a2a64fb79816b1fa3"
+content-hash = "307209f9e39e3f6b0b25540c28c2dba3b9d3f729e05a184309442ce40a42edf9"
