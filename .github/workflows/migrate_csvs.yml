@@ -1,0 +1,149 @@
+# When poetry.lock changes on main (usually Dependabot bumping ukrdc-sqla), migrate the
+# CSVs in tables/ to the latest CSV step with ukrdc-sqla's own migration tool (through
+# scripts/migrate_csvs.py) and open, or update, a PR with the result.
+#
+# CSVs that fail stay at their last good step. The PR then lists the failures, is
+# opened as a draft, and this run is marked failed. If a failure leaves nothing to
+# commit, an issue is opened (or commented on) instead, so it is never silent.
+
+name: Migrate CSVs
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "poetry.lock"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: migrate-csvs
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    name: Migrate CSVs to head
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # polars and click, which the migration tool needs, come from the migrations group.
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          poetry install --no-interaction --only main,migrations
+
+      - name: Migrate CSVs
+        id: migrate
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          poetry run python scripts/migrate_csvs.py upgrade tables 2>&1 | tee "$RUNNER_TEMP/migrate.log"
+
+      - name: Summarise
+        id: summary
+        run: |
+          LOG="$RUNNER_TEMP/migrate.log"
+          VERSION=$(poetry show ukrdc-sqla --no-ansi | awk '$1 == "version" {print $3}')
+          COMMIT=$(git -C .ukrdc-sqla rev-parse --short HEAD 2>/dev/null || echo "unknown commit")
+          FAILURES=$(grep '^FAILED' "$LOG" || true)
+          COUNT=$(printf '%s\n' "$FAILURES" | grep -c . || true)
+
+          if [ "${{ steps.migrate.outcome }}" = "success" ]; then
+            STATUS=ok
+            TITLE="chore: migrate CSVs to ukrdc-sqla $VERSION"
+          elif [ "$COUNT" -gt 0 ]; then
+            STATUS=failed
+            TITLE="chore: migrate CSVs to ukrdc-sqla $VERSION ($COUNT failed)"
+          else
+            STATUS=failed
+            TITLE="chore: migrate CSVs to ukrdc-sqla $VERSION (migration error)"
+          fi
+
+          {
+            echo "Migrates the CSVs in \`tables/\` to the latest CSV step in ukrdc-sqla $VERSION (\`$COMMIT\`), using ukrdc-sqla's migration tool through \`scripts/migrate_csvs.py\`."
+            echo
+            if [ "$STATUS" = failed ] && [ "$COUNT" -gt 0 ]; then
+              echo "> [!CAUTION]"
+              echo "> **$COUNT CSV(s) failed to migrate.** They were left at their last good step in \`tables/csv_versions.json\`. Fix them on this branch, or fix the step in ukrdc-sqla, before merging."
+              echo
+              echo '```'
+              echo "$FAILURES"
+              echo '```'
+              echo
+            elif [ "$STATUS" = failed ]; then
+              echo "> [!CAUTION]"
+              echo "> **The migration tool stopped with an error before migrating anything.** See the log below."
+              echo
+            fi
+            echo "<details><summary>Full migration log</summary>"
+            echo
+            echo '```'
+            tail -c 50000 "$LOG"
+            echo '```'
+            echo
+            echo "</details>"
+          } > "$RUNNER_TEMP/body.md"
+
+          cat "$RUNNER_TEMP/body.md" >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "status=$STATUS"
+            echo "title=$TITLE"
+            echo "version=$VERSION"
+          } >> "$GITHUB_OUTPUT"
+
+      # A PR opened with the default GITHUB_TOKEN doesn't trigger the test workflows,
+      # so open it as the GitHub App.
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.SIMON_APP_ID }}
+          private-key: ${{ secrets.SIMON_APP_KEY }}
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          branch: automation/migrate-csvs
+          delete-branch: true
+          add-paths: tables
+          commit-message: ${{ steps.summary.outputs.title }}
+          title: ${{ steps.summary.outputs.title }}
+          body-path: ${{ runner.temp }}/body.md
+          draft: ${{ steps.summary.outputs.status == 'failed' }}
+
+      - name: Open an issue for a failure with nothing to commit
+        if: >-
+          steps.summary.outputs.status == 'failed' &&
+          steps.cpr.outputs.pull-request-operation != 'created' &&
+          steps.cpr.outputs.pull-request-operation != 'updated'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "CSV migration failed for ukrdc-sqla ${{ steps.summary.outputs.version }}"
+        run: |
+          EXISTING=$(gh issue list --state open --search "\"CSV migration failed\" in:title" \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file "$RUNNER_TEMP/body.md"
+            gh issue edit "$EXISTING" --title "$TITLE"
+          else
+            gh issue create --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          fi
+
+      - name: Fail the run if the migration failed
+        if: steps.summary.outputs.status == 'failed'
+        run: |
+          echo "::error::CSV migration failed: see ${{ steps.cpr.outputs.pull-request-url || 'the issue opened by this run' }}"
+          exit 1

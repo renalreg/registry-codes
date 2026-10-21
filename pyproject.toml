@@ -8,7 +8,7 @@ packages = [{ include = "registry_codes" }]
 python = ">=3.10,<4.0"
 pandas = "^2.3.3"
 psycopg = {extras = ["binary"], version = "^3.2.12"}
-ukrdc-sqla = "^4.8.0"
+ukrdc-sqla =  { git = "https://github.com/renalreg/ukrdc-sqla.git",rev='UK-409'}
 sqlalchemy = "^2.0.45"
 python-dotenv = "^1.2.1"
 
@@ -27,6 +27,10 @@ dev = [
     "deptry (>=0.24.0,<0.25.0)",
     "tox (>=4.32.0,<5.0.0)",
     "pandas-stubs (>=2.3.3.251219,<3.0.0.0)"
+]
+migrations = [
+    "polars (>=1.44.2,<3.0.0)",
+    "click (>=8.5.0,<9.0.0)"
 ]
 
 [tool.deptry.per_rule_ignores]
