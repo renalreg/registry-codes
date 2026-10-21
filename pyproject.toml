@@ -8,7 +8,7 @@ packages = [{ include = "registry_codes" }]
 python = ">=3.10,<4.0"
 pandas = "^2.3.3"
 psycopg = {extras = ["binary"], version = "^3.2.12"}
-ukrdc-sqla =  { git = "https://github.com/renalreg/ukrdc-sqla.git",rev='UK-409'}
+ukrdc-sqla = "^5.0.0"
 sqlalchemy = "^2.0.45"
 python-dotenv = "^1.2.1"
 

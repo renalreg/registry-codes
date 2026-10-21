@@ -1661,26 +1661,22 @@ files = [
 
 [[package]]
 name = "ukrdc-sqla"
-version = "4.9.0"
+version = "5.0.0"
 description = "SQLAlchemy models for the UKRDC"
 optional = false
-python-versions = ">=3.10.0,<4.0"
+python-versions = "<4.0,>=3.10.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "ukrdc_sqla-5.0.0-py3-none-any.whl", hash = "sha256:5c7f91d36fa4877f7a9a73fbe0cb3519d381c14d705b3aa8c1cf505e49e38261"},
+    {file = "ukrdc_sqla-5.0.0.tar.gz", hash = "sha256:9b16c2dfd7d0f675795b3e8ce8f285f21c40cffd26bc40cffd86cf6ca6787045"},
+]
 
 [package.dependencies]
-psycopg2 = "^2.9.13"
+psycopg2 = ">=2.9.13,<3.0.0"
 SQLAlchemy = ">=2.0.0,<3.0.0"
 
 [package.extras]
-migration = ["alembic (>=1.20.0,<2.0.0)", "click (>=8.5.0,<9.0.0)", "polars (>=1.44.2,<2.0.0)", "psycopg[binary] (>=3.3.6,<4.0.0)"]
-
-[package.source]
-type = "git"
-url = "https://github.com/renalreg/ukrdc-sqla.git"
-reference = "UK-409"
-resolved_reference = "522b264300c907cee6b789a8943a41d7f4c3ff71"
+migration = ["alembic (>=1.20.0,<2.0.0)", "click (>=8.5.0,<9.0.0)", "polars (>=1.44.2,<3.0.0)", "psycopg[binary] (>=3.3.6,<4.0.0)"]
 
 [[package]]
 name = "virtualenv"
@@ -1704,4 +1700,4 @@ typing-extensions = {version = ">=4.13.2", markers = "python_version < \"3.11\""
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "68f4edf36d715de5d40e535fb1db72c065d75638e33cddb2bb8ba23e8ad84896"
+content-hash = "9f0f1a6fe748954a873b951134df9df4a6d379d5c7877d0a2a64fb79816b1fa3"
