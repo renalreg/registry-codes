@@ -1,0 +1,446 @@
+{
+  "code_exclusion/pkb_observations.csv": {
+    "model": "CodeExclusion",
+    "step": "base"
+  },
+  "code_exclusion/pv_observations.csv": {
+    "model": "CodeExclusion",
+    "step": "base"
+  },
+  "code_list/HL7_0004.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ODS.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR19.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR2.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR22.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR23.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR35.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR50.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR51.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/RR52.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/cf_rr7_discharge.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/cf_rr7_treatment.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/dose_units.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/edta2.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/edta2_prd.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/edta_cod.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/edta_prd.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/local_malignancy.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/local_survey_questions.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/local_survey_types.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/loinc_observations.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/nhs_data_dictionary_employment_status.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/nhs_data_dictionary_ethnicity.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/nhs_data_dictionary_language_code.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pkb_main.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_admit_reason.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_groups.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_observations.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_raw_rrtstatus.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_rrtstatus.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/pv_tpstatus.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/radar_facilities.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/rr1_main_units.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/rr1plus_facilities.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_access_device.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_access_finding.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_access_procedure.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_codes.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_diabetes.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_diagnosis.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_dialysis.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_graft_type.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_malignancy.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_observation.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_relationship.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_renal_diagnosis.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_result.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_survey_types.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/snomed_units_of_measure.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukrdc.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukrr_observations.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukrr_testcodes_to_gl_mmoll_ratio.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukt3.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukt4.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_list/ukt6.csv": {
+    "model": "Code",
+    "step": "base"
+  },
+  "code_map/dose_units_cf_rr23_to_radar.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/dose_units_snomed_to_radar.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/edta2_to_edta.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/edta2_to_snomed.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/edta_to_edta2.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ethnicity_to_urts.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/icd10_to_rr19.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/main_unit_to_region.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ods_to_rr1plus_facilities.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/phosphate_to_rr1plus_facilities.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pkb_org_to_rr1plus.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pkbsite_to_pkbmain.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pv_facilities_to_rr1plus.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pv_raw_ethnicity_to_nhs_data_dictionary.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pv_testcodes_to_loinc.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pv_testcodes_to_snomed.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pvmig_testcodes_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pvmig_testunits_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/pvraw_testcodes_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/radar_facilities_to_rr1plus.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rawpvrrtstatus_to_pvrrtstatus.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1_facilities_to_region.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_current_to_rr1plus_deprecated.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_facilities_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_facilities_to_radar.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_facilities_to_statistician_code.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_feedshare_child_to_rr1plus_feedshare_parent.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_raw_to_rr1plus_facilities.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr1plus_satellite_to_rr1plus_main.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/rr2_to_urts.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/simplified_to_rr1plus_facilities.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_testcodes_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_edta2.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_rr19.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_rr35.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_rr52.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_survey_types.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_to_ukrr_testcodes.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/snomed_unofficial_to_edta2.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/survey_types_to_snomed.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/survey_units_to_rr1plus.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ukrr_qbl_to_ukrr_qua.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ukrr_qua_to_ukrr_qbl.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ukrr_testcodes_to_loinc.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ukrr_testcodes_to_pv.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "code_map/ukrr_testcodes_to_snomed.csv": {
+    "model": "CodeMap",
+    "step": "base"
+  },
+  "coding_standards/coding_standards.csv": {
+    "model": "CodingStandards",
+    "step": "base"
+  },
+  "facility_new/facilities.csv": {
+    "model": "Facility",
+    "step": "base"
+  },
+  "locations/locations.csv": {
+    "model": "Locations",
+    "step": "base"
+  },
+  "modality_codes/v4.csv": {
+    "model": "ModalityCodes",
+    "step": "base"
+  },
+  "modality_codes/v5.csv": {
+    "model": "ModalityCodes",
+    "step": "base"
+  },
+  "rr_codes/renalreg_codes_dump.csv": {
+    "model": "RRCodes",
+    "step": "base"
+  },
+  "rr_data_definition/renalreg_data_definition_dump.csv": {
+    "model": "RRDataDefinition",
+    "step": "base"
+  }
+}
