@@ -105,8 +105,7 @@ def ukrdc_sqla_checkout() -> Path:
         git("-C", str(CACHE), "fetch", "--quiet", "origin", ref)
     if not commit_of(CACHE, ref):
         fail(f"can't find {ref} in {REPO}.")
-    if commit_of(CACHE, "HEAD") != commit_of(CACHE, ref):
-        git("-C", str(CACHE), "checkout", "--quiet", "--detach", ref)
+    git("-C", str(CACHE), "checkout", "--quiet", "--force", "--detach", ref)
     return CACHE
 
 
