@@ -6,7 +6,7 @@ from registry_codes.utils import load_data_to_df
 from typing import List
 import pandas as pd
 
-FACILITIES = load_data_to_df("facility_new")
+FACILITIES = load_data_to_df("facility")
 CODELIST = load_data_to_df("code_list")
 CODEMAP = load_data_to_df("code_map")
 
