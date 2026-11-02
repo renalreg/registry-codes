@@ -1,17 +1,18 @@
-import os
-import logging
 import json
-
-from sqlalchemy.exc import SQLAlchemyError
-import pandas as pd
-from sqlalchemy import inspect
+import logging
+import os
+from collections.abc import Hashable
 from pathlib import Path
-from sqlalchemy import Integer, Boolean, DateTime, Numeric
+
+import pandas as pd
+from pandas.api.extensions import ExtensionDtype
+from sqlalchemy import Boolean, DateTime, Integer, Numeric, inspect
+from sqlalchemy.dialects.postgresql import ARRAY, BIT
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from sqlalchemy.dialects.postgresql import BIT, ARRAY
 from ukrdc_sqla.ukrdc import Base
 
-from registry_codes.schema import TABLE_MODEL_MAP
+from registry_codes.schema import SQLA_TO_PANDAS_DTYPE, TABLE_MODEL_MAP
 
 
 def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
@@ -32,7 +33,16 @@ def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
 
         match column.type:
             case Boolean():
-                value = bool(value)
+                if value is None:
+                    value = False
+                else:
+                    text = str(value).strip().lower()
+                    if text in ("true", "t", "1"):
+                        value = True
+                    elif text in ("false", "f", "0"):
+                        value = False
+                    else:
+                        raise ValueError(f"{key}: not a boolean: {value!r}")
             case ARRAY():
                 if value:
                     value = json.loads(value)
@@ -43,10 +53,10 @@ def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
                     value = pd.to_datetime(value).to_pydatetime()
             case Numeric():
                 # Handle NULL strings and convert to proper numeric or None
-                if value and value != "NULL":
-                    value = float(value)
-                else:
+                if value is None or value == "NULL":
                     value = None
+                else:
+                    value = float(value)
         coerced_data[key] = value
 
     return coerced_data
@@ -88,6 +98,33 @@ def create_table(table_name: str, engine, schema=None) -> None:
         )
 
 
+def _build_pandas_dtypes(table_name: str) -> dict[Hashable, ExtensionDtype]:
+    """Build read_csv dtypes for a table from its SQLAlchemy model.
+
+    Columns with a type that is not in SQLA_TO_PANDAS_DTYPE are read as text.
+    """
+    sqla_model = TABLE_MODEL_MAP[table_name]["sqla_model"]
+    dtypes: dict[Hashable, ExtensionDtype] = {}
+    for key, column in sqla_model.__mapper__.columns.items():
+        dtype: ExtensionDtype = pd.StringDtype()
+        for sqla_type, pandas_dtype in SQLA_TO_PANDAS_DTYPE.items():
+            if isinstance(column.type, sqla_type):
+                dtype = pandas_dtype
+                break
+        dtypes[key] = dtype
+    return dtypes
+
+
+# Built once at import time. create_table() changes BIT and ARRAY columns to
+# Integer in place for SQLite, so the model types are not reliable after that.
+_PANDAS_DTYPES = {table: _build_pandas_dtypes(table) for table in TABLE_MODEL_MAP}
+
+
+def pandas_dtypes_for_table(table_name: str) -> dict[Hashable, ExtensionDtype]:
+    """Return the read_csv dtypes for a table, from the original model types."""
+    return _PANDAS_DTYPES[table_name]
+
+
 def load_data_to_df(table_name: str) -> pd.DataFrame:
     """Data is defined using csv folders named after the table names on the
     database. This function loads all of the csv files for a given table into a
@@ -106,7 +143,12 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     for filename in os.listdir(table_dir):
         if filename.endswith(".csv"):
             filepath = table_dir / filename
-            df = pd.read_csv(filepath, dtype=str, encoding="utf-8", index_col=False)
+            df = pd.read_csv(
+                filepath,
+                dtype=pandas_dtypes_for_table(table_name),
+                encoding="utf-8",
+                index_col=False,
+            )
             all_dfs.append(df)
 
     if not all_dfs:

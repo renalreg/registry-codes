@@ -29,10 +29,10 @@ class TableInfo(TypedDict):
 SQLA_TO_PANDAS_DTYPE = {
     String: pd.StringDtype(),
     Integer: pd.Int64Dtype(),  # Nullable integer
-    Boolean: pd.StringDtype(),  # Read as string, convert to bool after
+    Boolean: pd.BooleanDtype(),  # read_csv parses True/False, empty cells as NA
     DateTime: pd.StringDtype(),  # Read as string, convert to datetime after
     Numeric: pd.Float64Dtype(),  # Nullable float
-    BIT: pd.StringDtype(),  # Read as string, convert to bool after
+    BIT: pd.StringDtype(),  # Postgres bit string, passed to the database as text
     ARRAY: pd.StringDtype(),  # Arrays stored as strings in CSV
 }
 
