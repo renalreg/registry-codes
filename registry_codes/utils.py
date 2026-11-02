@@ -1,15 +1,16 @@
-import json
-import logging
 import os
+import logging
+import json
 from collections.abc import Hashable
-from pathlib import Path
 
+from sqlalchemy.exc import SQLAlchemyError
 import pandas as pd
 from pandas.api.extensions import ExtensionDtype
-from sqlalchemy import Boolean, DateTime, Integer, Numeric, inspect
-from sqlalchemy.dialects.postgresql import ARRAY, BIT
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy import inspect
+from pathlib import Path
+from sqlalchemy import Integer, Boolean, DateTime, Numeric
 from sqlalchemy.orm import Session
+from sqlalchemy.dialects.postgresql import BIT, ARRAY
 from ukrdc_sqla.ukrdc import Base
 
 from registry_codes.schema import SQLA_TO_PANDAS_DTYPE, TABLE_MODEL_MAP
@@ -98,7 +99,7 @@ def create_table(table_name: str, engine, schema=None) -> None:
         )
 
 
-def pandas_dtypes_for_table(table_name: str) -> dict[Hashable, ExtensionDtype]:
+def _build_pandas_dtypes(table_name: str) -> dict[Hashable, ExtensionDtype]:
     """Build read_csv dtypes for a table from its SQLAlchemy model.
 
     Columns with a type that is not in SQLA_TO_PANDAS_DTYPE are read as text.
@@ -113,6 +114,16 @@ def pandas_dtypes_for_table(table_name: str) -> dict[Hashable, ExtensionDtype]:
                 break
         dtypes[key] = dtype
     return dtypes
+
+
+# Built once at import time. create_table() changes BIT and ARRAY columns to
+# Integer in place for SQLite, so the model types are not reliable after that.
+_PANDAS_DTYPES = {table: _build_pandas_dtypes(table) for table in TABLE_MODEL_MAP}
+
+
+def pandas_dtypes_for_table(table_name: str) -> dict[Hashable, ExtensionDtype]:
+    """Return the read_csv dtypes for a table, from the original model types."""
+    return _PANDAS_DTYPES[table_name]
 
 
 def load_data_to_df(table_name: str) -> pd.DataFrame:
