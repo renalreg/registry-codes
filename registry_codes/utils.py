@@ -1,16 +1,18 @@
 import json
 import logging
 import os
+from collections.abc import Hashable
 from pathlib import Path
 
 import pandas as pd
+from pandas.api.extensions import ExtensionDtype
 from sqlalchemy import Boolean, DateTime, Integer, Numeric, inspect
 from sqlalchemy.dialects.postgresql import ARRAY, BIT
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 from ukrdc_sqla.ukrdc import Base
 
-from registry_codes.schema import TABLE_MODEL_MAP
+from registry_codes.schema import SQLA_TO_PANDAS_DTYPE, TABLE_MODEL_MAP
 
 
 def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
@@ -96,6 +98,23 @@ def create_table(table_name: str, engine, schema=None) -> None:
         )
 
 
+def pandas_dtypes_for_table(table_name: str) -> dict[Hashable, ExtensionDtype]:
+    """Build read_csv dtypes for a table from its SQLAlchemy model.
+
+    Columns with a type that is not in SQLA_TO_PANDAS_DTYPE are read as text.
+    """
+    sqla_model = TABLE_MODEL_MAP[table_name]["sqla_model"]
+    dtypes: dict[Hashable, ExtensionDtype] = {}
+    for key, column in sqla_model.__mapper__.columns.items():
+        dtype: ExtensionDtype = pd.StringDtype()
+        for sqla_type, pandas_dtype in SQLA_TO_PANDAS_DTYPE.items():
+            if isinstance(column.type, sqla_type):
+                dtype = pandas_dtype
+                break
+        dtypes[key] = dtype
+    return dtypes
+
+
 def load_data_to_df(table_name: str) -> pd.DataFrame:
     """Data is defined using csv folders named after the table names on the
     database. This function loads all of the csv files for a given table into a
@@ -114,7 +133,12 @@ def load_data_to_df(table_name: str) -> pd.DataFrame:
     for filename in os.listdir(table_dir):
         if filename.endswith(".csv"):
             filepath = table_dir / filename
-            df = pd.read_csv(filepath, dtype=str, encoding="utf-8", index_col=False)
+            df = pd.read_csv(
+                filepath,
+                dtype=pandas_dtypes_for_table(table_name),
+                encoding="utf-8",
+                index_col=False,
+            )
             all_dfs.append(df)
 
     if not all_dfs:

@@ -1,20 +1,21 @@
+from typing import TypedDict
+
+import pandas as pd
+from sqlalchemy import Boolean, DateTime, Integer, Numeric, String
+from sqlalchemy.dialects.postgresql import ARRAY, BIT
 from ukrdc_sqla.ukrdc import (
+    Base,
     Code,
-    CodeMap,
     CodeExclusion,
+    CodeMap,
+    CodingStandards,
+    Facility,
+    GPInfo,
+    Locations,
     ModalityCodes,
     RRCodes,
     RRDataDefinition,
-    GPInfo,
-    Facility,
-    Base,
-    CodingStandards,
-    Locations,
 )
-from typing import TypedDict
-from sqlalchemy import String, Integer, Boolean, DateTime, Numeric
-from sqlalchemy.dialects.postgresql import ARRAY, BIT
-import pandas as pd
 
 
 class TableInfo(TypedDict):
@@ -29,10 +30,10 @@ class TableInfo(TypedDict):
 SQLA_TO_PANDAS_DTYPE = {
     String: pd.StringDtype(),
     Integer: pd.Int64Dtype(),  # Nullable integer
-    Boolean: pd.StringDtype(),  # Read as string, convert to bool after
+    Boolean: pd.BooleanDtype(),  # Read as string, convert to bool after
     DateTime: pd.StringDtype(),  # Read as string, convert to datetime after
     Numeric: pd.Float64Dtype(),  # Nullable float
-    BIT: pd.StringDtype(),  # Read as string, convert to bool after
+    BIT: pd.StringDtype(),  # Postgres bit string, passed to the database as text
     ARRAY: pd.StringDtype(),  # Arrays stored as strings in CSV
 }
 
