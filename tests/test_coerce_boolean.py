@@ -3,7 +3,7 @@ from typing import cast
 
 import pandas as pd
 import pytest
-from sqlalchemy import Boolean, String
+from sqlalchemy import Boolean, Numeric, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from ukrdc_sqla.ukrdc import Base
 
@@ -18,6 +18,7 @@ class _FlagRow(_TestBase):
     __tablename__ = "flag_row"
     code: Mapped[str] = mapped_column(String, primary_key=True)
     flag: Mapped[bool] = mapped_column(Boolean)
+    amount: Mapped[float] = mapped_column(Numeric)
 
 
 # coerce_sqla_types expects a ukrdc_sqla model. The cast only tells mypy
@@ -54,3 +55,12 @@ def test_facility_booleans_are_read_as_booleans():
     assert values[0] is True
     assert values[1] is False
     assert pd.isna(values[2])
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [(0.0, 0.0), ("0", 0.0), (1.5, 1.5), (None, None), ("NULL", None)],
+)
+def test_numeric_zero_is_kept(raw, expected):
+    result = coerce_sqla_types({"code": "X", "amount": raw}, FLAG_MODEL)
+    assert result["amount"] == expected

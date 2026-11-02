@@ -1,16 +1,15 @@
-import os
-import logging
 import json
+import logging
+import os
 from collections.abc import Hashable
+from pathlib import Path
 
-from sqlalchemy.exc import SQLAlchemyError
 import pandas as pd
 from pandas.api.extensions import ExtensionDtype
-from sqlalchemy import inspect
-from pathlib import Path
-from sqlalchemy import Integer, Boolean, DateTime, Numeric
+from sqlalchemy import Boolean, DateTime, Integer, Numeric, inspect
+from sqlalchemy.dialects.postgresql import ARRAY, BIT
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from sqlalchemy.dialects.postgresql import BIT, ARRAY
 from ukrdc_sqla.ukrdc import Base
 
 from registry_codes.schema import SQLA_TO_PANDAS_DTYPE, TABLE_MODEL_MAP
@@ -54,10 +53,10 @@ def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
                     value = pd.to_datetime(value).to_pydatetime()
             case Numeric():
                 # Handle NULL strings and convert to proper numeric or None
-                if value and value != "NULL":
-                    value = float(value)
-                else:
+                if value is None or value == "NULL":
                     value = None
+                else:
+                    value = float(value)
         coerced_data[key] = value
 
     return coerced_data
