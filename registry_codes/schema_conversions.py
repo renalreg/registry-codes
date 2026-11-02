@@ -74,3 +74,30 @@ def model_schema(model) -> ModelSchema:
             )
 
     return schema
+
+
+def df_to_records(df: pd.DataFrame, model) -> list[dict]:
+    """Convert a DataFrame into dicts keyed by the model's attribute names."""
+    mapper = inspect(model)
+
+    # Column name in the CSV/table -> attribute name on the model
+    # (these differ if you've written e.g. donor_id = mapped_column("DonorID", ...))
+    attr_names = {
+        col.name: mapper.get_property_by_column(col).key
+        for col in mapper.columns
+        if col.name in df.columns
+    }
+    date_cols = [
+        col.name for col in mapper.columns
+        if col.name in df.columns
+        and isinstance(col.type, Date) and not isinstance(col.type, DateTime)
+    ]
+
+    out = df[list(attr_names)].copy()
+    for col in date_cols:
+        out[col] = out[col].dt.date  # Timestamp -> datetime.date
+
+    # pd.NA / NaT / NaN -> None, numpy scalars -> Python types
+    out = out.astype(object).where(out.notna(), None)
+
+    return out.rename(columns=attr_names).to_dict("records")
