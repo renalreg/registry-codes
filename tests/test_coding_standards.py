@@ -17,7 +17,7 @@ ROOT_DIRS = [
     os.path.join(_TABLES, "code_map"),
     os.path.join(_TABLES, "code_list"),
     os.path.join(_TABLES, "code_exclusion"),
-    os.path.join(_TABLES, "facility_new"),
+    os.path.join(_TABLES, "facility"),
 ]
 
 MASTER_CSV = os.path.join(_TABLES, "coding_standards", "coding_standards.csv")

@@ -70,7 +70,7 @@ TABLE_MODEL_MAP: dict[str, TableInfo] = {
     },
     # "facility": {
     # },
-    "facility_new": {
+    "facility": {
         "sqla_model": Facility,
         "excluded_columns": ["creation_date", "update_date"],
         "unique_columns": ["facilitycode", "facilitycodestd"],

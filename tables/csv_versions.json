@@ -419,7 +419,7 @@
     "model": "CodingStandards",
     "step": "base"
   },
-  "facility_new/facilities.csv": {
+  "facility/facilities.csv": {
     "model": "Facility",
     "step": "base"
   },
