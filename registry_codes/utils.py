@@ -1,14 +1,13 @@
-import os
-import logging
 import json
-
-from sqlalchemy.exc import SQLAlchemyError
-import pandas as pd
-from sqlalchemy import inspect
+import logging
+import os
 from pathlib import Path
-from sqlalchemy import Integer, Boolean, DateTime, Numeric
+
+import pandas as pd
+from sqlalchemy import Boolean, DateTime, Integer, Numeric, inspect
+from sqlalchemy.dialects.postgresql import ARRAY, BIT
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from sqlalchemy.dialects.postgresql import BIT, ARRAY
 from ukrdc_sqla.ukrdc import Base
 
 from registry_codes.schema import TABLE_MODEL_MAP
@@ -32,7 +31,16 @@ def coerce_sqla_types(data_row: dict, sqla_model: type[Base]) -> dict:
 
         match column.type:
             case Boolean():
-                value = bool(value)
+                if value is None:
+                    value = False
+                else:
+                    text = str(value).strip().lower()
+                    if text in ("true", "t", "1"):
+                        value = True
+                    elif text in ("false", "f", "0"):
+                        value = False
+                    else:
+                        raise ValueError(f"{key}: not a boolean: {value!r}")
             case ARRAY():
                 if value:
                     value = json.loads(value)
